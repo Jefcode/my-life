@@ -34,7 +34,7 @@ const Sidebar = () => {
 				{/* Logo */}
 				<div
 					className={`h-32 flex items-center pl-8 transition-all ${
-						!isOpen && 'pl-5'
+						!isOpen && 'pl-[20px]'
 					}`}
 				>
 					<a href="#" className="flex items-center gap-3">
