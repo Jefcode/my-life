@@ -51,6 +51,9 @@ const NextCalls = () => {
 						))}
 					</tbody>
 				</table>
+				{nextMeetings.length === 0 && (
+					<div className="w-full p-6 text-center">No calls ahead!</div>
+				)}
 			</div>
 		</div>
 	);
