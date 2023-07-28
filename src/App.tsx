@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
 import Dashboard from './Dashboad';
 // import MeetingModal from './components/modals/MeetingModal';
 import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
+	// Remove the loader once the app mounts
+	useEffect(() => {
+		const loader = document.querySelector('.loader-wrapper') as HTMLDivElement;
+
+		loader.classList.add('opacity-0', 'invisible');
+	}, []);
+
 	return (
 		<>
 			{/* <MeetingModal /> */}
