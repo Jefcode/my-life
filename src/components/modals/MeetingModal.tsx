@@ -33,9 +33,9 @@ const MeetingModal = ({ meeting, onClose }: MeetingModalProps) => {
 					{/* User Info */}
 					<div className="flex items-center gap-5 mb-8">
 						<img
-							src="/imgs/user-1.png"
+							src={meeting.imageUrl}
 							alt="User Image"
-							className="w-20 h-20 rounded-full"
+							className="w-20 h-20 rounded-full object-cover"
 						/>
 
 						<div className="flex flex-col">
