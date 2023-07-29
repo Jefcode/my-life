@@ -31,14 +31,14 @@ const MeetingModal = ({ meeting, onClose }: MeetingModalProps) => {
 			<div className="bg-white rounded-2xl fixed top-[50%] right-[50%] -translate-y-[50%] translate-x-[50%] max-w-[calc(100vw-20px)] w-[700px] max-h-[calc(100vh-20px)] z-20 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100">
 				<div className="w-full h-full p-10 relative">
 					{/* User Info */}
-					<div className="flex items-center gap-5 mb-8">
+					<div className="flex flex-col sm:flex-row items-center gap-5 mb-8">
 						<img
 							src={meeting.imageUrl}
 							alt="User Image"
 							className="w-20 h-20 rounded-full object-cover"
 						/>
 
-						<div className="flex flex-col">
+						<div className="flex flex-col sm:w-full text-center sm:text-left">
 							<span className="text-neutral-500">Meeting with</span>
 							<p className="text-xl mb-1 font-semibold text-stone-800">
 								Roya Simonetti
