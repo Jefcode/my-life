@@ -4,7 +4,7 @@ import Calendar from './calendar/Calendar';
 
 const Appointments = () => {
 	return (
-		<div className="bg-white rounded-3xl p-5 h-full">
+		<div className="card bg-white rounded-2xl p-5 h-full">
 			{/* Panel Title Flex Container */}
 			<div className="flex items-center flex-wrap gap-5 justify-between mb-10">
 				<div className="flex items-center gap-2">

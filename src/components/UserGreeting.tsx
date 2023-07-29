@@ -2,7 +2,7 @@ import Button from './Button';
 
 const UserGreeting = () => {
 	return (
-		<div className="rounded-2xl bg-white p-8">
+		<div className="card rounded-2xl bg-white p-8">
 			<div className="flex flex-col sm:flex-row sm:items-center">
 				{/* User Image/text */}
 				<div className="flex items-center">

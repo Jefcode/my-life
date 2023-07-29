@@ -16,7 +16,7 @@ const NextCalls = () => {
 	}, []);
 
 	return (
-		<div className="bg-white rounded-2xl p-5 flex-auto">
+		<div className="card bg-white rounded-2xl p-5 flex-auto">
 			{/* Panel Name / Filter Flex Container */}
 			<div className="flex items-center flex-wrap gap-2 justify-between">
 				<div className="flex items-center gap-2">
