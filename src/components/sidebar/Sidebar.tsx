@@ -75,9 +75,12 @@ const Sidebar = () => {
 			</button>
 
 			{/* On Mobile */}
-			<button className="absolute top-[52px] right-5 z-50" onClick={close}>
+			<button
+				className="block sm:hidden absolute top-[52px] right-5 z-50"
+				onClick={close}
+			>
 				<IoIosClose
-					size={22}
+					size={24}
 					className=" text-stone-600 hover:text-stone-900"
 				/>
 			</button>
