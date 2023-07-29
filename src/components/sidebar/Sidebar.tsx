@@ -1,3 +1,4 @@
+import { IoIosClose } from 'react-icons/io';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useMediaQuery, useOnClickOutside } from 'usehooks-ts';
@@ -12,11 +13,13 @@ const Sidebar = () => {
 	const isLargeScreen = useMediaQuery('(min-width: 1024px)');
 	const { toggle, isOpen, close } = useSidebar();
 
-	const handleCloseSidebar = () => {
-		toggle();
+	const handleClickOutside = () => {
+		if (!isLargeScreen) {
+			close();
+		}
 	};
 
-	useOnClickOutside(ref, close);
+	useOnClickOutside(ref, handleClickOutside);
 
 	// Framer motion variant
 	const sidebarWidth = '250px';
@@ -66,9 +69,17 @@ const Sidebar = () => {
 				className={`hidden lg:flex absolute bottom-5 right-5 border border-stone-200 rounded-full items-center cursor-pointer justify-center w-12 h-12 p-3 text-stone-600 hover:bg-stone-50 transition-all ${
 					isOpen ? 'visible opacity-100' : 'invisible opacity-0'
 				}`}
-				onClick={handleCloseSidebar}
+				onClick={toggle}
 			>
 				<ChevronLeftIcon className="h-4 w-4" />
+			</button>
+
+			{/* On Mobile */}
+			<button className="absolute top-[52px] right-5 z-50" onClick={close}>
+				<IoIosClose
+					size={22}
+					className=" text-stone-600 hover:text-stone-900"
+				/>
 			</button>
 
 			{/* When Collapsed */}
@@ -76,7 +87,7 @@ const Sidebar = () => {
 				className={`hidden lg:flex absolute top-[50%] -translate-y-[50%] right-0 translate-x-[50%] bg-primary text-white rounded-full items-center cursor-pointer justify-center w-10 h-10 p-3 hover:bg-red-500 transition-all ${
 					isOpen ? 'invisible opacity-0' : 'visible opacity-100'
 				}`}
-				onClick={handleCloseSidebar}
+				onClick={toggle}
 			>
 				<ChevronRightIcon className="h-4 w-4" />
 			</button>

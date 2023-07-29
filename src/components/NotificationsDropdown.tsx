@@ -1,14 +1,28 @@
+import { motion } from 'framer-motion';
 import { ReactComponent as CalendarIcon } from '../icons/calendar.svg';
 import { ReactComponent as ClockIcon } from '../icons/clock.svg';
 import Button from './Button';
 
-const NotificationsDropdown = () => {
+interface NotificationsDropdownProps {
+	onClose?: () => void;
+}
+
+const NotificationsDropdown = ({ onClose }: NotificationsDropdownProps) => {
 	return (
-		<>
+		<motion.div
+			className="relative z-50"
+			variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
+			initial="hidden"
+			animate="visible"
+			exit="hidden"
+		>
 			{/* Backdrop */}
-			<div className="fixed top-0 right-0 left-0 bottom-0 bg-black/50 z-10"></div>
+			<div
+				className="fixed top-0 right-0 left-0 bottom-0 bg-black/50 z-10"
+				onClick={onClose}
+			></div>
 			{/* Dropdown */}
-			<div className="bg-white top-full mt-5 rounded-xl w-[350px] p-5 absolute -right-10 z-20">
+			<div className="bg-white top-full mt-5 rounded-xl w-[350px] p-5 absolute right-0 translate-x-[25%] md:translate-x-0 md:-right-10 z-20">
 				{/* Header */}
 				<div className="flex items-center justify-between">
 					<p className="font-semibold text-lg">Notifications</p>
@@ -142,7 +156,7 @@ const NotificationsDropdown = () => {
 					</li>
 				</ul>
 			</div>
-		</>
+		</motion.div>
 	);
 };
 
