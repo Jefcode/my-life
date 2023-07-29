@@ -1,6 +1,7 @@
 import { GrMenu, GrFormClose } from 'react-icons/gr';
 import { ReactComponent as BellIcon } from '../icons/bell.svg';
 import useSidebar from '../hooks/useSidebar';
+import NotificationsDropdown from './NotificationsDropdown';
 
 interface HeaderProps {
 	pageTitle: string;
@@ -18,12 +19,16 @@ const Header = ({ pageTitle }: HeaderProps) => {
 
 			{/* NOTIFICATION/USER MENU Flex container */}
 			<div className="flex items-center gap-4">
-				<button className="rounded-full flex items-center justify-center cursor-pointer text-stone-700 w-10 h-10 bg-white relative">
-					<BellIcon />
-					<div className="bg-primary absolute flex items-center justify-center top-0 -right-1 text-white w-4 h-4 text-xs rounded-full">
-						3
-					</div>
-				</button>
+				<div className="relative">
+					<button className="rounded-full flex items-center justify-center cursor-pointer text-stone-700 w-10 h-10 bg-white relative">
+						<BellIcon />
+						<div className="bg-primary absolute flex items-center justify-center top-0 -right-1 text-white w-4 h-4 text-xs rounded-full">
+							3
+						</div>
+					</button>
+
+					<NotificationsDropdown />
+				</div>
 
 				{/* User Menu */}
 				<button
@@ -35,6 +40,7 @@ const Header = ({ pageTitle }: HeaderProps) => {
 					<div className="w-2.5 h-2.5 bg-primary rounded-full border-2 border-white absolute bottom-0 right-0"></div>
 				</button>
 
+				{/* Open Sidebar Button */}
 				<button className="rounded-full lg:hidden  cursor-pointer text-stone-700 bg-white relative">
 					{!isOpen ? (
 						<div
