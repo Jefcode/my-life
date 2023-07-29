@@ -33,7 +33,7 @@ const Sidebar = () => {
 			<div className="flex flex-col h-full pb-16 relative overflow-y-auto overflow-x-hidden">
 				{/* Logo */}
 				<div
-					className={`h-32 flex items-center pl-8 transition-all ${
+					className={`h-32 min-h-[8rem] flex items-center pl-8 transition-all ${
 						!isOpen && 'pl-[20px]'
 					}`}
 				>
