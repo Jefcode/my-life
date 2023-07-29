@@ -1,9 +1,9 @@
-import { ReactComponent as BellIcon } from './icons/bell.svg';
-import { ReactComponent as CalendarIcon } from './icons/calendar-active.svg';
-import Button from './components/Button';
-import Calendar from './components/calendar/Calendar';
-import NextCalls from './components/next-calls/NextCalls';
-import TodayStats from './components/TodayStats';
+import { ReactComponent as BellIcon } from '../icons/bell.svg';
+import { ReactComponent as CalendarIcon } from '../icons/calendar-active.svg';
+import Button from './Button';
+import Calendar from './calendar/Calendar';
+import NextCalls from './next-calls/NextCalls';
+import TodayStats from './TodayStats';
 
 const Dashboard = () => {
 	return (

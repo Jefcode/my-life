@@ -72,7 +72,7 @@ export default function Calendar() {
 							</button>
 						</div>
 						<div className="text-center text-gray-400 font-light text-sm">
-							May 15, Thursday
+							{format(today, 'MMMM d')}, {daysOfTheWeek[getDay(today)]}
 						</div>
 						<div className="grid grid-cols-7 mt-10 text-lg leading-6 text-center text-primary">
 							<div>S</div>

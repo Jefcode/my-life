@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Dashboard from './Dashboad';
+import Dashboard from './components/Dashboad';
 // import MeetingModal from './components/modals/MeetingModal';
 import Sidebar from './components/sidebar/Sidebar';
 
