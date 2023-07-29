@@ -1,7 +1,8 @@
 import { GrMenu, GrFormClose } from 'react-icons/gr';
 import { ReactComponent as BellIcon } from '../icons/bell.svg';
 import useSidebar from '../hooks/useSidebar';
-import NotificationsDropdown from './NotificationsDropdown';
+import UserMenuDropdown from './UserMenuDropdown';
+// import NotificationsDropdown from './NotificationsDropdown';
 
 interface HeaderProps {
 	pageTitle: string;
@@ -27,18 +28,22 @@ const Header = ({ pageTitle }: HeaderProps) => {
 						</div>
 					</button>
 
-					<NotificationsDropdown />
+					{/* <NotificationsDropdown /> */}
 				</div>
 
 				{/* User Menu */}
-				<button
-					className="h-10 w-10 rounded-full bg-cover bg-center relative"
-					// For Dynamic Image rendering
-					style={{ backgroundImage: 'url("/imgs/profile.png")' }}
-				>
-					{/* Online Status */}
-					<div className="w-2.5 h-2.5 bg-primary rounded-full border-2 border-white absolute bottom-0 right-0"></div>
-				</button>
+				<div className="relative">
+					<button
+						className="h-10 w-10 rounded-full bg-cover bg-center relative"
+						// For Dynamic Image rendering
+						style={{ backgroundImage: 'url("/imgs/profile.png")' }}
+					>
+						{/* Online Status */}
+						<div className="w-2.5 h-2.5 bg-primary rounded-full border-2 border-white absolute bottom-0 right-0"></div>
+					</button>
+
+					<UserMenuDropdown />
+				</div>
 
 				{/* Open Sidebar Button */}
 				<button className="rounded-full lg:hidden  cursor-pointer text-stone-700 bg-white relative">
