@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import meetings from '../../data/meetings';
 import { parseISO } from 'date-fns';
 import CallRow from './CallRow';
+import Panel from '../Panel';
 
 const NextCalls = () => {
 	const nextMeetings = useMemo(() => {
@@ -16,7 +17,7 @@ const NextCalls = () => {
 	}, []);
 
 	return (
-		<div className="card bg-white rounded-2xl p-5 flex-auto">
+		<Panel className="card flex-auto">
 			{/* Panel Name / Filter Flex Container */}
 			<div className="flex items-center flex-wrap gap-2 justify-between">
 				<div className="flex items-center gap-2">
@@ -55,7 +56,7 @@ const NextCalls = () => {
 					<div className="w-full p-6 text-center">No calls ahead!</div>
 				)}
 			</div>
-		</div>
+		</Panel>
 	);
 };
 

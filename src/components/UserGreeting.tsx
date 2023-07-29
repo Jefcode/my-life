@@ -1,8 +1,9 @@
 import Button from './Button';
+import Panel from './Panel';
 
 const UserGreeting = () => {
 	return (
-		<div className="card rounded-2xl bg-white p-8">
+		<Panel className="card p-8">
 			<div className="flex flex-col sm:flex-row sm:items-center">
 				{/* User Image/text */}
 				<div className="flex items-center">
@@ -37,7 +38,7 @@ const UserGreeting = () => {
 					<Button className="!px-8 flex-1">Edit Profile</Button>
 				</div>
 			</div>
-		</div>
+		</Panel>
 	);
 };
 

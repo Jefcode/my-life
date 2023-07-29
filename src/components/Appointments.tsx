@@ -1,10 +1,11 @@
 import { ReactComponent as CalendarIcon } from '../icons/calendar-active.svg';
 import Button from './Button';
+import Panel from './Panel';
 import Calendar from './calendar/Calendar';
 
 const Appointments = () => {
 	return (
-		<div className="card bg-white rounded-2xl p-5 h-full">
+		<Panel className="card h-full">
 			{/* Panel Title Flex Container */}
 			<div className="flex items-center flex-wrap gap-5 justify-between mb-10">
 				<div className="flex items-center gap-2">
@@ -17,7 +18,7 @@ const Appointments = () => {
 				<Button>See all</Button>
 			</div>
 			<Calendar />
-		</div>
+		</Panel>
 	);
 };
 
