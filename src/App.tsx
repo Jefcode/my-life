@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Dashboard from './components/Dashboad';
+import Dashboard from './components/Dashboard';
 import Sidebar from './components/sidebar/Sidebar';
 import useSidebar from './hooks/useSidebar';
 import classNames from './utils/classNames';

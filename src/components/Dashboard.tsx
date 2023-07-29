@@ -1,4 +1,4 @@
-import { GrMenu } from 'react-icons/gr';
+import { GrMenu, GrFormClose } from 'react-icons/gr';
 import { ReactComponent as BellIcon } from '../icons/bell.svg';
 import { ReactComponent as CalendarIcon } from '../icons/calendar-active.svg';
 import Button from './Button';
@@ -8,7 +8,7 @@ import TodayStats from './TodayStats';
 import useSidebar from '../hooks/useSidebar';
 
 const Dashboard = () => {
-	const { toggle: toggleSidebar } = useSidebar();
+	const { open, close, isOpen } = useSidebar();
 
 	return (
 		<>
@@ -38,11 +38,22 @@ const Dashboard = () => {
 						<div className="w-2.5 h-2.5 bg-primary rounded-full border-2 border-white absolute bottom-0 right-0"></div>
 					</button>
 
-					<button
-						className="rounded-full flex lg:hidden items-center justify-center cursor-pointer text-stone-700 w-10 h-10 bg-white relative"
-						onClick={toggleSidebar}
-					>
-						<GrMenu />
+					<button className="rounded-full lg:hidden  cursor-pointer text-stone-700 bg-white relative">
+						{!isOpen ? (
+							<div
+								className="w-10 h-10 flex items-center justify-center"
+								onClick={open}
+							>
+								<GrMenu />
+							</div>
+						) : (
+							<div
+								className="w-10 h-10 flex items-center justify-center"
+								onClick={open}
+							>
+								<GrFormClose size={22} onClose={close} />
+							</div>
+						)}
 					</button>
 				</div>
 			</div>

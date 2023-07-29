@@ -1,5 +1,6 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuery, useOnClickOutside } from 'usehooks-ts';
 
 import useSidebar from '../../hooks/useSidebar';
 import { ReactComponent as ChevronLeftIcon } from '../../icons/chevron-left.svg';
@@ -7,12 +8,15 @@ import { ReactComponent as ChevronRightIcon } from '../../icons/chevron-right.sv
 import Menu from './Menu';
 
 const Sidebar = () => {
+	const ref = useRef<HTMLDivElement>(null);
 	const isLargeScreen = useMediaQuery('(min-width: 1024px)');
-	const { toggle, isOpen } = useSidebar();
+	const { toggle, isOpen, close } = useSidebar();
 
 	const handleCloseSidebar = () => {
 		toggle();
 	};
+
+	useOnClickOutside(ref, close);
 
 	// Framer motion variant
 	const sidebarWidth = '250px';
@@ -34,6 +38,7 @@ const Sidebar = () => {
 
 	return (
 		<motion.div
+			ref={ref}
 			className="fixed shadow-xl lg:shadow-none h-screen bg-white z-50 lg:relative before:bg-black backdrop-blur-lg"
 			variants={sidebarVariants}
 			initial={isOpen ? 'expanded' : 'collapsed'}
