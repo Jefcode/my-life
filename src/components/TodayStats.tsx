@@ -31,7 +31,7 @@ const TodayStats = () => {
 	return (
 		<div className="">
 			{/* Cards Flex Container */}
-			<div className="flex items-stretch gap-5 h-full">
+			<div className="flex flex-col sm:flex-row items-stretch gap-5 h-full">
 				{/* Card => Todays Calls and meetings */}
 				<div className="bg-gradient-to-l from-gradientRed-100 via-primary to-gradientRed-200 rounded-2xl p-4 flex-1 text-white flex flex-col justify-between">
 					<div className="flex items-center gap-3 mb-12">

@@ -1,30 +1,40 @@
 import { motion } from 'framer-motion';
+import { useMediaQuery } from 'usehooks-ts';
 
 import useSidebar from '../../hooks/useSidebar';
 import { ReactComponent as ChevronLeftIcon } from '../../icons/chevron-left.svg';
 import { ReactComponent as ChevronRightIcon } from '../../icons/chevron-right.svg';
 import Menu from './Menu';
 
-const sidebarVariants = {
-	expanded: {
-		width: '260px',
-	},
-	collapsed: {
-		width: '90px',
-	},
-};
-
 const Sidebar = () => {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const isLargeScreen = useMediaQuery('(min-width: 1024px)');
 	const { toggle, isOpen } = useSidebar();
 
 	const handleCloseSidebar = () => {
 		toggle();
 	};
 
+	// Framer motion variant
+	const sidebarWidth = '250px';
+	const sidebarVariants = isLargeScreen
+		? {
+				expanded: {
+					width: sidebarWidth,
+					transform: 'translateX(0)',
+				},
+				collapsed: {
+					width: '90px',
+					transform: 'translateX(0)',
+				},
+		  }
+		: {
+				expanded: { width: sidebarWidth, transform: 'translateX(0)' },
+				collapsed: { width: sidebarWidth, transform: 'translateX(-100%)' },
+		  };
+
 	return (
 		<motion.div
-			className="h-screen relative"
+			className="fixed shadow-xl lg:shadow-none h-screen bg-white z-50 lg:relative before:bg-black backdrop-blur-lg"
 			variants={sidebarVariants}
 			initial={isOpen ? 'expanded' : 'collapsed'}
 			animate={!isOpen ? 'collapsed' : 'expanded'}
@@ -48,7 +58,7 @@ const Sidebar = () => {
 
 			{/* Close Buttons */}
 			<button
-				className={`absolute bottom-5 right-5 border border-stone-200 rounded-full flex items-center cursor-pointer justify-center w-12 h-12 p-3 text-stone-600 hover:bg-stone-50 transition-all ${
+				className={`hidden lg:flex absolute bottom-5 right-5 border border-stone-200 rounded-full items-center cursor-pointer justify-center w-12 h-12 p-3 text-stone-600 hover:bg-stone-50 transition-all ${
 					isOpen ? 'visible opacity-100' : 'invisible opacity-0'
 				}`}
 				onClick={handleCloseSidebar}
@@ -58,7 +68,7 @@ const Sidebar = () => {
 
 			{/* When Collapsed */}
 			<button
-				className={`absolute top-[50%] -translate-y-[50%] right-0 translate-x-[50%] bg-primary text-white rounded-full flex items-center cursor-pointer justify-center w-10 h-10 p-3 hover:bg-red-500 transition-all ${
+				className={`hidden lg:flex absolute top-[50%] -translate-y-[50%] right-0 translate-x-[50%] bg-primary text-white rounded-full items-center cursor-pointer justify-center w-10 h-10 p-3 hover:bg-red-500 transition-all ${
 					isOpen ? 'invisible opacity-0' : 'visible opacity-100'
 				}`}
 				onClick={handleCloseSidebar}

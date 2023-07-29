@@ -22,7 +22,7 @@ const Button = ({
 	return (
 		<button
 			className={classNames(
-				'py-2.5 px-6 rounded-md flex items-center justify-center gap-2 transition duration-300  active:scale-90 disabled:!bg-slate-100 disabled:!border-0 disabled:!text-slate-400 disabled:hover:!bg-slate-100 disabled:hover:!cursor-not-allowed disabled:active:!scale-100',
+				'py-2.5 px-6 rounded-md flex items-center justify-center gap-2 transition duration-300  active:scale-90 disabled:!bg-slate-100 disabled:!border-0 disabled:!text-slate-400 disabled:hover:!bg-slate-100 disabled:hover:!cursor-not-allowed disabled:active:!scale-100 whitespace-nowrap',
 				full ? 'w-full' : '',
 				variant === 'primary'
 					? 'bg-primary text-white border border-transparent hover:bg-white hover:text-stone-800 hover:border-stone-200'

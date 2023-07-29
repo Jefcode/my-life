@@ -18,7 +18,7 @@ const NextCalls = () => {
 	return (
 		<div className="bg-white rounded-2xl p-5 flex-auto">
 			{/* Panel Name / Filter Flex Container */}
-			<div className="flex items-center justify-between">
+			<div className="flex items-center flex-wrap gap-2 justify-between">
 				<div className="flex items-center gap-2">
 					<CameraIcon />
 					<span className="text-stone-800 font-semibold text-xl">
@@ -34,8 +34,8 @@ const NextCalls = () => {
 			</div>
 
 			{/* Calls Table */}
-			<div className="overflow-y-auto mt-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100">
-				<table className="w-full text-left">
+			<div className="overflow-y-auto mt-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 overflow-x-auto">
+				<table className="w-full text-left whitespace-nowrap">
 					<thead className="text-stone-400 border-b border-stone-200">
 						<tr>
 							<td className="py-2 pl-2">Client</td>

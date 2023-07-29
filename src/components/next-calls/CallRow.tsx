@@ -21,11 +21,11 @@ const CallRow = ({ meeting }: CallRowProps) => {
 	return (
 		<tr key={meeting.id} className="bg-white hover:bg-stone-50">
 			{/* Client */}
-			<td className="py-4 pl-2">
+			<td className="py-4 px-2">
 				<div className="flex items-center gap-3">
 					<img
 						src={meeting.imageUrl}
-						className="w-12 h-12 rounded-full object-cover object-center"
+						className="hidden sm:block w-12 h-12 rounded-full object-cover object-center"
 						alt="Client's image"
 					/>
 					<div>
@@ -36,18 +36,18 @@ const CallRow = ({ meeting }: CallRowProps) => {
 					</div>
 				</div>
 			</td>
-			<td className="py-4">
+			<td className="py-4 px-2">
 				<span className="text-stone-500">
 					{format(parseISO(meeting.startDatetime), 'MMMM d')}
 				</span>
 			</td>
-			<td className="py-4">
+			<td className="py-4 px-2">
 				<span className="text-stone-500">
 					{format(parseISO(meeting.startDatetime), 'hh:mm')} -{' '}
 					{format(parseISO(meeting.endDatetime), 'hh:mm')}
 				</span>
 			</td>
-			<td className="py-4 pr-2">
+			<td className="py-4 px-2 pr-2">
 				<Button
 					variant="tertiary"
 					className="ml-auto"

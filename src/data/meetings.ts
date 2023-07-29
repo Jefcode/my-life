@@ -41,8 +41,8 @@ const meetings: Meeting[] = [
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 						aliquip`,
-		startDatetime: '2023-07-28T13:53',
-		endDatetime: '2023-07-28T14:30',
+		startDatetime: '2023-07-30T13:53',
+		endDatetime: '2023-07-30T14:30',
 		done: false,
 	},
 	{

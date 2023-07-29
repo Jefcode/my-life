@@ -8,7 +8,7 @@ interface IUseSidebar {
 }
 
 const useSidebar = create<IUseSidebar>((set) => ({
-	isOpen: true,
+	isOpen: false,
 	open: () => set(() => ({ isOpen: true })),
 	close: () => set(() => ({ isOpen: false })),
 	toggle: () => set((state) => ({ isOpen: !state.isOpen })),

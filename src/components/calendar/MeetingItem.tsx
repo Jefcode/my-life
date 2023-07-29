@@ -21,11 +21,11 @@ const MeetingItem = ({ meeting }: MeetingItemProps) => {
 	return (
 		<li className="p-5 border border-stone-100 rounded-lg">
 			{/* Flex Container */}
-			<div className="flex items-center">
+			<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
 				<img
 					src={meeting.imageUrl}
 					alt="User Image"
-					className="rounded-full w-14 h-14 object-cover mr-5"
+					className="hidden sm:block rounded-full w-14 h-14 object-cover mr-5"
 				/>
 				<div className="flex flex-col">
 					<span
@@ -50,7 +50,7 @@ const MeetingItem = ({ meeting }: MeetingItemProps) => {
 
 				{/* Button */}
 				<Button
-					className="ml-auto"
+					className="sm:ml-auto"
 					variant="primary"
 					disabled={meeting.done}
 					onClick={openModal}
