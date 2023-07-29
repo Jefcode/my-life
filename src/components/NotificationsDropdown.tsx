@@ -21,6 +21,10 @@ const NotificationsDropdown = ({ onClose }: NotificationsDropdownProps) => {
 				className="fixed top-0 right-0 left-0 bottom-0 bg-black/50 z-10"
 				onClick={onClose}
 			></div>
+
+			{/* Triangle shape */}
+			<div className="w-0 h-0 border-t-0 border-r-[10px] border-l-[10px] border-b-[10px]  absolute z-20 border-t-transparent border-r-transparent border-b-white border-l-transparent top-full mt-2.5 right-[50%] translate-x-[50%]"></div>
+
 			{/* Dropdown */}
 			<div className="bg-white top-full mt-5 rounded-xl w-[350px] p-5 absolute right-0 translate-x-[25%] md:translate-x-0 md:-right-10 z-20">
 				{/* Header */}

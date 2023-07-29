@@ -20,6 +20,10 @@ const UserMenuDropdown = ({ onClose }: UserMenuDropdown) => {
 				onClick={onClose}
 			></div>
 
+			{/* Triangle shape */}
+			<div className="w-0 h-0 border-t-0 border-r-[10px] border-l-[10px] border-b-[10px]  absolute z-20 border-t-transparent border-r-transparent border-b-white border-l-transparent top-full mt-2.5 right-[50%] translate-x-[50%]"></div>
+
+			{/* Dropdown */}
 			<div className="bg-white top-full mt-5 rounded-xl w-64 absolute -right-4 z-20 shadow-lg shadow-stone-200 overflow-hidden">
 				<ul>
 					<li className="relative">
