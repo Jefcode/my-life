@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { ReactComponent as CalendarIcon } from '../icons/calendar.svg';
-import { ReactComponent as ClockIcon } from '../icons/clock.svg';
-import Button from './Button';
+import { ReactComponent as CalendarIcon } from '../../icons/calendar.svg';
+import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
+import Button from '../common/Button';
 
 interface NotificationsDropdownProps {
 	onClose?: () => void;

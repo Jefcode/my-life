@@ -1,5 +1,5 @@
-import Button from './Button';
-import Panel from './Panel';
+import Button from './common/Button';
+import Panel from './common/Panel';
 
 const UserGreeting = () => {
 	return (

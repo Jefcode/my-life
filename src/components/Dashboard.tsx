@@ -1,5 +1,5 @@
 import Appointments from './Appointments';
-import Header from './Header';
+import Header from './header/Header';
 import NextCalls from './next-calls/NextCalls';
 import TodayStats from './TodayStats';
 import UserGreeting from './UserGreeting';

@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Meeting } from '../../data/meetings';
 import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
 import { ReactComponent as CheckIcon } from '../../icons/check.svg';
-import Button from '../Button';
+import Button from '../common/Button';
 import MeetingModal from '../modals/MeetingModal';
 
 interface MeetingItemProps {

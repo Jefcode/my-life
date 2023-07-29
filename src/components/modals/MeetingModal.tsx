@@ -5,7 +5,7 @@ import { ReactComponent as CalendarIcon } from '../../icons/calendar.svg';
 import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
 import { ReactComponent as UsersIcon } from '../../icons/users.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
-import Button from '../Button';
+import Button from '../common/Button';
 import { daysOfTheWeek } from '../calendar/Calendar';
 
 interface MeetingModalProps {

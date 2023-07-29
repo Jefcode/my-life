@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Meeting } from '../../data/meetings';
-import Button from '../Button';
+import Button from '../common/Button';
 import { format, parseISO } from 'date-fns';
 
 import ReactDOM from 'react-dom';

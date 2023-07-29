@@ -1,11 +1,11 @@
-import Button from '../Button';
+import Button from '../common/Button';
 import { ReactComponent as CameraIcon } from '../../icons/camera.svg';
 import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
 import { useMemo } from 'react';
 import meetings from '../../data/meetings';
 import { parseISO } from 'date-fns';
 import CallRow from './CallRow';
-import Panel from '../Panel';
+import Panel from '../common/Panel';
 
 const NextCalls = () => {
 	const nextMeetings = useMemo(() => {
