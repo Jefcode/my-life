@@ -156,7 +156,7 @@ export default function Calendar() {
 				{/* Meetings List */}
 				<ul className="flex flex-col gap-5">
 					{selectedDayMeetings.map((meeting) => (
-						<MeetingItem meeting={meeting} />
+						<MeetingItem key={meeting.id} meeting={meeting} />
 					))}
 				</ul>
 

@@ -47,7 +47,7 @@ const NextCalls = () => {
 					<tbody className="divide-y divide-stone-100">
 						{/* Table Row => Each Call */}
 						{nextMeetings.map((meeting) => (
-							<CallRow meeting={meeting} />
+							<CallRow key={meeting.id} meeting={meeting} />
 						))}
 					</tbody>
 				</table>
