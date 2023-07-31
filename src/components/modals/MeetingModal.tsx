@@ -41,7 +41,7 @@ const MeetingModal = ({ meeting, onClose }: MeetingModalProps) => {
 						<div className="flex flex-col sm:w-full text-center sm:text-left">
 							<span className="text-neutral-500">Meeting with</span>
 							<p className="text-xl mb-1 font-semibold text-stone-800">
-								Roya Simonetti
+								{meeting.name}
 							</p>
 							<div className="text-primary">Drugs</div>
 						</div>
