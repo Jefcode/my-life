@@ -104,7 +104,7 @@ const MeetingModal = ({ meeting, onClose }: MeetingModalProps) => {
 
 					{/* Close Button */}
 					<button
-						className="absolute top-10 right-10 text-stone-600 hover:text-stone-900 transition"
+						className="absolute top-10 right-10 text-stone-600 hover:text-stone-900 hover:bg-stone-100 p-2 rounded-full transition"
 						onClick={onClose}
 					>
 						<CloseIcon />
