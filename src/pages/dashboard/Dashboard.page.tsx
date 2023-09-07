@@ -1,6 +1,6 @@
 import Appointments from '../../components/Appointments';
 import NextCalls from '../../components/next-calls/NextCalls';
-import PageTitle from '../../components/PageTitle';
+import PageTitle from '../../components/common/PageTitle';
 import TodayStats from '../../components/TodayStats';
 import UserGreeting from '../../components/UserGreeting';
 
