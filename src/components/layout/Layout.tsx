@@ -1,16 +1,13 @@
 import { stagger, useAnimate } from 'framer-motion';
 import { useEffect, useCallback } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import useSidebar from '../../hooks/useSidebar';
 import classNames from '../../utils/classNames';
 import Sidebar from '../sidebar/Sidebar';
 import Header from '../header/Header';
 
-interface LayoutProps {
-  children?: React.ReactNode;
-}
-
-function Layout({ children }: LayoutProps) {
+function Layout() {
   const [scope, animate] = useAnimate();
   const { isOpen: isSidebarOpen } = useSidebar();
 
@@ -23,10 +20,7 @@ function Layout({ children }: LayoutProps) {
     );
   }, [animate]);
 
-  // Remove the loader once the app mounts
   useEffect(() => {
-    removeLoader();
-
     animateCards();
   }, [animate, animateCards]);
 
@@ -46,19 +40,13 @@ function Layout({ children }: LayoutProps) {
           >
             <div className='relative'>
               <Header />
-              {children}
+              <Outlet />
             </div>
           </main>
         </div>
       </div>
     </>
   );
-}
-
-// Remove preloader on component mount
-function removeLoader() {
-  const loader = document.querySelector('.loader-wrapper') as HTMLDivElement;
-  loader.classList.add('opacity-0', 'invisible');
 }
 
 export default Layout;

@@ -1,8 +1,8 @@
-import Appointments from './Appointments';
-import NextCalls from './next-calls/NextCalls';
-import PageTitle from './PageTitle';
-import TodayStats from './TodayStats';
-import UserGreeting from './UserGreeting';
+import Appointments from '../../components/Appointments';
+import NextCalls from '../../components/next-calls/NextCalls';
+import PageTitle from '../../components/PageTitle';
+import TodayStats from '../../components/TodayStats';
+import UserGreeting from '../../components/UserGreeting';
 
 const Dashboard = () => {
   return (
