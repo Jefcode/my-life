@@ -4,6 +4,7 @@ import { useEffect, useCallback } from 'react';
 import useSidebar from '../../hooks/useSidebar';
 import classNames from '../../utils/classNames';
 import Sidebar from '../sidebar/Sidebar';
+import Header from '../header/Header';
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -39,11 +40,14 @@ function Layout({ children }: LayoutProps) {
         <div className='flex-1 bg-stone-100' ref={scope}>
           <main
             className={classNames(
-              'py-8 h-full transition-all duration-300  overflow-y-auto px-2 sm:px-8 max-w-[100vw]',
+              'py-8 h-full transition-all duration-300 overflow-y-auto px-2 sm:px-8 max-w-[100vw]',
               !isSidebarOpen ? 'lg:px-24' : ''
             )}
           >
-            {children}
+            <div className='relative'>
+              <Header />
+              {children}
+            </div>
           </main>
         </div>
       </div>
