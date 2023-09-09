@@ -10,7 +10,6 @@ import { ReactComponent as MicrophoneIcon } from '../../icons/microphone.svg';
 import { ReactComponent as VideoIcon } from '../../icons/video.svg';
 import { ReactComponent as DotsIcon } from '../../icons/dots.svg';
 import { ReactComponent as FullScreenIcon } from '../../icons/full-screen.svg';
-import { ReactComponent as JournalIcon } from '../../icons/journal.svg';
 import { ReactComponent as SmallScreenIcon } from '../../icons/small-screen.svg';
 
 import CallWrapper from '../../components/video-call/CallWrapper';
@@ -18,6 +17,7 @@ import CallWrapper from '../../components/video-call/CallWrapper';
 import OnCall from '../../components/video-call/OnCall';
 // import CallEnd from '../../components/video-call/CallEnd';
 import classNames from '../../utils/classNames';
+import ClientJournal from '../../components/video-call/ClientJournal';
 
 function VideoCallPage() {
   const [fullscreen, setFullscreen] = useState<boolean>(true);
@@ -126,51 +126,7 @@ function VideoCallPage() {
           {!fullscreen && (
             <div className='flex-1'>
               <div className='w-full mt-10 xl:mt-0 xl:pl-5 xl:border-l border-stone-200 h-full'>
-                {/* Header */}
-                <div className='flex items-center gap-3 mb-5'>
-                  <JournalIcon />
-                  <span className='font-semibold text-stone-800 text-xl'>
-                    Client Journal
-                  </span>
-                </div>
-
-                {/* Panels items */}
-                <div className='flex items-center justify-between border-b border-stone-200'>
-                  <div className='relative py-2 cursor-pointer font-medium text-primary'>
-                    Client Story
-                    {/* Active panel has this */}
-                    <div className='bg-primary h-1 w-full absolute bottom-0 left-0 rounded-full translate-y-half'></div>
-                  </div>
-                  <div className='py-2 cursor-pointer font-medium text-stone-600 transition hover:text-stone-800'>
-                    Client Notes
-                  </div>
-                  <div className='py-2 cursor-pointer font-medium text-stone-600 transition hover:text-stone-800'>
-                    Other Information
-                  </div>
-                </div>
-
-                {/* Panels Data */}
-                <div className='mt-8'>
-                  {/* Client Story */}
-                  <div className='text-stone-500 space-y-5'>
-                    <p>
-                      MyLife believes that unhealthy, repeated patterns of
-                      behaviour often stem from emotional loss and pain. The
-                      addiction process often begins as an attempt to soothe or
-                      numb that pain, only doing so temporarily. Obsessive
-                      preoccupation, secrecy, feelings of nagging emptiness,
-                      craving and impaired control then follow, frequently
-                      ruining relationships and one's own self-esteem. Financial
-                      losses and employment problems can quickly follow.
-                    </p>
-                    <p>
-                      By no means does everybody understand where this 'root
-                      cause' pain arises from. Through a combination of speaking
-                      to trained specialists and the features that the app
-                      offers to help you stay on track, we believe we can help.
-                    </p>
-                  </div>
-                </div>
+                <ClientJournal />
               </div>
             </div>
           )}
