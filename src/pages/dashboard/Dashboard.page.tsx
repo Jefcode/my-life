@@ -4,7 +4,7 @@ import PageTitle from '../../components/common/PageTitle';
 import TodayStats from '../../components/TodayStats';
 import UserGreeting from '../../components/UserGreeting';
 
-const Dashboard = () => {
+const DashboardPage = () => {
   return (
     <>
       <PageTitle title='Dashboard' />
@@ -31,4 +31,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

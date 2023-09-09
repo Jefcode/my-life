@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Layout from './components/layout/Layout';
-import Dashboard from './pages/dashboard/Dashboard.page';
+import DashboardPage from './pages/dashboard/Dashboard.page';
 import NotFoundPage from './pages/NotFound.page';
+import VideoCallPage from './pages/dashboard/VideoCall.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -14,9 +15,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='' element={<Layout />}>
-          <Route path='/' element={<Dashboard />} />
+        <Route path='/' element={<Navigate to='/dashboard' />} />
+
+        <Route path='/dashboard' element={<Layout />}>
+          <Route path='' element={<DashboardPage />} />
+          <Route path='call/:userId' element={<VideoCallPage />} />
         </Route>
+
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
