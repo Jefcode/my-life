@@ -4,10 +4,17 @@ import Button from '../../components/common/Button';
 
 const CallEnd = () => {
   return (
-    <div
-      className='w-full h-[500px] bg-no-repeat bg-cover bg-center relative after:content-[""] after:absolute after:bg-black/50 after:top-0 after:left-0 after:w-full after:h-full after:z-0'
-      style={{ backgroundImage: 'url("/imgs/user-1.png")' }}
-    >
+    <>
+      {/* Overlay */}
+      <div className='absolute bg-black bg-opacity-50 top-0 left-0 w-full h-full z-0'></div>
+
+      {/* Background Image */}
+      <img
+        src='/imgs/user-1.png'
+        alt='User photo'
+        className='w-full h-full object-cover'
+      />
+
       <div className='absolute z-10 top-half left-half -translate-y-half -translate-x-half flex flex-col gap-8 items-center'>
         {/* Logo */}
         <div className='text-white flex items-center gap-3 w-28'>
@@ -27,7 +34,7 @@ const CallEnd = () => {
           Go To Dashboard
         </Button>
       </div>
-    </div>
+    </>
   );
 };
 

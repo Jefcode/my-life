@@ -21,12 +21,17 @@ function PageTitle({ title, breadcrumb = [] }: PageTitleProps) {
       <h1 className='text-2xl font-semibold leading-tight'>{title}</h1>
 
       {/* Breadcrumb */}
-      <div className='flex items-center gap-2 text-stone-500'>
-        {breadcrumb.length > 0 && <Link to='/'>Dashboard</Link>}
+      <div className='flex items-center flex-wrap max-w-[300px] xs:max-w-none whitespace-nowrap gap-2 text-stone-500 '>
+        {breadcrumb.length > 0 && (
+          <div className='flex items-center gap-1 after:font-icon after:content-["\e904"] last:after:hidden'>
+            <Link to='/'>Dashboard</Link>
+          </div>
+        )}
+
         {breadcrumb.map((item, idx) => (
           <div
             key={idx}
-            className='flex items-center gap-1 before:font-icon before:content-["\e904"]'
+            className='flex items-center gap-1 after:font-icon after:content-["\e904"] last:after:hidden'
           >
             {item.href ? (
               <Link to={item.href}>{item.title}</Link>

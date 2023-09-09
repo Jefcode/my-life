@@ -1,6 +1,12 @@
-const OnCall = () => {
+interface OnCallProps {
+  fullScreen: boolean;
+}
+
+const OnCall = ({ fullScreen }: OnCallProps) => {
+  console.log(fullScreen);
+
   return (
-    <div className='w-full h-[500px] relative'>
+    <>
       {/* Client Video */}
       <img
         src='/imgs/video-call-1.jpg'
@@ -21,7 +27,7 @@ const OnCall = () => {
         <p className='font-normal mb-0.5'>Time remaining</p>
         <p className='font-medium'>11:29</p>
       </div>
-    </div>
+    </>
   );
 };
 
