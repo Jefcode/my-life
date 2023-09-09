@@ -16,7 +16,10 @@ import Calling from '../../components/video-call/Calling';
 function VideoCallPage() {
   return (
     <>
-      <PageTitle title='Dashboard My Clients' />
+      <PageTitle
+        title='Dashboard'
+        breadcrumb={[{ title: 'Roya Simonetti' }, { title: 'Video Call' }]}
+      />
 
       <Panel>
         <div className='flex gap-5 items-stretch  '>

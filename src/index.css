@@ -51,6 +51,12 @@
 		src: url('./fonts/jost/Jost-Black.ttf');
 		font-weight: 900;
 	}
+
+	/* icon webfont */
+		@font-face {
+			font-family: icon;
+			src: url('./fonts/icon/icomoon.ttf');
+		}
 }
 
 .card {

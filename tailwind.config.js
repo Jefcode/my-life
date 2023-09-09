@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Jost'],
+        icon: ['icon'],
       },
       colors: {
         primary: '#EA515E',
