@@ -1,10 +1,4 @@
-interface OnCallProps {
-  fullScreen: boolean;
-}
-
-const OnCall = ({ fullScreen }: OnCallProps) => {
-  console.log(fullScreen);
-
+const OnCall = () => {
   return (
     <>
       {/* Client Video */}

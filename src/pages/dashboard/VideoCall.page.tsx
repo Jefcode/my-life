@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FaPhoneAlt } from 'react-icons/fa';
 
 import PageTitle from '../../components/common/PageTitle';
@@ -14,12 +15,12 @@ import { ReactComponent as SmallScreenIcon } from '../../icons/small-screen.svg'
 
 import CallWrapper from '../../components/video-call/CallWrapper';
 // import Calling from '../../components/video-call/Calling';
-// import OnCall from '../../components/video-call/OnCall';
-import CallEnd from '../../components/video-call/CallEnd';
+import OnCall from '../../components/video-call/OnCall';
+// import CallEnd from '../../components/video-call/CallEnd';
 import classNames from '../../utils/classNames';
 
 function VideoCallPage() {
-  const [fullscreen, setFullscreen] = useState<boolean>(false);
+  const [fullscreen, setFullscreen] = useState<boolean>(true);
 
   return (
     <>
@@ -57,27 +58,31 @@ function VideoCallPage() {
             {/* Video Call Container */}
             <div>
               {/* Call */}
-              <div className='relative w-full rounded-xl overflow-hidden'>
+              <motion.div
+                layout
+                className='relative z-10 w-full rounded-xl overflow-hidden'
+              >
                 {/* Shared Stuff between different stages */}
-                <button
+                <motion.button
+                  layout
                   className='absolute top-5 right-5 bg-black bg-opacity-50 w-8 rounded-lg z-10 p-2 text-stone-200'
                   onClick={() => setFullscreen((val) => !val)}
                 >
                   {!fullscreen && <FullScreenIcon />}
                   {fullscreen && <SmallScreenIcon />}
-                </button>
+                </motion.button>
 
-                {/* Calling Stage */}
                 <CallWrapper fullscreen={fullscreen}>
+                  {/* Calling Stage */}
                   {/* <Calling /> */}
 
                   {/* On-Call Stage */}
-                  {/* <OnCall fullScreen={fullScreen} /> */}
+                  <OnCall />
 
                   {/* Call End Stage */}
-                  <CallEnd />
+                  {/* <CallEnd /> */}
                 </CallWrapper>
-              </div>
+              </motion.div>
 
               {/* Control Buttons */}
               <div

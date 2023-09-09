@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface CallWrapperProps {
   children?: React.ReactNode;
   className?: string;
@@ -10,13 +12,14 @@ const CallWrapper = ({
   fullscreen,
 }: CallWrapperProps) => {
   return (
-    <div
+    <motion.div
+      layout
       className={`w-full h-[500px] relative ${
         fullscreen && 'lg:h-[700px]'
       } ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
