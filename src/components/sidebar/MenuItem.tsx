@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import useSidebar from '../../hooks/useSidebar';
 import classNames from '../../utils/classNames';
@@ -42,7 +43,10 @@ const MenuItem = ({ icon: Icon, text, to }: MenuItemProps) => {
 
             {/* Active Item has */}
             {isActive && (
-              <div className='absolute left-0 top-[50%] -translate-y-[50%] w-[6px] h-11 rounded-e-lg bg-primary'></div>
+              <motion.div
+                layoutId='sidebar-activebar'
+                className='absolute z-10 left-0 top-[50%] w-[6px] -mt-5 h-10 rounded-e-lg bg-primary'
+              ></motion.div>
             )}
           </>
         )}
