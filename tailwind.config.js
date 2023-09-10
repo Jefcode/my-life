@@ -21,10 +21,7 @@ export default {
           200: '#10A4DB',
           300: '#117DC1',
         },
-      },
-      spacing: {
-        half: '50%',
-      },
+      }
     },
   },
   // eslint-disable-next-line no-undef

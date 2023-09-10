@@ -15,7 +15,7 @@ const CallEnd = () => {
         className='w-full h-full object-cover'
       />
 
-      <div className='absolute z-10 top-half left-half -translate-y-half -translate-x-half flex flex-col gap-8 items-center'>
+      <div className='absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col gap-8 items-center'>
         {/* Logo */}
         <div className='text-white flex items-center gap-3 w-28'>
           <LogoIcon />

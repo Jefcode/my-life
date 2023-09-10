@@ -91,7 +91,7 @@ const Sidebar = () => {
 
       {/* When Collapsed */}
       <button
-        className={`hidden lg:flex absolute top-[50%] -translate-y-[50%] right-0 translate-x-[50%] bg-primary text-white rounded-full items-center cursor-pointer justify-center w-10 h-10 p-3 hover:bg-red-500 transition-all ${
+        className={`hidden lg:flex absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 bg-primary text-white rounded-full items-center cursor-pointer justify-center w-10 h-10 p-3 hover:bg-red-500 transition-all ${
           isOpen ? 'invisible opacity-0' : 'visible opacity-100'
         }`}
         onClick={toggle}

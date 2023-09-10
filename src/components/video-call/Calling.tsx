@@ -17,7 +17,7 @@ function Calling() {
       />
 
       {/* User/Calling... */}
-      <div className='absolute z-10 top-half left-half -translate-y-half -translate-x-half flex flex-col items-center'>
+      <div className='absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center'>
         <img
           src='/imgs/user-1.png'
           alt='user photo'
@@ -30,7 +30,7 @@ function Calling() {
       </div>
 
       {/* Action Controls */}
-      <div className='absolute left-half -translate-x-half flex items-center z-20 gap-5 bottom-10'>
+      <div className='absolute left-1/2 -translate-x-1/2 flex items-center z-20 gap-5 bottom-10'>
         <button className='flex items-center justify-center transition bg-white/30 hover:bg-white/40 active:scale-90 rounded-full w-10 h-10 text-white'>
           <SpeakerIcon className='h-4 w-4' />
         </button>

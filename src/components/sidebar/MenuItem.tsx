@@ -45,7 +45,7 @@ const MenuItem = ({ icon: Icon, text, to }: MenuItemProps) => {
             {isActive && (
               <motion.div
                 layoutId='sidebar-activebar'
-                className='absolute z-10 left-0 top-[50%] w-[6px] -mt-5 h-10 rounded-e-lg bg-primary'
+                className='absolute z-10 left-0 top-1/2 w-[6px] -mt-5 h-10 rounded-e-lg bg-primary'
               ></motion.div>
             )}
           </>
