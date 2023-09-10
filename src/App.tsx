@@ -5,6 +5,8 @@ import Layout from './components/layout/Layout';
 import DashboardPage from './pages/dashboard/Dashboard.page';
 import NotFoundPage from './pages/NotFound.page';
 import VideoCallPage from './pages/dashboard/VideoCall.page';
+import ClientsPage from './pages/clients/Clients.page';
+
 function App() {
   // Remove loader once the app component mounts
   useEffect(() => {
@@ -19,6 +21,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/dashboard' element={<DashboardPage />} />
           <Route path='/dashboard/call/:userId' element={<VideoCallPage />} />
+          <Route path='/clients' element={<ClientsPage />} />
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />

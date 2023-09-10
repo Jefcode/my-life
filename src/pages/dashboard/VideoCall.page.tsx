@@ -147,13 +147,13 @@ function VideoCallPage() {
                       <div className='relative'>
                         <label
                           htmlFor='note'
-                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500'
+                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 text-stone-500'
                         >
                           Notes
                         </label>
                         <textarea
                           id='note'
-                          className='w-full rounded-xl border border-stone-300 py-5 px-6 outline-none focus:border-stone-500 peer transition h-52'
+                          className='w-full rounded-xl border border-stone-300 py-5 px-6 outline-none focus:border-stone-500 peer transition h-72'
                         >
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt ut labore et

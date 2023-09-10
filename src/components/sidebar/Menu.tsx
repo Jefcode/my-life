@@ -12,7 +12,7 @@ const Menu = () => {
     <div className='flex flex-col h-full justify-between'>
       <ul className='flex flex-col text-stone-500'>
         <MenuItem to='/dashboard' icon={HomeIcon} text='Dashboard' />
-        <MenuItem to='/my-clients' icon={UsersIcon} text='Clients' />
+        <MenuItem to='/clients' icon={UsersIcon} text='Clients' />
         <MenuItem to='/hub' icon={HubIcon} text='The Hub' />
         <MenuItem to='/settings' icon={FilterIcon} text='Settings' />
       </ul>

@@ -7,7 +7,7 @@ export default {
         xs: '450px',
       },
       fontFamily: {
-        sans: ['Jost'],
+        sans: ['jost'],
         icon: ['icon'],
       },
       colors: {
@@ -21,7 +21,7 @@ export default {
           200: '#10A4DB',
           300: '#117DC1',
         },
-      }
+      },
     },
   },
   // eslint-disable-next-line no-undef
