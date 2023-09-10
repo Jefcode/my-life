@@ -17,9 +17,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/dashboard' />} />
 
-        <Route path='/dashboard' element={<Layout />}>
-          <Route path='' element={<DashboardPage />} />
-          <Route path='call/:userId' element={<VideoCallPage />} />
+        <Route element={<Layout />}>
+          <Route path='/dashboard' element={<DashboardPage />} />
+          <Route path='/dashboard/call/:userId' element={<VideoCallPage />} />
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />

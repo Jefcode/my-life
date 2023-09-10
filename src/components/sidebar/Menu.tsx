@@ -8,23 +8,23 @@ import { ReactComponent as LogoutIcon } from '../../icons/logout.svg';
 import MenuItem from './MenuItem';
 
 const Menu = () => {
-	return (
-		<div className="flex flex-col h-full justify-between">
-			<ul className="flex flex-col text-stone-500">
-				<MenuItem icon={HomeIcon} text="Dashboard" active />
-				<MenuItem icon={UsersIcon} text="Clients" />
-				<MenuItem icon={HubIcon} text="The Hub" />
-				<MenuItem icon={FilterIcon} text="Settings" />
-			</ul>
+  return (
+    <div className='flex flex-col h-full justify-between'>
+      <ul className='flex flex-col text-stone-500'>
+        <MenuItem to='/dashboard' icon={HomeIcon} text='Dashboard' />
+        <MenuItem to='/my-clients' icon={UsersIcon} text='Clients' />
+        <MenuItem to='/hub' icon={HubIcon} text='The Hub' />
+        <MenuItem to='/settings' icon={FilterIcon} text='Settings' />
+      </ul>
 
-			{/* Extra CTA */}
-			<ul className="flex flex-col mt-auto text-stone-500">
-				<MenuItem icon={SupportIcon} text="Support" />
-				<MenuItem icon={UserIcon} text="My Profile" />
-				<MenuItem icon={LogoutIcon} text="Log Out" />
-			</ul>
-		</div>
-	);
+      {/* Extra CTA */}
+      <ul className='flex flex-col mt-auto text-stone-500'>
+        <MenuItem to='/support' icon={SupportIcon} text='Support' />
+        <MenuItem to='/my-profile' icon={UserIcon} text='My Profile' />
+        <MenuItem to='/logout' icon={LogoutIcon} text='Log Out' />
+      </ul>
+    </div>
+  );
 };
 
 export default Menu;

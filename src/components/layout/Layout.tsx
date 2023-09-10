@@ -1,6 +1,6 @@
 import { stagger, useAnimate } from 'framer-motion';
 import { useEffect, useCallback } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import useSidebar from '../../hooks/useSidebar';
 import classNames from '../../utils/classNames';
@@ -8,6 +8,8 @@ import Sidebar from '../sidebar/Sidebar';
 import Header from '../header/Header';
 
 function Layout() {
+  const { pathname } = useLocation();
+
   const [scope, animate] = useAnimate();
   const { isOpen: isSidebarOpen } = useSidebar();
 
@@ -26,7 +28,7 @@ function Layout() {
 
   useEffect(() => {
     animateCards();
-  }, [animate, animateCards]);
+  }, [animateCards, pathname]);
 
   return (
     <>

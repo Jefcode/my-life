@@ -20,7 +20,7 @@ import classNames from '../../utils/classNames';
 import ClientJournal from '../../components/video-call/ClientJournal';
 
 function VideoCallPage() {
-  const [fullscreen, setFullscreen] = useState<boolean>(true);
+  const [fullscreen, setFullscreen] = useState<boolean>(false);
 
   return (
     <>
