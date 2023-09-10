@@ -11,6 +11,7 @@ import { ReactComponent as VideoIcon } from '../../icons/video.svg';
 import { ReactComponent as DotsIcon } from '../../icons/dots.svg';
 import { ReactComponent as FullScreenIcon } from '../../icons/full-screen.svg';
 import { ReactComponent as SmallScreenIcon } from '../../icons/small-screen.svg';
+import { ReactComponent as NoteIcon } from '../../icons/note.svg';
 
 import CallWrapper from '../../components/video-call/CallWrapper';
 // import Calling from '../../components/video-call/Calling';
@@ -18,6 +19,8 @@ import OnCall from '../../components/video-call/OnCall';
 // import CallEnd from '../../components/video-call/CallEnd';
 import classNames from '../../utils/classNames';
 import ClientJournal from '../../components/video-call/ClientJournal';
+import Modal from '../../components/common/Modal';
+import Button from '../../components/common/Button';
 
 function VideoCallPage() {
   const [fullscreen, setFullscreen] = useState<boolean>(false);
@@ -115,9 +118,71 @@ function VideoCallPage() {
 
               {/* Leave Notes */}
               {!fullscreen && (
-                <button className='w-full rounded-lg border border-red-500 flex items-center justify-center p-3 font-medium text-red-500 transition hover:bg-rose-50'>
-                  Leave Notes on your session
-                </button>
+                <Modal>
+                  <Modal.Button className='w-full rounded-lg border border-red-500 flex items-center justify-center p-3 font-medium text-red-500 transition hover:bg-rose-50'>
+                    Leave Notes on your session
+                  </Modal.Button>
+
+                  <Modal.Content>
+                    <Modal.Header
+                      title='Leave Notes on your session'
+                      icon={NoteIcon}
+                    />
+
+                    <form className='mt-10 flex flex-col'>
+                      <div className='relative mb-10'>
+                        <label
+                          htmlFor='call'
+                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500'
+                        >
+                          Call Sumary
+                        </label>
+                        <input
+                          id='call'
+                          type='text'
+                          className='w-full rounded-xl border border-stone-300 py-4 px-6 outline-none focus:border-stone-500 peer transition'
+                          value='I'
+                        />
+                      </div>
+                      <div className='relative'>
+                        <label
+                          htmlFor='note'
+                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500'
+                        >
+                          Notes
+                        </label>
+                        <textarea
+                          id='note'
+                          className='w-full rounded-xl border border-stone-300 py-5 px-6 outline-none focus:border-stone-500 peer transition h-52'
+                        >
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat. Lorem ipsum dolor sit amet,
+                          consectetur adipiscing elit, sed do eiusmod tempor
+                          incididunt ut labore et dolore magna aliqua. Ut enim
+                          ad minim veniam, quis nostrud exercitation ullamco
+                          laboris nisi ut aliquip ex ea commodo consequat.
+                        </textarea>
+                      </div>
+
+                      {/* Buttons Container */}
+                      <div className='flex items-center justify-end gap-4 mt-5'>
+                        <Modal.Close asChild>
+                          <Button variant='tertiary'>Cancel</Button>
+                        </Modal.Close>
+                        <Button
+                          variant='primary'
+                          type='submit'
+                          className='px-8'
+                        >
+                          Save
+                        </Button>
+                      </div>
+                    </form>
+                  </Modal.Content>
+                </Modal>
               )}
             </div>
           </div>
