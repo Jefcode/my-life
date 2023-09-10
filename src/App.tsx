@@ -5,8 +5,6 @@ import Layout from './components/layout/Layout';
 import DashboardPage from './pages/dashboard/Dashboard.page';
 import NotFoundPage from './pages/NotFound.page';
 import VideoCallPage from './pages/dashboard/VideoCall.page';
-import NextCalls from './components/next-calls/NextCalls';
-
 function App() {
   // Remove loader once the app component mounts
   useEffect(() => {
