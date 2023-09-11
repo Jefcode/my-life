@@ -90,7 +90,7 @@ function ClientDetailPage() {
                 >
                   <Badge.Top className=''>
                     <Badge.Number className='text-lg'>10</Badge.Number>
-                    <Badge.Title className='text-[6px]'>Journals</Badge.Title>
+                    <Badge.Title className='!text-[6px]'>Journals</Badge.Title>
                   </Badge.Top>
                   <Badge.Icon>
                     <EditIcon className='w-3 h-3' />

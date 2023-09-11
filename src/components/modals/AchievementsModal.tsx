@@ -75,7 +75,7 @@ const AchievementsModal = () => {
             >
               <Badge.Top className='-mt-1'>
                 <Badge.Number className='!text-2xl'>30</Badge.Number>
-                <Badge.Title className='font-light -mt-1 text-[8px]'>
+                <Badge.Title className='font-light -mt-1 !text-[8px]'>
                   Journals
                 </Badge.Title>
               </Badge.Top>
@@ -94,7 +94,7 @@ const AchievementsModal = () => {
             >
               <Badge.Top className='-mt-1'>
                 <Badge.Number className='!text-2xl'>10</Badge.Number>
-                <Badge.Title className='font-light -mt-1 text-[8px]'>
+                <Badge.Title className='font-light -mt-1 !text-[8px]'>
                   Journals
                 </Badge.Title>
               </Badge.Top>
@@ -112,7 +112,7 @@ const AchievementsModal = () => {
             >
               <Badge.Top className='-mt-1'>
                 <Badge.Number className='!text-2xl'>50</Badge.Number>
-                <Badge.Title className='font-light -mt-1 text-[8px]'>
+                <Badge.Title className='font-light -mt-1 !text-[8px]'>
                   Journals
                 </Badge.Title>
               </Badge.Top>
@@ -130,7 +130,7 @@ const AchievementsModal = () => {
             >
               <Badge.Top className='-mt-1'>
                 <Badge.Number className='!text-2xl'>20</Badge.Number>
-                <Badge.Title className='font-light -mt-1 text-[8px]'>
+                <Badge.Title className='font-light -mt-1 !text-[8px]'>
                   Journals
                 </Badge.Title>
               </Badge.Top>
@@ -149,7 +149,7 @@ const AchievementsModal = () => {
             >
               <Badge.Top className='-mt-1'>
                 <Badge.Number className='!text-2xl'>10</Badge.Number>
-                <Badge.Title className='font-light -mt-1 text-[8px]'>
+                <Badge.Title className='font-light -mt-1 !text-[8px]'>
                   Journals
                 </Badge.Title>
               </Badge.Top>
