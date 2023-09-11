@@ -12,15 +12,17 @@ import { ReactComponent as DotsIcon } from '../../icons/dots.svg';
 import { ReactComponent as FullScreenIcon } from '../../icons/full-screen.svg';
 import { ReactComponent as SmallScreenIcon } from '../../icons/small-screen.svg';
 import { ReactComponent as NoteIcon } from '../../icons/note.svg';
+import { ReactComponent as JournalIcon } from '../../icons/journal.svg';
 
 import CallWrapper from '../../components/video-call/CallWrapper';
 // import Calling from '../../components/video-call/Calling';
 import OnCall from '../../components/video-call/OnCall';
 // import CallEnd from '../../components/video-call/CallEnd';
 import classNames from '../../utils/classNames';
-import ClientJournal from '../../components/video-call/ClientJournal';
+import ClientJournal from '../../features/client/ClientJournal';
 import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
+import PanelHeading from '../../components/common/PanelHeading';
 
 function VideoCallPage() {
   const [fullscreen, setFullscreen] = useState<boolean>(false);
@@ -191,6 +193,13 @@ function VideoCallPage() {
           {!fullscreen && (
             <div className='flex-1'>
               <div className='w-full mt-10 xl:mt-0 xl:pl-5 xl:border-l border-stone-200 h-full'>
+                {/* Header */}
+                <PanelHeading
+                  title='Client Journal'
+                  icon={JournalIcon}
+                  className='mb-5'
+                />
+
                 <ClientJournal />
               </div>
             </div>

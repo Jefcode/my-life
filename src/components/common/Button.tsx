@@ -1,3 +1,4 @@
+import { IconType } from '../../types';
 import classNames from '../../utils/classNames';
 
 type ButtonTypes = 'primary' | 'secondary' | 'tertiary';
@@ -10,6 +11,8 @@ interface ButtonProps {
   disabled?: boolean;
   button?: string;
   type?: 'button' | 'submit' | 'reset';
+
+  icon?: IconType;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -21,6 +24,7 @@ const Button = ({
   disabled = false,
   type = 'button',
   onClick,
+  icon: Icon,
 }: ButtonProps) => {
   return (
     <button
@@ -40,7 +44,10 @@ const Button = ({
       onClick={onClick}
       type={type}
     >
-      {children}
+      <div className='flex items-center gap-2 justify-center'>
+        {Icon && <Icon />}
+        {children}
+      </div>
     </button>
   );
 };

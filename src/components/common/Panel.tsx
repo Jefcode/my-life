@@ -13,4 +13,14 @@ const Panel = ({ children, className = '' }: PanelProps) => {
   );
 };
 
+const PanelHeader = ({ children }: { children?: React.ReactNode }) => {
+  return (
+    <div className='flex items-center justify-between gap-2 mb-5'>
+      {children}
+    </div>
+  );
+};
+
+Panel.Header = PanelHeader;
+
 export default Panel;
