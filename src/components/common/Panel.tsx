@@ -15,7 +15,7 @@ const Panel = ({ children, className = '' }: PanelProps) => {
 
 const PanelHeader = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className='flex items-center justify-between gap-2 mb-5'>
+    <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2'>
       {children}
     </div>
   );

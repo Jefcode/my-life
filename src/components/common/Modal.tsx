@@ -1,8 +1,8 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { GrClose } from 'react-icons/gr';
-import type { IconType } from '../../types';
 
 import classNames from '../../utils/classNames';
+import PanelHeading from './PanelHeading';
 
 const Modal = ({ children }: { children: React.ReactNode }) => {
   return <Dialog.Root>{children}</Dialog.Root>;
@@ -37,18 +37,9 @@ function ModalContent({
   );
 }
 
-function ModalHeader({ title, icon: Icon }: { title: string; icon: IconType }) {
-  return (
-    <div className='flex items-center gap-4 mb-5'>
-      <Icon />
-      <span className='font-semibold text-xl text-stone-900'>{title}</span>
-    </div>
-  );
-}
-
 Modal.Button = Dialog.Trigger;
 Modal.Content = ModalContent;
-Modal.Header = ModalHeader;
+Modal.Header = PanelHeading;
 Modal.Close = Dialog.Close;
 
 export default Modal;

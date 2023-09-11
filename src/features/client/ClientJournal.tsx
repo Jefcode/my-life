@@ -10,7 +10,7 @@ const ClientJournal = () => {
   const [tab, setTab] = useState<string>('story');
 
   return (
-    <div>
+    <div className='mt-5'>
       <Tabs.Root value={tab} onValueChange={setTab}>
         <div className='border-b border-stone-200'>
           <Tabs.List className='flex items-center justify-between max-w-lg'>
