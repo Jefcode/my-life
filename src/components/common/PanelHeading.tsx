@@ -11,7 +11,7 @@ const PanelHeading = ({
   className?: string;
 }) => {
   return (
-    <div className={classNames('flex items-center gap-4', className)}>
+    <div className={classNames('flex items-center gap-3', className)}>
       <Icon className='w-7 h-7' />
       <span className='font-medium text-xl text-current whitespace-nowrap'>
         {title}
