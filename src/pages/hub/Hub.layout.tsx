@@ -34,10 +34,12 @@ const HubLayout = () => {
           <div className='flex items-end justify-between border-b border-stone-200'>
             <Tabs.List className='flex items-center gap-14 text-stone-600 max-w-sm'>
               <Tabs.Trigger
-                className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
+                className='relative cursor-pointer  transition font-medium data-[state=active]:text-primary'
                 value='videos'
               >
-                <Link to='videos'>Videos</Link>
+                <Link className='inline-block h-full py-2' to='videos'>
+                  Videos
+                </Link>
 
                 {tab === 'videos' && (
                   <motion.div
@@ -48,10 +50,12 @@ const HubLayout = () => {
                 )}
               </Tabs.Trigger>
               <Tabs.Trigger
-                className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
+                className='relative cursor-pointer  transition font-medium data-[state=active]:text-primary'
                 value='podcasts'
               >
-                <Link to='podcasts'>Podcasts</Link>
+                <Link className='inline-block h-full py-2' to='podcasts'>
+                  Podcasts
+                </Link>
                 {tab === 'podcasts' && (
                   <motion.div
                     layoutId='active-border'
@@ -61,10 +65,12 @@ const HubLayout = () => {
                 )}
               </Tabs.Trigger>
               <Tabs.Trigger
-                className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
+                className='relative cursor-pointer  transition font-medium data-[state=active]:text-primary'
                 value='articles'
               >
-                <Link to='articles'>Articles</Link>
+                <Link className='inline-block h-full py-2' to='articles'>
+                  Articles
+                </Link>
                 {tab === 'articles' && (
                   <motion.div
                     layoutId='active-border'
