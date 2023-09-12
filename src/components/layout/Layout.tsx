@@ -14,20 +14,16 @@ function Layout() {
   const { isOpen: isSidebarOpen } = useSidebar();
 
   const animateCards = useCallback(async () => {
-    try {
-      // Animate Each item that has 'card' class, one by one
-      await animate(
-        '.card',
-        { opacity: 1 },
-        { delay: stagger(0.5, { startDelay: 1 }) }
-      );
-    } catch (err) {
-      console.log('No card class to animate');
-    }
+    // Animate Each item that has 'card' class, one by one
+    await animate(
+      '.card',
+      { opacity: 1 },
+      { delay: stagger(0.5, { startDelay: 1 }) }
+    );
   }, [animate]);
 
   useEffect(() => {
-    animateCards();
+    animateCards().catch(() => {});
   }, [animateCards, pathname]);
 
   return (

@@ -7,6 +7,10 @@ import NotFoundPage from './pages/NotFound.page';
 import VideoCallPage from './pages/dashboard/VideoCall.page';
 import ClientsPage from './pages/clients/Clients.page';
 import ClientDetailPage from './pages/clients/ClientDetail.page';
+import HubLayout from './pages/hub/Hub.layout';
+import VideosPage from './pages/hub/Videos.page';
+import PodcastsPage from './pages/hub/Podcasts.page';
+import ArticlesPage from './pages/hub/Articles.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -24,6 +28,13 @@ function App() {
           <Route path='/dashboard/call/:userId' element={<VideoCallPage />} />
           <Route path='/clients' element={<ClientsPage />} />
           <Route path='/clients/:clientId' element={<ClientDetailPage />} />
+
+          <Route path='/hub' element={<HubLayout />}>
+            <Route path='' element={<Navigate to='videos' />} />
+            <Route path='videos' element={<VideosPage />} />
+            <Route path='podcasts' element={<PodcastsPage />} />
+            <Route path='articles' element={<ArticlesPage />} />
+          </Route>
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />
