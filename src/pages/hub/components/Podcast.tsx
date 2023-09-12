@@ -20,11 +20,11 @@ const Podcast = ({ data }: PodcastProps) => {
         <img
           src={data.image}
           alt='Video thumbnail'
-          className='w-full h-full object-cover'
+          className='w-full h-56 object-cover object-center'
         />
 
         {/* Gradient */}
-        <div className='absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent'></div>
+        <div className='absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent'></div>
 
         {/* Podcast Indicator */}
         <div className='bg-primary rounded-l-md text-white px-5 py-1.5 text-sm absolute z-10 top-5 right-0'>

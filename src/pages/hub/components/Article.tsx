@@ -15,11 +15,11 @@ const Article = ({ data }: ArticleProps) => {
         <img
           src={data.image}
           alt='Video thumbnail'
-          className='w-full h-full object-cover'
+          className='w-full h-56 object-cover object-center'
         />
 
         {/* Gradient */}
-        <div className='absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent'></div>
+        <div className='absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent'></div>
 
         {/* Video Info */}
         <div className='absolute z-10 w-full text-white bottom-3 px-4 flex items-center justify-between'>
