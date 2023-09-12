@@ -1,15 +1,22 @@
-import { Link, Outlet } from 'react-router-dom';
-import * as Tabs from '@radix-ui/react-tabs';
-
 import { useState } from 'react';
+import { Link, Outlet, useMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import * as Tabs from '@radix-ui/react-tabs';
 
 import PageTitle from '../../components/common/PageTitle';
 import Button from '../../components/common/Button';
 import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
 
 const HubLayout = () => {
-  const [tab, setTab] = useState<string>('videos');
+  const podcastMatch = useMatch('/hub/podcasts');
+  const articlesMatch = useMatch('/hub/articles');
+
+  const [tab, setTab] = useState<string>(() => {
+    // Setting the value of the tab based on url
+    if (podcastMatch) return 'podcasts';
+    else if (articlesMatch) return 'articles';
+    else return 'videos';
+  });
 
   return (
     <>
