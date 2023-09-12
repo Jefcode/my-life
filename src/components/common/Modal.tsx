@@ -30,7 +30,7 @@ function ModalContent({
       >
         <Dialog.Close
           className={classNames(
-            'absolute top-8 right-8 p-2 cursor-pointer z-10 rounded-full transition',
+            'absolute top-7 right-6 p-2 cursor-pointer z-10 rounded-full transition',
             dark
               ? 'text-stone-800 bg-stone-200 shadow-lg'
               : 'hover:bg-stone-100 text-stone-600 hover:text-stone-900'

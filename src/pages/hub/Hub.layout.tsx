@@ -6,6 +6,8 @@ import * as Tabs from '@radix-ui/react-tabs';
 import PageTitle from '../../components/common/PageTitle';
 import Button from '../../components/common/Button';
 import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
+import Modal from '../../components/common/Modal';
+import CreateMediaModal from './components/CreateMediaModal';
 
 const HubLayout = () => {
   const podcastMatch = useMatch('/hub/podcasts');
@@ -31,12 +33,18 @@ const HubLayout = () => {
       <div>
         {/* Tab Flex Container */}
         <Tabs.Root className='mb-5' value={tab} onValueChange={setTab}>
-          <Button
-            variant='primary'
-            className='ml-auto text-sm !px-10 !rounded-lg mb-2 w-full xs:w-auto md:-mb-5'
-          >
-            New Post
-          </Button>
+          <Modal>
+            <Modal.Button asChild>
+              <Button
+                variant='primary'
+                className='ml-auto text-sm !px-10 !rounded-lg mb-2 w-full xs:w-auto md:translate-y-5'
+              >
+                New Post
+              </Button>
+            </Modal.Button>
+
+            <CreateMediaModal />
+          </Modal>
 
           <div className='flex items-end justify-between border-b border-stone-200'>
             <Tabs.List className='flex items-center gap-14 text-stone-600 max-w-sm'>

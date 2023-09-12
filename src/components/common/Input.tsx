@@ -1,12 +1,22 @@
+import classNames from '../../utils/classNames';
+
 interface InputProps {
   label: string;
   type?: string;
   id?: string;
   value?: string;
   onChange?: (value: string) => void;
+  className?: string;
 }
 
-const Input = ({ label, type = 'text', id, value, onChange }: InputProps) => {
+const Input = ({
+  label,
+  type = 'text',
+  id,
+  value,
+  onChange,
+  className = '',
+}: InputProps) => {
   return (
     <div className='relative mb-10'>
       <label
@@ -18,7 +28,10 @@ const Input = ({ label, type = 'text', id, value, onChange }: InputProps) => {
       <input
         id={id}
         type={type}
-        className='w-full rounded-xl border border-stone-300 py-4 px-6 outline-none focus:border-stone-500 peer transition'
+        className={classNames(
+          'w-full rounded-xl border border-stone-300 py-4 px-6 outline-none focus:border-stone-500 peer transition',
+          className
+        )}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
       />
