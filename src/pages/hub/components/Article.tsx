@@ -3,6 +3,11 @@ import { ReactComponent as EditIcon } from '../../../icons/edit.svg';
 import { Media } from '../../../types';
 import Modal from '../../../components/common/Modal';
 
+/**
+ * TODO clean up modal into a sperate compnent,
+ * TODO clean up card for podcasts, articles, videos
+ */
+
 interface ArticleProps {
   data: Media;
 }
