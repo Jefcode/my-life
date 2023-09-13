@@ -1,3 +1,8 @@
+/**
+ * This Component handles both inputs and textareas
+ * to convert this component to textarea, just use type='textarea'
+ */
+
 import classNames from '../../utils/classNames';
 
 interface InputProps {
@@ -17,6 +22,34 @@ const Input = ({
   onChange,
   className = '',
 }: InputProps) => {
+  /**
+   * Textarea
+   */
+  if (type === 'textarea') {
+    return (
+      <div className='relative'>
+        <label
+          htmlFor={id}
+          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 text-stone-500'
+        >
+          {label}
+        </label>
+        <textarea
+          id={id}
+          className={classNames(
+            'w-full rounded-xl border border-stone-300 py-5 px-6 outline-none focus:border-stone-500 peer transition h-32',
+            className
+          )}
+          onChange={(e) => onChange?.(e.target.value)}
+          defaultValue={value}
+        ></textarea>
+      </div>
+    );
+  }
+
+  /**
+   * Normal Input
+   */
   return (
     <div className='relative mb-10'>
       <label

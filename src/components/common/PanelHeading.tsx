@@ -12,7 +12,9 @@ const PanelHeading = ({
 }) => {
   return (
     <div className={classNames('flex items-center gap-3', className)}>
-      <Icon className='w-7 h-7' />
+      <div className='w-7'>
+        <Icon className='w-7 h-7' />
+      </div>
       <span className='font-medium text-xl text-current whitespace-nowrap'>
         {title}
       </span>

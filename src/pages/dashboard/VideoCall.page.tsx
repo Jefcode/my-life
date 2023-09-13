@@ -23,6 +23,7 @@ import ClientJournal from '../../features/client/ClientJournal';
 import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
 import PanelHeading from '../../components/common/PanelHeading';
+import Input from '../../components/common/Input';
 
 function VideoCallPage() {
   const [fullscreen, setFullscreen] = useState<boolean>(false);
@@ -132,42 +133,13 @@ function VideoCallPage() {
                     />
 
                     <form className='mt-10 flex flex-col'>
-                      <div className='relative mb-10'>
-                        <label
-                          htmlFor='call'
-                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500'
-                        >
-                          Call Sumary
-                        </label>
-                        <input
-                          id='call'
-                          type='text'
-                          className='w-full rounded-xl border border-stone-300 py-4 px-6 outline-none focus:border-stone-500 peer transition'
-                          value='I'
-                        />
-                      </div>
-                      <div className='relative'>
-                        <label
-                          htmlFor='note'
-                          className='absolute -top-0.5 left-2 -translate-y-1/2 bg-white px-3 text-stone-500'
-                        >
-                          Notes
-                        </label>
-                        <textarea
-                          id='note'
-                          className='w-full rounded-xl border border-stone-300 py-5 px-6 outline-none focus:border-stone-500 peer transition h-72'
-                        >
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit, sed do eiusmod tempor
-                          incididunt ut labore et dolore magna aliqua. Ut enim
-                          ad minim veniam, quis nostrud exercitation ullamco
-                          laboris nisi ut aliquip ex ea commodo consequat.
-                        </textarea>
-                      </div>
+                      <Input id='call' label='Call Summary' value='I' />
+                      <Input
+                        type='textarea'
+                        label='Notes'
+                        value='Eu mollit do adipisicing consectetur. Pariatur duis do proident enim id nisi incididunt ad. Minim exercitation quis minim culpa dolore velit est. Eu cillum magna nostrud nostrud. Non magna labore duis anim adipisicing velit pariatur irure occaecat.'
+                        className='!h-72'
+                      />
 
                       {/* Buttons Container */}
                       <div className='flex items-center justify-end gap-4 mt-5'>
