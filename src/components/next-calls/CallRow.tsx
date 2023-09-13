@@ -41,7 +41,7 @@ const CallRow = ({ meeting }: CallRowProps) => {
       </td>
       <td className='py-4 px-2 pr-2'>
         <Modal>
-          <Modal.Button>
+          <Modal.Button asChild>
             <Button variant='tertiary' className='ml-auto'>
               Join Call
             </Button>

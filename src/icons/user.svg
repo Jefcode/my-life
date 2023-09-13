@@ -1,7 +1,7 @@
 <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group 11113142">
 <g id="Group 11112999">
-<circle id="Ellipse 59" cx="10" cy="4.5" r="3.75" stroke="#404649" stroke-width="1.5"/>
+<circle id="Ellipse 59" cx="10" cy="4.5" r="3.75" stroke="currentColor" stroke-width="1.5"/>
 <g id="Intersect">
 <mask id="path-2-inside-1_1_1595" fill="white">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5004 16.2579C18.3677 18.347 16.6312 20.0003 14.5086 20.0003H4.49184C2.36923 20.0003 0.632779 18.347 0.5 16.2579C0.702668 12.7771 4.65467 10.0002 9.50022 10.0002C14.3458 10.0002 18.2978 12.7771 18.5004 16.2579Z"/>

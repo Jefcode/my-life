@@ -11,6 +11,7 @@ import HubLayout from './pages/hub/Hub.layout';
 import VideosPage from './pages/hub/Videos.page';
 import PodcastsPage from './pages/hub/Podcasts.page';
 import ArticlesPage from './pages/hub/Articles.page';
+import MyProfilePage from './pages/profile/MyProfile.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -35,6 +36,8 @@ function App() {
             <Route path='podcasts' element={<PodcastsPage />} />
             <Route path='articles' element={<ArticlesPage />} />
           </Route>
+
+          <Route path='/profile' element={<MyProfilePage />} />
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />

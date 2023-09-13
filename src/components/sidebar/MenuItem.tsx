@@ -19,7 +19,13 @@ const MenuItem = ({ icon: Icon, text, to }: MenuItemProps) => {
     <li>
       <NavLink
         to={to}
-        className='relative flex px-8 py-5 items-center gap-4 hover:bg-stone-50 transition'
+        className={({ isActive }) =>
+          classNames(
+            'relative flex px-8 py-5 items-center gap-4 hover:bg-stone-50 transition',
+            isActive ? 'bg-stone-50' : 'bg-white'
+          )
+        }
+        title={text}
       >
         {({ isActive }) => (
           <>

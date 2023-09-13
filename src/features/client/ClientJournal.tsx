@@ -1,66 +1,23 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import * as Tabs from '@radix-ui/react-tabs';
-
 import { ReactComponent as TrashIcon } from '../../icons/trash.svg';
 import { ReactComponent as EditIcon } from '../../icons/edit.svg';
 import Input from '../../components/common/Input';
+import MyTabs from '../../components/common/MyTabs';
 
 const ClientJournal = () => {
-  const [tab, setTab] = useState<string>('story');
-
   return (
     <div className='mt-5'>
-      <Tabs.Root value={tab} onValueChange={setTab}>
-        <div className='border-b border-stone-200'>
-          <Tabs.List className='flex items-center justify-between max-w-lg'>
-            <Tabs.Trigger
-              className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
-              value='story'
-            >
-              Client Story
-              {tab === 'story' && (
-                <motion.div
-                  layoutId='active-border'
-                  className='bg-primary h-1 w-full absolute bottom-0 left-0 -mb-0.5'
-                  style={{ borderRadius: '99999px' }}
-                ></motion.div>
-              )}
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
-              value='notes'
-            >
-              Client Notes
-              {tab === 'notes' && (
-                <motion.div
-                  layoutId='active-border'
-                  className='bg-primary h-1 w-full absolute bottom-0 left-0 -mb-0.5'
-                  style={{ borderRadius: '99999px' }}
-                ></motion.div>
-              )}
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              className='relative py-2 cursor-pointer  transition font-medium data-[state=active]:text-primary'
-              value='info'
-            >
-              Other Information
-              {tab === 'info' && (
-                <motion.div
-                  layoutId='active-border'
-                  className='bg-primary h-1 w-full absolute bottom-0 left-0 -mb-0.5'
-                  style={{ borderRadius: '99999px' }}
-                ></motion.div>
-              )}
-            </Tabs.Trigger>
-          </Tabs.List>
-        </div>
+      <MyTabs defaultValue='story'>
+        <MyTabs.List fullBorder>
+          <MyTabs.Trigger value='story' text='Client Story' />
+          <MyTabs.Trigger value='notes' text='Client Notes' />
+          <MyTabs.Trigger value='info' text='Other Information' />
+        </MyTabs.List>
 
         {/* Tabs Content Container */}
         <div className='mt-5'>
           <div className='h-screen max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 pr-3'>
             {/* Client Story */}
-            <Tabs.Content value='story' className='text-stone-500 space-y-5'>
+            <MyTabs.Content value='story' className='text-stone-500 space-y-5'>
               <p>
                 MyLife believes that unhealthy, repeated patterns of behaviour
                 often stem from emotional loss and pain. The addiction process
@@ -76,8 +33,8 @@ const ClientJournal = () => {
                 specialists and the features that the app offers to help you
                 stay on track, we believe we can help.
               </p>
-            </Tabs.Content>
-            <Tabs.Content value='notes'>
+            </MyTabs.Content>
+            <MyTabs.Content value='notes'>
               {/* Notes Flex Container */}
               <div className='flex flex-col gap-4 h-full'>
                 {/* One Note */}
@@ -201,9 +158,9 @@ const ClientJournal = () => {
                   </div>
                 </div>
               </div>
-            </Tabs.Content>
+            </MyTabs.Content>
 
-            <Tabs.Content value='info'>
+            <MyTabs.Content value='info'>
               <div className='pt-5 flex flex-col md:flex-row items-center gap-5'>
                 <div className='w-full'>
                   <Input label='Date of birth' type='date' value='1989-12-05' />
@@ -215,10 +172,10 @@ const ClientJournal = () => {
                   <Input label='Preferred language' value='English (UK)' />
                 </div>
               </div>
-            </Tabs.Content>
+            </MyTabs.Content>
           </div>
         </div>
-      </Tabs.Root>
+      </MyTabs>
     </div>
   );
 };

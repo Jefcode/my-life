@@ -7,7 +7,12 @@ interface PanelProps {
 
 const Panel = ({ children, className = '' }: PanelProps) => {
   return (
-    <div className={classNames('bg-white rounded-2xl p-5', className)}>
+    <div
+      className={classNames(
+        'bg-white rounded-xl p-5 overflow-hidden',
+        className
+      )}
+    >
       {children}
     </div>
   );

@@ -40,7 +40,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           variant === 'primary'
             ? 'bg-primary text-white border border-transparent hover:bg-transparent hover:text-stone-800 hover:border-stone-500'
             : variant === 'secondary'
-            ? 'bg-transparent border border-stone-300 text-stone-800 hover:border-stone-500'
+            ? 'bg-transparent border border-stone-200 text-stone-800 hover:border-stone-500'
             : variant === 'tertiary'
             ? 'bg-slate-100 text-stone-800 font-medium hover:bg-slate-200'
             : '',

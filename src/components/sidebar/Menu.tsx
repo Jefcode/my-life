@@ -20,7 +20,7 @@ const Menu = () => {
       {/* Extra CTA */}
       <ul className='flex flex-col mt-auto text-stone-500'>
         <MenuItem to='/support' icon={SupportIcon} text='Support' />
-        <MenuItem to='/my-profile' icon={UserIcon} text='My Profile' />
+        <MenuItem to='/profile' icon={UserIcon} text='My Profile' />
         <MenuItem to='/logout' icon={LogoutIcon} text='Log Out' />
       </ul>
     </div>
