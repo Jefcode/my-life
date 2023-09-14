@@ -14,11 +14,10 @@ import {
 } from 'date-fns';
 import { useState } from 'react';
 
-import { ReactComponent as ChevronLeftIcon } from '../../icons/chevron-left.svg';
-import { ReactComponent as ChevronRightIcon } from '../../icons/chevron-right.svg';
 import classNames from '../../utils/classNames';
 import meetings from '../../data/meetings';
 import MeetingItem from './MeetingItem';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../icons';
 
 export default function Calendar() {
 	const today = startOfToday();

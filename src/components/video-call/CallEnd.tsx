@@ -1,6 +1,5 @@
-import { ReactComponent as LogoIcon } from '../../icons/logo.svg';
-import { ReactComponent as LogoTextIcon } from '../../icons/logo-text.svg';
 import Button from '../../components/common/Button';
+import { LogoIcon, LogoTextIcon } from '../../icons';
 
 const CallEnd = () => {
   return (

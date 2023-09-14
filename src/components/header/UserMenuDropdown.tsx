@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactComponent as LogoutIcon } from '../../icons/logout.svg';
+import { LogoutIcon } from '../../icons';
 
 interface UserMenuDropdown {
   onClose?: () => void;

@@ -5,9 +5,8 @@ import * as Switch from '@radix-ui/react-switch';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 
 import PageTitle from '../../components/common/PageTitle';
-import { ReactComponent as NotificationIcon } from '../../icons/notifications.svg';
-import { ReactComponent as DismissUserIcon } from '../../icons/user-dismiss.svg';
 import Button from '../../components/common/Button';
+import { NotificationsIcon, UserDismissIcon } from '../../icons';
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState<string>('notifications');
@@ -63,7 +62,7 @@ const SettingsPage = () => {
                 {/* Header => Shared */}
                 <header className='relative py-5 px-6 w-full border-b border-stone-200/50 text-left transition flex items-center justify-between gap-3 text-lg font-medium h-16'>
                   <div className='text-stone-800 flex items-center gap-3'>
-                    <NotificationIcon className='w-6 h-6' />
+                    <NotificationsIcon className='w-6 h-6' />
                     <span>Notifications</span>
                   </div>
 
@@ -116,7 +115,7 @@ const SettingsPage = () => {
               <Tabs.Content value='delete-account'>
                 <header className='relative py-5 px-6 w-full border-b border-stone-200/50 text-left transition flex items-center justify-between gap-3 text-lg font-medium h-16'>
                   <div className='text-stone-800 flex items-center gap-3'>
-                    <DismissUserIcon className='w-6 h-6' />
+                    <UserDismissIcon className='w-6 h-6' />
                     <span>Delete account</span>
                   </div>
                 </header>

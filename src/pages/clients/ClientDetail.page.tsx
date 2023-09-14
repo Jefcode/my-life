@@ -1,15 +1,17 @@
 import Button from '../../components/common/Button';
 import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
-import { ReactComponent as AchievementsIcon } from '../../icons/achievements.svg';
-import { ReactComponent as JournalIcon } from '../../icons/journal.svg';
-import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
-import { ReactComponent as EditIcon } from '../../icons/edit-alt.svg';
 import PanelHeading from '../../components/common/PanelHeading';
 import ClientJournal from '../../features/client/ClientJournal';
 import Badge from '../../components/badge/Badge';
 import Modal from '../../components/common/Modal';
 import AchievementsModal from '../../components/modals/AchievementsModal';
+import {
+  AchievementsIcon,
+  EditIcon,
+  FilterIcon,
+  JournalIcon,
+} from '../../icons';
 
 function ClientDetailPage() {
   return (

@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import { useMediaQuery, useOnClickOutside } from 'usehooks-ts';
 
 import useSidebar from '../../hooks/useSidebar';
-import { ReactComponent as ChevronLeftIcon } from '../../icons/chevron-left.svg';
-import { ReactComponent as ChevronRightIcon } from '../../icons/chevron-right.svg';
-import { ReactComponent as LogoIcon } from '../../icons/logo.svg';
-import { ReactComponent as LogoTextIcon } from '../../icons/logo-text.svg';
 import Menu from './Menu';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  LogoIcon,
+  LogoTextIcon,
+} from '../../icons';
 
 const Sidebar = () => {
   const ref = useRef<HTMLDivElement>(null);

@@ -6,11 +6,11 @@
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { GrMenu, GrFormClose } from 'react-icons/gr';
-import { ReactComponent as BellIcon } from '../../icons/bell.svg';
 import useSidebar from '../../hooks/useSidebar';
 import UserMenuDropdown from './UserMenuDropdown';
 import NotificationsDropdown from './NotificationsDropdown';
 import classNames from '../../utils/classNames';
+import { BellIcon } from '../../icons';
 
 const Header = () => {
   const { open, close, isOpen } = useSidebar();

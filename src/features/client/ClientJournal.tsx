@@ -1,7 +1,6 @@
-import { ReactComponent as TrashIcon } from '../../icons/trash.svg';
-import { ReactComponent as EditIcon } from '../../icons/edit.svg';
 import Input from '../../components/common/Input';
 import MyTabs from '../../components/common/MyTabs';
+import { EditIcon, TrashIcon } from '../../icons';
 
 const ClientJournal = () => {
   return (

@@ -1,12 +1,14 @@
 import * as Slider from '@radix-ui/react-slider';
 
-import { ReactComponent as HeartIcon } from '../../../icons/heart.svg';
-import { ReactComponent as EditIcon } from '../../../icons/edit.svg';
-import { ReactComponent as PreviousIcon } from '../../../icons/previous.svg';
-import { ReactComponent as NextIcon } from '../../../icons/next.svg';
-import { ReactComponent as PauseIcon } from '../../../icons/pause.svg';
 import { Media } from '../../../types';
 import Modal from '../../../components/common/Modal';
+import {
+  EditIcon,
+  HeartIcon,
+  NextIcon,
+  PauseIcon,
+  PreviousIcon,
+} from '../../../icons';
 
 /**
  * TODO clean up modal into a sperate compnent,

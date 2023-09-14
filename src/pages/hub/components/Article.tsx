@@ -1,7 +1,6 @@
-import { ReactComponent as HeartIcon } from '../../../icons/heart.svg';
-import { ReactComponent as EditIcon } from '../../../icons/edit.svg';
 import { Media } from '../../../types';
 import Modal from '../../../components/common/Modal';
+import { EditIcon, HeartIcon } from '../../../icons';
 
 /**
  * TODO clean up modal into a sperate compnent,

@@ -1,4 +1,4 @@
-import { ReactComponent as EditIcon } from '../../icons/edit.svg';
+import { EditIcon } from '../../icons';
 import classNames from '../../utils/classNames';
 
 const EditButton = ({ className = '' }: { className?: string }) => {

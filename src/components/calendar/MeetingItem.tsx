@@ -4,8 +4,7 @@ import MeetingModal from '../modals/MeetingModal';
 import Button from '../common/Button';
 import Modal from '../common/Modal';
 import { Meeting } from '../../data/meetings';
-import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
-import { ReactComponent as CheckIcon } from '../../icons/check.svg';
+import { CheckIcon, ClockIcon } from '../../icons';
 
 interface MeetingItemProps {
   meeting: Meeting;

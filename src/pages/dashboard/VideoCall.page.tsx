@@ -5,15 +5,6 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 
-import { ReactComponent as SpeakerIcon } from '../../icons/speaker.svg';
-import { ReactComponent as MicrophoneIcon } from '../../icons/microphone.svg';
-import { ReactComponent as VideoIcon } from '../../icons/video.svg';
-import { ReactComponent as DotsIcon } from '../../icons/dots.svg';
-import { ReactComponent as FullScreenIcon } from '../../icons/full-screen.svg';
-import { ReactComponent as SmallScreenIcon } from '../../icons/small-screen.svg';
-import { ReactComponent as NoteIcon } from '../../icons/note.svg';
-import { ReactComponent as JournalIcon } from '../../icons/journal.svg';
-
 import CallWrapper from '../../components/video-call/CallWrapper';
 // import Calling from '../../components/video-call/Calling';
 import OnCall from '../../components/video-call/OnCall';
@@ -24,6 +15,16 @@ import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
 import PanelHeading from '../../components/common/PanelHeading';
 import Input from '../../components/common/Input';
+import {
+  DotsIcon,
+  FullScreenIcon,
+  JournalIcon,
+  MicrophoneIcon,
+  NoteIcon,
+  SmallScreenIcon,
+  SpeakerIcon,
+  VideoIcon,
+} from '../../icons';
 
 function VideoCallPage() {
   const [fullscreen, setFullscreen] = useState<boolean>(false);

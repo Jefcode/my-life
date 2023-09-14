@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { ReactComponent as VideoIcon } from '../icons/video-background.svg';
 import meetings from '../data/meetings';
 import {
 	add,
@@ -11,6 +10,7 @@ import {
 	isSameDay,
 } from 'date-fns';
 import { daysOfTheWeek } from './calendar/Calendar';
+import { VideoBackgroundIcon } from '../icons';
 
 const TodayStats = () => {
 	const today = startOfToday();
@@ -35,7 +35,7 @@ const TodayStats = () => {
 				{/* Card => Todays Calls and meetings */}
 				<div className="card bg-gradient-to-l from-gradientRed-100 via-primary to-gradientRed-200 rounded-2xl p-4 flex-1 text-white flex flex-col justify-between">
 					<div className="flex items-center gap-3 mb-12">
-						<VideoIcon className="w-14 h-14" />
+						<VideoBackgroundIcon className="w-14 h-14" />
 						<div className="flex flex-col">
 							<span className="uppercase text-xl">
 								{format(today, 'MMMM d')}
@@ -54,7 +54,7 @@ const TodayStats = () => {
 				{/* Card => Tomarrow's Calls and meetings */}
 				<div className="card bg-gradient-to-l from-gradientBlue-100 via-gradientBlue-200 to-gradientBlue-300 rounded-2xl p-4 flex-1 text-white flex flex-col justify-between">
 					<div className="flex items-center gap-3 mb-12">
-						<VideoIcon className="w-14 h-14" />
+						<VideoBackgroundIcon className="w-14 h-14" />
 						<div className="flex flex-col">
 							<span className="uppercase text-lg">
 								{' '}

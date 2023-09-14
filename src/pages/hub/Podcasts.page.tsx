@@ -2,8 +2,8 @@ import PanelHeading from '../../components/common/PanelHeading';
 import Row from '../../components/common/Row';
 import Podcast from './components/Podcast';
 
-import { ReactComponent as PodcastIcon } from '../../icons/podcast.svg';
 import podcasts from '../../data/podcasts';
+import { PodcastIcon } from '../../icons';
 
 const PodcastsPage = () => {
   return (

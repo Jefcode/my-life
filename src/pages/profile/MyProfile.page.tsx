@@ -5,16 +5,18 @@ import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 
-import { ReactComponent as WalletIcon } from '../../icons/wallet.svg';
-import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
-import { ReactComponent as MediaIcon } from '../../icons/media.svg';
-import { ReactComponent as JournalIcon } from '../../icons/journal.svg';
-import { ReactComponent as ChevronRight } from '../../icons/chevron-right.svg';
-import { ReactComponent as EmailIcon } from '../../icons/mail.svg';
-import { ReactComponent as PhoneIcon } from '../../icons/phone.svg';
 import MyTabs from '../../components/common/MyTabs';
 import Row from '../../components/common/Row';
 import Input from '../../components/common/Input';
+import {
+  ChevronRightIcon,
+  FilterIcon,
+  JournalIcon,
+  MailIcon,
+  MediaIcon,
+  PhoneIcon,
+  WalletIcon,
+} from '../../icons';
 
 const MyProfilePage = () => {
   return (
@@ -109,7 +111,7 @@ const MyProfilePage = () => {
               to='/'
               className='border w-8 h-8 rounded-md border-stone-200 p-2 flex items-center justify-center text-primary'
             >
-              <ChevronRight className='w-3 h-3' />
+              <ChevronRightIcon className='w-3 h-3' />
             </Link>
           </Panel.Header>
         </Panel>
@@ -127,7 +129,7 @@ const MyProfilePage = () => {
               to='/'
               className='border w-8 h-8 rounded-md border-stone-200 p-2 flex items-center justify-center text-primary'
             >
-              <ChevronRight className='w-3 h-3' />
+              <ChevronRightIcon className='w-3 h-3' />
             </Link>
           </Panel.Header>
         </Panel>
@@ -144,7 +146,7 @@ const MyProfilePage = () => {
               to='/'
               className='border w-8 h-8 rounded-md border-stone-200 p-2 flex items-center justify-center text-primary'
             >
-              <ChevronRight className='w-3 h-3' />
+              <ChevronRightIcon className='w-3 h-3' />
             </Link>
           </Panel.Header>
         </Panel>
@@ -174,7 +176,7 @@ const MyProfilePage = () => {
         {/* Email */}
         <Panel>
           <div className='flex items-center gap-4'>
-            <EmailIcon className='w-7 h-7' />
+            <MailIcon className='w-7 h-7' />
             <a
               href='mailto:rioyaexample@gmail.com'
               className='text-slate-800 font-medium text-lg underline'
@@ -236,9 +238,9 @@ const MyProfilePage = () => {
                 </div>
               </Row>
             </MyTabs.Content>
-            <MyTabs.Content value='personal-info'></MyTabs.Content>
-            <MyTabs.Content value='qualifications'></MyTabs.Content>
           </div>
+          <MyTabs.Content value='personal-info'></MyTabs.Content>
+          <MyTabs.Content value='qualifications'></MyTabs.Content>
         </MyTabs>
       </Panel>
     </>

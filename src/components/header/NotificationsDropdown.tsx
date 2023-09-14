@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { ReactComponent as CalendarIcon } from '../../icons/calendar.svg';
-import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
 import Button from '../common/Button';
+import { CalendarActiveIcon, ClockIcon } from '../../icons';
 
 interface NotificationsDropdownProps {
   onClose?: () => void;
@@ -62,7 +61,7 @@ const NotificationsDropdown = ({ onClose }: NotificationsDropdownProps) => {
                 {/* Date and time */}
                 <div className='flex items-center gap-3 text-primary text-xs'>
                   <div className='flex items-center gap-1'>
-                    <CalendarIcon className='w-3.5 h-3.5' />
+                    <CalendarActiveIcon className='w-3.5 h-3.5' />
                     <span>May 15, Thursday</span>
                   </div>
                   <div className='flex items-center gap-1'>
@@ -108,7 +107,7 @@ const NotificationsDropdown = ({ onClose }: NotificationsDropdownProps) => {
                 {/* Date and time */}
                 <div className='flex items-center gap-3 text-primary text-xs'>
                   <div className='flex items-center gap-1'>
-                    <CalendarIcon className='w-3.5 h-3.5' />
+                    <CalendarActiveIcon className='w-3.5 h-3.5' />
                     <span>May 15, Thursday</span>
                   </div>
                   <div className='flex items-center gap-1'>

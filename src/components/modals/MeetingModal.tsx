@@ -1,10 +1,8 @@
 import { format, parseISO, getDay } from 'date-fns';
-import { ReactComponent as CalendarIcon } from '../../icons/calendar.svg';
-import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
-import { ReactComponent as UsersIcon } from '../../icons/users.svg';
 import Button from '../common/Button';
 import { daysOfTheWeek } from '../calendar/Calendar';
 import type { Meeting } from '../../data/meetings';
+import { CalendarActiveIcon, ClockIcon, UsersIcon } from '../../icons';
 
 interface MeetingModalProps {
   meeting: Meeting;
@@ -43,7 +41,7 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
       {/* Steps */}
       <div className='flex flex-col gap-2 mb-10'>
         <div className='flex items-center gap-3'>
-          <CalendarIcon className='text-primary w-6 h-6' />
+          <CalendarActiveIcon className='text-primary w-6 h-6' />
           <span className='text-stone-500'>
             {format(parseISO(meeting.startDatetime), 'MMMM d')},{' '}
             {daysOfTheWeek[getDay(parseISO(meeting.startDatetime))]}

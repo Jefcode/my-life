@@ -1,7 +1,4 @@
-import { ReactComponent as SpeakerIcon } from '../../icons/speaker.svg';
-import { ReactComponent as MicrophoneIcon } from '../../icons/microphone.svg';
-import { ReactComponent as VideoIcon } from '../../icons/video.svg';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
+import { CloseIcon, MicrophoneIcon, SpeakerIcon, VideoIcon } from '../../icons';
 
 function Calling() {
   return (

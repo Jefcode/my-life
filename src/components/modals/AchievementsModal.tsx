@@ -1,7 +1,5 @@
+import { ClockIcon, EditIcon } from '../../icons';
 import Badge from '../badge/Badge';
-
-import { ReactComponent as EditIcon } from '../../icons/edit-alt.svg';
-import { ReactComponent as ClockIcon } from '../../icons/clock.svg';
 
 const AchievementsModal = () => {
   return (

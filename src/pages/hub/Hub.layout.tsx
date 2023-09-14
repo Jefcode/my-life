@@ -5,9 +5,9 @@ import * as Tabs from '@radix-ui/react-tabs';
 
 import PageTitle from '../../components/common/PageTitle';
 import Button from '../../components/common/Button';
-import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
 import Modal from '../../components/common/Modal';
 import CreateMediaModal from './components/CreateMediaModal';
+import { FilterIcon } from '../../icons';
 
 const HubLayout = () => {
   const podcastMatch = useMatch('/hub/podcasts');

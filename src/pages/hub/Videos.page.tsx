@@ -2,8 +2,8 @@ import PanelHeading from '../../components/common/PanelHeading';
 import Row from '../../components/common/Row';
 import Video from './components/Video';
 
-import { ReactComponent as VideoIcon } from '../../icons/video-active.svg';
 import videos from '../../data/videos';
+import { VideoIcon } from '../../icons';
 
 const VideosPage = () => {
   return (

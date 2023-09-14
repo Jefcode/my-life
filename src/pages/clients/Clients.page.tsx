@@ -3,8 +3,7 @@ import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 import Table from '../../components/common/Table';
-
-import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
+import { FilterIcon } from '../../icons';
 
 const ClientsPage = () => {
   return (

@@ -2,8 +2,8 @@ import PanelHeading from '../../components/common/PanelHeading';
 import Row from '../../components/common/Row';
 import Article from './components/Article';
 
-import { ReactComponent as ArticleIcon } from '../../icons/article.svg';
 import articles from '../../data/articles';
+import { ArticleIcon } from '../../icons';
 
 const ArticlesPage = () => {
   return (

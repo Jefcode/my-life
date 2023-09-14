@@ -5,12 +5,14 @@ import { useDropzone } from 'react-dropzone';
 import Modal from '../../../components/common/Modal';
 import classNames from '../../../utils/classNames';
 import Input from '../../../components/common/Input';
-import { ReactComponent as HubIcon } from '../../../icons/hub-active.svg';
-import { ReactComponent as VideoIcon } from '../../../icons/video-active.svg';
-import { ReactComponent as PodcastIcon } from '../../../icons/podcast.svg';
-import { ReactComponent as ArticleIcon } from '../../../icons/article.svg';
-import { ReactComponent as CheckIcon } from '../../../icons/check-raw.svg';
 import Button from '../../../components/common/Button';
+import {
+  ArticleIcon,
+  CheckIcon,
+  HubIcon,
+  PodcastIcon,
+  VideoIcon,
+} from '../../../icons';
 
 const STEPS = 3;
 
