@@ -4,6 +4,8 @@ import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 import Table from '../../components/common/Table';
 
+import { ReactComponent as FilterIcon } from '../../icons/filter-active.svg';
+
 const ClientsPage = () => {
   return (
     <>
@@ -166,6 +168,8 @@ const ClientsPage = () => {
       <Panel>
         <Panel.Header>
           <PanelHeading title='All Clients' />
+
+          <Button icon={FilterIcon}>Filter</Button>
         </Panel.Header>
 
         <Table>
