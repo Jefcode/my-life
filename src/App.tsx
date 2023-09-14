@@ -12,6 +12,7 @@ import VideosPage from './pages/hub/Videos.page';
 import PodcastsPage from './pages/hub/Podcasts.page';
 import ArticlesPage from './pages/hub/Articles.page';
 import MyProfilePage from './pages/profile/MyProfile.page';
+import SettingsPage from './pages/settings/Settings.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -38,6 +39,7 @@ function App() {
           </Route>
 
           <Route path='/profile' element={<MyProfilePage />} />
+          <Route path='/settings' element={<SettingsPage />} />
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />
