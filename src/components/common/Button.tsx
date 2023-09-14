@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { forwardRef } from 'react';
 import { IconType } from '../../types';
 import classNames from '../../utils/classNames';
@@ -14,6 +15,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
 
   icon?: IconType;
+  href?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
@@ -28,9 +30,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       onClick,
       icon: Icon,
+      href,
     }: ButtonProps,
     ref
   ) => {
+    const navigate = useNavigate();
+    const handleClick = (
+      event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
+      if (href) {
+        return navigate(href);
+      }
+
+      onClick?.(event);
+    };
+
     return (
       <button
         ref={ref}
@@ -47,7 +61,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         disabled={disabled}
-        onClick={onClick}
+        onClick={handleClick}
         type={type}
       >
         <div className='flex items-center gap-2 justify-center'>

@@ -51,8 +51,12 @@ const ClientsPage = () => {
               </Table.BodyColumn>
               <Table.BodyColumn>
                 <div className='flex items-center gap-2 justify-end'>
-                  <Button variant='tertiary'>View Profile</Button>
-                  <Button variant='primary'>Join Call</Button>
+                  <Button variant='tertiary' href='/clients/roya-simonetti'>
+                    View Profile
+                  </Button>
+                  <Button variant='primary' href='/dashboard/call/roya'>
+                    Join Call
+                  </Button>
                 </div>
               </Table.BodyColumn>
             </Table.Row>
