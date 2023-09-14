@@ -8,10 +8,10 @@ import Input from '../../../components/common/Input';
 import Button from '../../../components/common/Button';
 import {
   ArticleIcon,
-  CheckIcon,
+  CheckRawIcon,
   HubIcon,
   PodcastIcon,
-  VideoIcon,
+  VideoActiveIcon,
 } from '../../../icons';
 
 const STEPS = 3;
@@ -64,7 +64,7 @@ const CreateMediaModal = () => {
             onClick={() => selectMediaHandler('video')}
             className='w-full rounded-lg h-32 flex flex-col items-center justify-center gap-1 text-stone-700 bg-stone-100 hover:border-stone-300 transition border border-stone-200'
           >
-            <VideoIcon />
+            <VideoActiveIcon />
             <span className='text-xl font-medium'>Video</span>
           </button>
           <button
@@ -98,7 +98,7 @@ const CreateMediaModal = () => {
                   id='c1'
                 >
                   <Checkbox.Indicator className='text-white'>
-                    <CheckIcon className='w-3 h-3' />
+                    <CheckRawIcon className='w-3 h-3' />
                   </Checkbox.Indicator>
                 </Checkbox.Root>
                 <label
@@ -114,7 +114,7 @@ const CreateMediaModal = () => {
                   id='c2'
                 >
                   <Checkbox.Indicator className='text-white'>
-                    <CheckIcon className='w-3 h-3' />
+                    <CheckRawIcon className='w-3 h-3' />
                   </Checkbox.Indicator>
                 </Checkbox.Root>
                 <label

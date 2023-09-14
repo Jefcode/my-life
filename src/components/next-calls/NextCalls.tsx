@@ -5,7 +5,7 @@ import meetings from '../../data/meetings';
 import Button from '../common/Button';
 import CallRow from './CallRow';
 import Panel from '../common/Panel';
-import { CameraIcon, FilterIcon } from '../../icons';
+import { CameraIcon, FilterActiveIcon } from '../../icons';
 
 const NextCalls = () => {
   const nextMeetings = useMemo(() => {
@@ -29,7 +29,7 @@ const NextCalls = () => {
 
         {/* Filter Button */}
         <Button>
-          <FilterIcon />
+          <FilterActiveIcon />
           <span>Filter</span>
         </Button>
       </div>

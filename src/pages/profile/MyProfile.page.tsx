@@ -10,7 +10,7 @@ import Row from '../../components/common/Row';
 import Input from '../../components/common/Input';
 import {
   ChevronRightIcon,
-  FilterIcon,
+  FilterActiveIcon,
   JournalIcon,
   MailIcon,
   MediaIcon,
@@ -139,7 +139,7 @@ const MyProfilePage = () => {
           <Panel.Header>
             <PanelHeading
               className='text-slate-800'
-              icon={FilterIcon}
+              icon={FilterActiveIcon}
               title='Settings'
             />
             <Link

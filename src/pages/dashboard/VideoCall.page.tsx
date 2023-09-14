@@ -6,8 +6,8 @@ import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 
 import CallWrapper from '../../components/video-call/CallWrapper';
-// import Calling from '../../components/video-call/Calling';
-import OnCall from '../../components/video-call/OnCall';
+import Calling from '../../components/video-call/Calling';
+// import OnCall from '../../components/video-call/OnCall';
 // import CallEnd from '../../components/video-call/CallEnd';
 import classNames from '../../utils/classNames';
 import ClientJournal from '../../features/client/ClientJournal';
@@ -81,10 +81,10 @@ function VideoCallPage() {
 
                 <CallWrapper fullscreen={fullscreen}>
                   {/* Calling Stage */}
-                  {/* <Calling /> */}
+                  <Calling />
 
                   {/* On-Call Stage */}
-                  <OnCall />
+                  {/* <OnCall /> */}
 
                   {/* Call End Stage */}
                   {/* <CallEnd /> */}

@@ -3,7 +3,7 @@ import Row from '../../components/common/Row';
 import Video from './components/Video';
 
 import videos from '../../data/videos';
-import { VideoIcon } from '../../icons';
+import { VideoActiveIcon } from '../../icons';
 
 const VideosPage = () => {
   return (
@@ -11,7 +11,7 @@ const VideosPage = () => {
       {/* Heading */}
       <div className='mt-7 mb-5'>
         <PanelHeading
-          icon={VideoIcon}
+          icon={VideoActiveIcon}
           className='text-stone-800'
           title='Videos'
         />

@@ -7,7 +7,7 @@ import PageTitle from '../../components/common/PageTitle';
 import Button from '../../components/common/Button';
 import Modal from '../../components/common/Modal';
 import CreateMediaModal from './components/CreateMediaModal';
-import { FilterIcon } from '../../icons';
+import { FilterActiveIcon } from '../../icons';
 
 const HubLayout = () => {
   const podcastMatch = useMatch('/hub/podcasts');
@@ -109,7 +109,7 @@ const HubLayout = () => {
           </div>
 
           <div className='md:ml-auto'>
-            <Button icon={FilterIcon}>Filter</Button>
+            <Button icon={FilterActiveIcon}>Filter</Button>
           </div>
         </div>
 

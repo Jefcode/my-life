@@ -1,5 +1,12 @@
+/**
+ * This file is collecting every svg icon and exports it;
+ * to have a better user experience when using these icons;
+ * if you plan to add any icon svgs of your choice, make sure you add them to this file
+ * for easier use;
+ */
+
 export { ReactComponent as AchievementsIcon } from './achievements.svg';
-export { ReactComponent as ArticleIcon } from './achievements.svg';
+export { ReactComponent as ArticleIcon } from './article.svg';
 export { ReactComponent as BellIcon } from './bell.svg';
 export { ReactComponent as CalendarActiveIcon } from './calendar-active.svg';
 export { ReactComponent as CalendarIcon } from './calendar.svg';

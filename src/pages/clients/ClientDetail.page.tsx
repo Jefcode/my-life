@@ -9,7 +9,7 @@ import AchievementsModal from '../../components/modals/AchievementsModal';
 import {
   AchievementsIcon,
   EditIcon,
-  FilterIcon,
+  FilterActiveIcon,
   JournalIcon,
 } from '../../icons';
 
@@ -117,7 +117,7 @@ function ClientDetailPage() {
       <Panel>
         <Panel.Header>
           <PanelHeading title='Client Journal' icon={JournalIcon} />
-          <Button icon={FilterIcon}>Filter</Button>
+          <Button icon={FilterActiveIcon}>Filter</Button>
         </Panel.Header>
 
         <ClientJournal />

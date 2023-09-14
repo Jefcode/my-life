@@ -3,7 +3,7 @@ import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 import Table from '../../components/common/Table';
-import { FilterIcon } from '../../icons';
+import { FilterActiveIcon } from '../../icons';
 
 const ClientsPage = () => {
   return (
@@ -168,7 +168,7 @@ const ClientsPage = () => {
         <Panel.Header>
           <PanelHeading title='All Clients' />
 
-          <Button icon={FilterIcon}>Filter</Button>
+          <Button icon={FilterActiveIcon}>Filter</Button>
         </Panel.Header>
 
         <Table>
