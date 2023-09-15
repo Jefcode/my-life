@@ -43,7 +43,9 @@ const Row = ({ children, className = '' }: Props) => {
 
 const BodyColumn = ({ children, className = '' }: Props) => {
   return (
-    <td className={classNames('py-4 px-2 last:pr-2', className)}>{children}</td>
+    <td className={classNames('py-4 px-2 last:pr-2 text-stone-400', className)}>
+      {children}
+    </td>
   );
 };
 

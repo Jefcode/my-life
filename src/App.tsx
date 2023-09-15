@@ -13,6 +13,7 @@ import PodcastsPage from './pages/hub/Podcasts.page';
 import ArticlesPage from './pages/hub/Articles.page';
 import MyProfilePage from './pages/profile/MyProfile.page';
 import SettingsPage from './pages/settings/Settings.page';
+import MyPaymentPage from './pages/profile/MyPayment.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -39,6 +40,7 @@ function App() {
           </Route>
 
           <Route path='/profile' element={<MyProfilePage />} />
+          <Route path='/profile/my-payment' element={<MyPaymentPage />} />
           <Route path='/settings' element={<SettingsPage />} />
         </Route>
 

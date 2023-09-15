@@ -108,7 +108,7 @@ const MyProfilePage = () => {
             />
 
             <Link
-              to='/'
+              to='/profile/my-payment'
               className='border w-8 h-8 rounded-md border-stone-200 p-2 flex items-center justify-center text-primary'
             >
               <ChevronRightIcon className='w-3 h-3' />
