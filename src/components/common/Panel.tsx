@@ -20,7 +20,7 @@ const Panel = ({ children, className = '' }: PanelProps) => {
 
 const PanelHeader = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2'>
+    <div className='w-full flex flex-wrap items-center justify-between gap-2'>
       {children}
     </div>
   );

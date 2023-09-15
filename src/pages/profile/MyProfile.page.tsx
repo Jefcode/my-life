@@ -23,9 +23,9 @@ const MyProfilePage = () => {
     <>
       <PageTitle title='My Profile' breadcrumb={[{ title: 'My Profile' }]} />
       <Panel className='mb-5'>
-        <div className='w-full flex items-center justify-between'>
+        <div className='w-full flex flex-col xl:flex-row gap-4 items-center justify-between'>
           {/* Doctor's info */}
-          <div className='flex items-center gap-5'>
+          <div className='flex flex-col text-center xl:text-left xl:flex-row items-center gap-5'>
             <div className='relative'>
               <div className='w-24 h-24'>
                 <img
@@ -48,7 +48,7 @@ const MyProfilePage = () => {
               </p>
 
               {/* Categories of specialty */}
-              <div className='flex items-center gap-2 mt-2'>
+              <div className='flex flex-wrap items-center justify-center xl:justify-start gap-2 mt-2'>
                 <div className='text-primary text-sm bg-rose-100 rounded-md px-3.5 py-1.5 font-medium'>
                   Smoking
                 </div>
@@ -63,9 +63,9 @@ const MyProfilePage = () => {
           </div>
 
           {/* Right Half */}
-          <div className='flex items-stretch'>
+          <div className='flex w-full sm:w-auto flex-col xl:flex-row gap-7 items-stretch'>
             {/* Stats */}
-            <div className='sm:ml-auto border-x border-stone-200/50 divide-x divide-stone-200/50 flex mr-7'>
+            <div className='xl:border-x border-stone-200/50 sm:divide-x divide-stone-200/50 flex flex-col sm:flex-row items-center'>
               {/* Track */}
               <div className='w-1/2 h-full flex flex-col justify-center items-center p-4'>
                 <span className='bg-gradient-to-r from-gradientRed-200 to-gradientRed-100 bg-clip-text whitespace-nowrap text-transparent font-bold text-xl'>
@@ -88,18 +88,20 @@ const MyProfilePage = () => {
             </div>
 
             {/* Buttons */}
-            <div className='flex flex-col items-stretch justify-between gap-2'>
-              <Button variant='primary'>Edit Profile</Button>
-              <Button>My License</Button>
+            <div className='flex flex-col xs:flex-row xl:flex-col items-stretch justify-between gap-2'>
+              <Button className='w-full' variant='primary'>
+                Edit Profile
+              </Button>
+              <Button className='w-full'>My License</Button>
             </div>
           </div>
         </div>
       </Panel>
 
       {/* Grid (Payment/Media/Setting/Email/Phone/About me) */}
-      <div className='w-full grid grid-cols-3 grid-rows-3 gap-5 mb-5'>
+      <div className='w-full grid grid-cols-1 xl:grid-cols-3 grid-rows-3 gap-5 mb-5'>
         {/* Payment */}
-        <Panel>
+        <Panel className='flex items-center'>
           <Panel.Header>
             <PanelHeading
               className='text-slate-800'
@@ -117,7 +119,7 @@ const MyProfilePage = () => {
         </Panel>
 
         {/* Media */}
-        <Panel>
+        <Panel className='flex items-center'>
           <Panel.Header>
             <PanelHeading
               className='text-slate-800'
@@ -135,7 +137,7 @@ const MyProfilePage = () => {
         </Panel>
 
         {/* Settings */}
-        <Panel>
+        <Panel className='flex items-center'>
           <Panel.Header>
             <PanelHeading
               className='text-slate-800'
@@ -152,7 +154,7 @@ const MyProfilePage = () => {
         </Panel>
 
         {/* About */}
-        <Panel className='col-span-2 row-span-2'>
+        <Panel className='xl:col-span-2 row-span-2'>
           <Panel.Header>
             <PanelHeading title='About me' icon={JournalIcon} />
             <EditButton />
@@ -174,7 +176,7 @@ const MyProfilePage = () => {
         </Panel>
 
         {/* Email */}
-        <Panel>
+        <Panel className='flex items-center'>
           <div className='flex items-center gap-4'>
             <MailIcon className='w-7 h-7' />
             <a
@@ -187,7 +189,7 @@ const MyProfilePage = () => {
         </Panel>
 
         {/* Phone */}
-        <Panel>
+        <Panel className='flex items-center'>
           <div className='flex items-center gap-4'>
             <PhoneIcon className='w-7 h-7' />
             <a
@@ -207,41 +209,46 @@ const MyProfilePage = () => {
           <Button>Edit Information</Button>
         </Panel.Header>
 
-        <MyTabs defaultValue='general-info'>
-          <MyTabs.List fullBorder>
-            <MyTabs.Trigger value='general-info' text='General Information' />
-            <MyTabs.Trigger value='personal-info' text='Personal Information' />
-            <MyTabs.Trigger value='qualifications' text='Qualifications' />
-          </MyTabs.List>
+        <div className='mt-3'>
+          <MyTabs defaultValue='general-info'>
+            <MyTabs.List fullBorder>
+              <MyTabs.Trigger value='general-info' text='General Information' />
+              <MyTabs.Trigger
+                value='personal-info'
+                text='Personal Information'
+              />
+              <MyTabs.Trigger value='qualifications' text='Qualifications' />
+            </MyTabs.List>
 
-          <div className='mt-8 min-h-[300px]'>
-            <MyTabs.Content value='general-info'>
-              {/* Inputs Flex Container */}
-              <Row>
-                <div className='w-1/3 px-4'>
-                  <Input label='Firstname' />
-                </div>
-                <div className='w-1/3 px-4'>
-                  <Input label='Lastname' />
-                </div>
-                <div className='w-1/3 px-4'>
-                  <Input label='Phone Number' />
-                </div>
-                <div className='w-1/3 px-4'>
-                  <Input type='email' label='Email' />
-                </div>
-                <div className='w-1/3 px-4'>
-                  <Input label='Years experience' />
-                </div>
-                <div className='w-1/3 px-4'>
-                  <Input label='Hour appointment' />
-                </div>
-              </Row>
-            </MyTabs.Content>
-          </div>
-          <MyTabs.Content value='personal-info'></MyTabs.Content>
-          <MyTabs.Content value='qualifications'></MyTabs.Content>
-        </MyTabs>
+            <div className='mt-8 min-h-[300px]'>
+              <MyTabs.Content value='general-info'>
+                {/* Inputs Flex Container */}
+                <Row>
+                  <div className='w-full sm:w-1/2 md:w-1/3 px-4'>
+                    <Input label='Firstname' />
+                  </div>
+                  <div className='w-full sm:w-1/2 md:w-1/3 px-4'>
+                    <Input label='Lastname' />
+                  </div>
+                  <div className='w-full md:w-1/3 px-4'>
+                    <Input label='Phone Number' />
+                  </div>
+                  <div className='w-full md:w-1/3 px-4'>
+                    <Input type='email' label='Email' />
+                  </div>
+                  <div className='w-full md:w-1/3 px-4'>
+                    <Input label='Years experience' />
+                  </div>
+                  <div className='w-full md:w-1/3 px-4'>
+                    <Input label='Hour appointment' />
+                  </div>
+                </Row>
+              </MyTabs.Content>
+            </div>
+            <MyTabs.Content value='personal-info'></MyTabs.Content>
+            <MyTabs.Content value='qualifications'></MyTabs.Content>
+          </MyTabs>
+        </div>
       </Panel>
     </>
   );

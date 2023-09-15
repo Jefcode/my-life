@@ -40,7 +40,7 @@ function TabsList({
         fullBorder ? '-mx-10 px-10' : ''
       )}
     >
-      <div className='flex items-center justify-between max-w-lg'>
+      <div className='flex flex-col sm:flex-row items-center justify-between max-w-lg'>
         {children}
       </div>
     </Tabs.List>
@@ -59,7 +59,7 @@ function TabsTrigger({ value, text }: { value: string; text: string }) {
       {tab === value && (
         <motion.div
           layoutId='active-border'
-          className='bg-primary h-1 w-full absolute bottom-0 left-0 -mb-0.5'
+          className='bg-primary hidden sm:block h-1 w-full absolute bottom-0 left-0 -mb-0.5'
           style={{ borderRadius: '99999px' }}
         ></motion.div>
       )}
