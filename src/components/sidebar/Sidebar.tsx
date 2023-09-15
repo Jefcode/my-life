@@ -1,5 +1,5 @@
 import { IoIosClose } from 'react-icons/io';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useMediaQuery, useOnClickOutside } from 'usehooks-ts';
 
@@ -11,9 +11,11 @@ import {
   LogoIcon,
   LogoTextIcon,
 } from '../../icons';
+import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
   const isLargeScreen = useMediaQuery('(min-width: 1024px)');
   const { toggle, isOpen, close } = useSidebar();
 
@@ -24,6 +26,13 @@ const Sidebar = () => {
   };
 
   useOnClickOutside(ref, handleClickOutside);
+
+  // Close sidebar when URL changes
+  useEffect(() => {
+    if (!isLargeScreen) {
+      close();
+    }
+  }, [pathname, close, isLargeScreen]);
 
   // Framer motion variant
   const sidebarWidth = '250px';
