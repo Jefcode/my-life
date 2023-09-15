@@ -1,4 +1,3 @@
-import * as Checkbox from '@radix-ui/react-checkbox';
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
@@ -8,11 +7,11 @@ import Input from '../../../components/common/Input';
 import Button from '../../../components/common/Button';
 import {
   ArticleIcon,
-  CheckRawIcon,
   HubIcon,
   PodcastIcon,
   VideoActiveIcon,
 } from '../../../icons';
+import Checkbox from '../../../components/common/Checkbox';
 
 const STEPS = 3;
 
@@ -92,15 +91,7 @@ const CreateMediaModal = () => {
             {/* Checkboxes */}
             <div className='flex items-center gap-10 mt-5'>
               <div className='flex items-center'>
-                <Checkbox.Root
-                  className='flex h-6 w-6 appearance-none items-center justify-center rounded-[4px] bg-white transition duration-100 border border-primary data-[state=checked]:bg-primary outline-none'
-                  defaultChecked
-                  id='c1'
-                >
-                  <Checkbox.Indicator className='text-white'>
-                    <CheckRawIcon className='w-3 h-3' />
-                  </Checkbox.Indicator>
-                </Checkbox.Root>
+                <Checkbox id='c1' defaultChecked />
                 <label
                   className='pl-[15px] text-[15px] leading-none'
                   htmlFor='c1'
@@ -109,14 +100,7 @@ const CreateMediaModal = () => {
                 </label>
               </div>
               <div className='flex items-center'>
-                <Checkbox.Root
-                  className='flex h-6 w-6 appearance-none items-center justify-center rounded-[4px] bg-white transition duration-100 border border-primary data-[state=checked]:bg-primary outline-none'
-                  id='c2'
-                >
-                  <Checkbox.Indicator className='text-white'>
-                    <CheckRawIcon className='w-3 h-3' />
-                  </Checkbox.Indicator>
-                </Checkbox.Root>
+                <Checkbox id='c2' />
                 <label
                   className='pl-[15px] text-[15px] leading-none'
                   htmlFor='c2'

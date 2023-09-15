@@ -52,7 +52,7 @@ const Input = ({
    * Normal Input
    */
   return (
-    <div className='relative mb-10'>
+    <div className='relative'>
       <input
         id={id}
         type={type}
