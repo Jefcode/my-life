@@ -21,11 +21,10 @@ const MyPaymentPage = () => {
         ]}
       />
 
-      {/* Flex container for the 3 top panels */}
-      <div className='flex items-stretch gap-5 mb-5'>
-        {/* Balance */}
-        <div className='w-1/3'>
-          <div className='h-full bg-gradient-to-l from-gradientRed-100 via-primary to-gradientRed-200 rounded-2xl p-7 flex-1 text-white flex flex-col justify-between'>
+      {/* Grid => 3 top panels */}
+      <div className='grid grid-cols-6 gap-5 mb-5'>
+        <div className='col-span-full md:col-span-3 2xl:col-span-2'>
+          <div className='h-full bg-gradient-to-l from-gradientRed-100 via-primary to-gradientRed-200 rounded-2xl p-4 md:p-7 flex-1 text-white flex flex-col justify-between'>
             <div className='flex items-center gap-3 mb-12'>
               <div className='rounded-full flex items-center justify-center bg-white/30 w-10 h-10'>
                 <CurrencyIcon className='w-4 h-4' />
@@ -33,13 +32,11 @@ const MyPaymentPage = () => {
               <span className='text-xl'>Balance</span>
             </div>
 
-            {/* Number of calls */}
-            <div className='flex items-center justify-between gap-1'>
+            <div className='flex items-center justify-between gap-2 flex-wrap'>
               <div className='font-medium text-2xl'>
                 <span className=''>£</span>
                 <span>7,457</span>
               </div>
-
               <div className='font-normal text-sm'>
                 <span>Process date: </span>
                 <span>May 30/03/2023</span>
@@ -47,8 +44,9 @@ const MyPaymentPage = () => {
             </div>
           </div>
         </div>
-        <div className='w-1/3'>
-          <div className='h-full bg-gradient-to-l from-gradientBlue-100 via-gradientBlue-200 to-gradientBlue-300 rounded-2xl p-7 flex-1 text-white flex flex-col justify-between'>
+
+        <div className='col-span-full md:col-span-3 2xl:col-span-2'>
+          <div className='h-full bg-gradient-to-l from-gradientBlue-100 via-gradientBlue-200 to-gradientBlue-300 rounded-2xl p-4 md:p-7 flex-1 text-white flex flex-col justify-between'>
             <div className='flex items-center gap-3 mb-12'>
               <div className='rounded-full flex items-center justify-center bg-white/30 w-10 h-10'>
                 <CheckRawIcon className='w-4 h-4' />
@@ -56,13 +54,11 @@ const MyPaymentPage = () => {
               <span className='text-xl'>Balance</span>
             </div>
 
-            {/* Number of calls */}
-            <div className='flex items-center justify-between gap-1'>
+            <div className='flex items-center justify-between gap-2 flex-wrap'>
               <div className='font-medium text-2xl'>
                 <span className=''>£</span>
                 <span>7,457</span>
               </div>
-
               <div className='font-normal text-sm'>
                 <span>Process date: </span>
                 <span>May 30/03/2023</span>
@@ -70,9 +66,10 @@ const MyPaymentPage = () => {
             </div>
           </div>
         </div>
-        <div className='w-1/3'>
+
+        <div className='col-span-6 2xl:col-span-2'>
           <div className='h-full bg-white rounded-2xl p-6 flex-1 flex flex-col justify-between'>
-            <div className='flex items-center justify-between'>
+            <div className='flex flex-col xs:flex-row xs:items-center gap-2 mb-4 justify-between'>
               <PanelHeading
                 icon={AchievementsIcon}
                 title='Bank accounts'
@@ -80,8 +77,7 @@ const MyPaymentPage = () => {
               />
               <Button className='text-sm'>New Account</Button>
             </div>
-
-            <div className='flex gap-1 text-stone-400 font-light uppercase'>
+            <div className='text-stone-400 font-light uppercase'>
               <span>royal bank of scotland -</span> <span>xxxxxxx1234</span>
             </div>
           </div>
@@ -96,7 +92,7 @@ const MyPaymentPage = () => {
         </Panel.Header>
 
         {/* Table */}
-        <div className='mt-2 max-h-[calc(100vh-440px)] overflow-y-auto scrollbar-thin scrollbar-track-stone-50 pr-3 scrollbar-thumb-stone-100'>
+        <div className='mt-2 xl:max-h-[calc(100vh-440px)] overflow-y-auto scrollbar-thin scrollbar-track-stone-50 pr-3 scrollbar-thumb-stone-100'>
           <Table>
             <Table.Head>
               <Table.HeadColumn>Client</Table.HeadColumn>

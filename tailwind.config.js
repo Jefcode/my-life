@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         xs: '450px',
+        '2xl': '1440px',
       },
       fontFamily: {
         sans: ['jost'],
