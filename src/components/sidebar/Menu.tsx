@@ -1,4 +1,5 @@
 import {
+  CalendarIcon,
   FilterIcon,
   HomeIcon,
   HubIcon,
@@ -14,6 +15,7 @@ const Menu = () => (
     <ul className='flex flex-col text-stone-500'>
       <MenuItem to='/dashboard' icon={HomeIcon} text='Dashboard' />
       <MenuItem to='/clients' icon={UsersIcon} text='Clients' />
+      <MenuItem to='/appointments' icon={CalendarIcon} text='Clients' />
       <MenuItem to='/hub' icon={HubIcon} text='The Hub' />
       <MenuItem to='/settings' icon={FilterIcon} text='Settings' />
     </ul>

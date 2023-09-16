@@ -15,11 +15,7 @@ function Layout() {
 
   const animateCards = useCallback(async () => {
     // Animate Each item that has 'card' class, one by one
-    await animate(
-      '.card',
-      { opacity: 1 },
-      { delay: stagger(0.5, { startDelay: 1 }) }
-    );
+    await animate('.card', { opacity: 1 }, { delay: stagger(0.1) });
   }, [animate]);
 
   useEffect(() => {
