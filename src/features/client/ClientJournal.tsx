@@ -1,8 +1,9 @@
 import Input from '../../components/common/Input';
 import MyTabs from '../../components/common/MyTabs';
 import { EditIcon, TrashIcon } from '../../icons';
+import classNames from '../../utils/classNames';
 
-const ClientJournal = () => {
+const ClientJournal = ({ expanded = false }: { expanded?: boolean }) => {
   return (
     <div className='mt-5'>
       <MyTabs defaultValue='story'>
@@ -14,7 +15,12 @@ const ClientJournal = () => {
 
         {/* Tabs Content Container */}
         <div className='mt-5'>
-          <div className='h-screen max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 pr-3'>
+          <div
+            className={classNames(
+              'h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 pr-3',
+              expanded ? 'max-h-[calc(100vh-100px)]' : 'max-h-60'
+            )}
+          >
             {/* Client Story */}
             <MyTabs.Content value='story' className='text-stone-500 space-y-5'>
               <p>
@@ -160,7 +166,12 @@ const ClientJournal = () => {
             </MyTabs.Content>
 
             <MyTabs.Content value='info'>
-              <div className='pt-5 flex flex-col md:flex-row items-center gap-5'>
+              <div
+                className={classNames(
+                  'pt-5 flex gap-7 flex-col md:flex-row items-center',
+                  expanded ? 'flex-wrap' : ''
+                )}
+              >
                 <div className='w-full'>
                   <Input label='Date of birth' type='date' value='1989-12-05' />
                 </div>

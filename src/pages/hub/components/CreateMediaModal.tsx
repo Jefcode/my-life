@@ -86,7 +86,9 @@ const CreateMediaModal = () => {
       {step === 1 && (
         <div className='mt-8'>
           <form>
-            <Input label='Title' className='!font-medium' />
+            <div className='mb-7'>
+              <Input label='Title' className='!font-medium' />
+            </div>
             <Input type='textarea' label='Description'></Input>
             {/* Checkboxes */}
             <div className='flex items-center gap-10 mt-5'>

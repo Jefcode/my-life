@@ -36,11 +36,12 @@ const Input = ({
           )}
           onChange={(e) => onChange?.(e.target.value)}
           defaultValue={value}
+          placeholder=' '
         ></textarea>
 
         <label
           htmlFor={id}
-          className='absolute peer-placeholder-shown:top-1/2 -top-0.5 peer-focus:-top-0.5 transition-all duration-300 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500 whitespace-nowrap pointer-events-none'
+          className='absolute peer-placeholder-shown:top-7 -top-0.5 peer-focus:-top-0.5 transition-all duration-300 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500 whitespace-nowrap pointer-events-none'
         >
           {label}
         </label>

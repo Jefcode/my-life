@@ -133,7 +133,7 @@ function VideoCallPage() {
                       icon={NoteIcon}
                     />
 
-                    <form className='mt-10 flex flex-col'>
+                    <form className='mt-10 flex flex-col gap-8'>
                       <Input id='call' label='Call Summary' value='I' />
                       <Input
                         type='textarea'
@@ -143,7 +143,7 @@ function VideoCallPage() {
                       />
 
                       {/* Buttons Container */}
-                      <div className='flex items-center justify-end gap-4 mt-5'>
+                      <div className='flex items-center justify-end gap-4'>
                         <Modal.Close asChild>
                           <Button variant='tertiary'>Cancel</Button>
                         </Modal.Close>
@@ -166,14 +166,16 @@ function VideoCallPage() {
           {!fullscreen && (
             <div className='flex-1'>
               <div className='w-full mt-10 xl:mt-0 xl:pl-5 xl:border-l border-stone-200 h-full'>
-                {/* Header */}
-                <PanelHeading
-                  title='Client Journal'
-                  icon={JournalIcon}
-                  className='mb-5'
-                />
+                <div className='overflow-hidden'>
+                  {/* Header */}
+                  <PanelHeading
+                    title='Client Journal'
+                    icon={JournalIcon}
+                    className='mb-5'
+                  />
 
-                <ClientJournal />
+                  <ClientJournal expanded />
+                </div>
               </div>
             </div>
           )}
