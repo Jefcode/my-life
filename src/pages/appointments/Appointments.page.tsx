@@ -5,6 +5,7 @@ import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 import meetings from '../../data/meetings';
 import {
+  CheckRawIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   FilterActiveIcon,
@@ -13,6 +14,7 @@ import {
 import { isSameDay, parseISO, startOfToday } from 'date-fns';
 import MeetingItem from '../../components/calendar/MeetingItem';
 import Schadule from './Schadule';
+import AppointmentsChart from './AppointmentsChart';
 
 const AppointmentsPage = () => {
   const today = startOfToday();
@@ -132,26 +134,49 @@ const AppointmentsPage = () => {
 
         {/* Today's meetings/Appointments stats */}
         <div className='w-2/5'>
-          <Panel>
-            <Panel.Header>
-              <PanelHeading title="Today's meetings" icon={VideoActiveIcon} />
-              <Button icon={FilterActiveIcon}>Filter</Button>
-            </Panel.Header>
+          <div className='flex flex-col gap-5 h-full'>
+            <Panel className='flex-1'>
+              <Panel.Header>
+                <PanelHeading title="Today's meetings" icon={VideoActiveIcon} />
+                <Button icon={FilterActiveIcon}>Filter</Button>
+              </Panel.Header>
 
-            <div className='mt-4'>
-              <ul className='flex flex-col gap-5'>
-                {todaysMeetings.map((meeting) => (
-                  <MeetingItem key={meeting.id} meeting={meeting} />
-                ))}
-              </ul>
+              <div className='mt-4'>
+                <ul className='flex flex-col gap-5'>
+                  {todaysMeetings.map((meeting) => (
+                    <MeetingItem key={meeting.id} meeting={meeting} />
+                  ))}
+                </ul>
 
-              {todaysMeetings.length === 0 && (
-                <p className='py-4 text-stone-600 text-center'>
-                  There is no meeting for today.
-                </p>
-              )}
-            </div>
-          </Panel>
+                {todaysMeetings.length === 0 && (
+                  <p className='py-4 text-stone-600 text-center'>
+                    There is no meeting for today.
+                  </p>
+                )}
+              </div>
+            </Panel>
+
+            <Panel>
+              <Panel.Header>
+                <div className='flex items-center gap-4'>
+                  {/* Check Icon */}
+                  <div className='w-10 h-10 rounded bg-slate-100 text-slate-700 flex items-center justify-center'>
+                    <CheckRawIcon className='w-5 h-5' strokeWidth={0.9} />
+                  </div>
+                  <div className='flex flex-col text-slate-700'>
+                    <span className='text-xl font-medium'>Completed</span>
+                    <span className='text-stone-400 font-light'>
+                      Number of completed appointments
+                    </span>
+                  </div>
+                </div>
+
+                <div className='text-primary text-3xl font-medium'>1230</div>
+              </Panel.Header>
+
+              <AppointmentsChart />
+            </Panel>
+          </div>
         </div>
       </div>
     </>
