@@ -1,10 +1,12 @@
 import Button from '../../components/common/Button';
+import Input from '../../components/common/Input';
+import Modal from '../../components/common/Modal';
 import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 import Table from '../../components/common/Table';
 import {
-  AchievementsIcon,
+  BankIcon,
   CheckRawIcon,
   CurrencyIcon,
   FilterActiveIcon,
@@ -71,11 +73,36 @@ const MyPaymentPage = () => {
           <div className='h-full bg-white rounded-2xl p-6 flex-1 flex flex-col justify-between'>
             <div className='flex flex-col xs:flex-row xs:items-center gap-2 mb-4 justify-between'>
               <PanelHeading
-                icon={AchievementsIcon}
+                icon={BankIcon}
                 title='Bank accounts'
                 subtitle='Default'
               />
-              <Button className='text-sm'>New Account</Button>
+
+              <Modal>
+                <Modal.Button asChild>
+                  <Button className='text-sm'>New Account</Button>
+                </Modal.Button>
+
+                <Modal.Content className='!w-[450px]'>
+                  <Modal.Header title='Add new bank account' icon={BankIcon} />
+
+                  <form className='flex flex-col mt-7'>
+                    <div className='mb-10'>
+                      <Input label='Sort Code' value='000 000 000 0000' />
+                    </div>
+                    <div className='mb-8'>
+                      <Input label='Account number' value='000 000 000 0000' />
+                    </div>
+
+                    <div className='flex items-center flex-col xs:flex-row justify-between gap-3'>
+                      <Button full>Cancel</Button>
+                      <Button variant='primary' full>
+                        Save
+                      </Button>
+                    </div>
+                  </form>
+                </Modal.Content>
+              </Modal>
             </div>
             <div className='text-stone-400 font-light uppercase'>
               <span>royal bank of scotland -</span> <span>xxxxxxx1234</span>

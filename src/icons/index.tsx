@@ -7,6 +7,7 @@
 
 export { ReactComponent as AchievementsIcon } from './achievements.svg';
 export { ReactComponent as ArticleIcon } from './article.svg';
+export { ReactComponent as BankIcon } from './bank.svg';
 export { ReactComponent as BellIcon } from './bell.svg';
 export { ReactComponent as CalendarActiveIcon } from './calendar-active.svg';
 export { ReactComponent as CalendarIcon } from './calendar.svg';
