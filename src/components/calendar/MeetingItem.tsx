@@ -34,8 +34,8 @@ const MeetingItem = ({ meeting }: MeetingItemProps) => {
             <span
               className={`${meeting.done && 'text-slate-400 line-through'}`}
             >
-              {format(parseISO(meeting.startDatetime), 'hh:mm')} -{' '}
-              {format(parseISO(meeting.endDatetime), 'hh:mm')}
+              {format(parseISO(meeting.startDatetime), 'HH:mm')} -{' '}
+              {format(parseISO(meeting.endDatetime), 'HH:mm')}
             </span>
           </span>
           <p className='font-semibold text-xl'>{meeting.name}</p>
