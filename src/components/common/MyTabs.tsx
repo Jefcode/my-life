@@ -58,7 +58,7 @@ function TabsTrigger({ value, text }: { value: string; text: string }) {
       {text}
       {tab === value && (
         <motion.div
-          layoutId='active-border'
+          layoutId='active-borders'
           className='bg-primary hidden sm:block h-1 w-full absolute bottom-0 left-0 -mb-0.5'
           style={{ borderRadius: '99999px' }}
         ></motion.div>
