@@ -14,7 +14,7 @@ import ClientJournal from '../../features/client/ClientJournal';
 import Modal from '../../components/common/Modal';
 import Button from '../../components/common/Button';
 import PanelHeading from '../../components/common/PanelHeading';
-import Input from '../../components/common/Input';
+import Input, { Textarea } from '../../components/common/Input';
 import {
   DotsIcon,
   FullScreenIcon,
@@ -135,8 +135,7 @@ function VideoCallPage() {
 
                     <form className='mt-10 flex flex-col gap-8'>
                       <Input id='call' label='Call Summary' value='I' />
-                      <Input
-                        type='textarea'
+                      <Textarea
                         label='Notes'
                         value='Eu mollit do adipisicing consectetur. Pariatur duis do proident enim id nisi incididunt ad. Minim exercitation quis minim culpa dolore velit est. Eu cillum magna nostrud nostrud. Non magna labore duis anim adipisicing velit pariatur irure occaecat.'
                         className='!h-72'

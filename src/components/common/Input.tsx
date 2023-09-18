@@ -1,6 +1,5 @@
 /**
  * This Component handles both inputs and textareas
- * to convert this component to textarea, just use type='textarea'
  */
 
 import { ChevronRightIcon } from '../../icons';
