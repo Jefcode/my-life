@@ -89,7 +89,7 @@ const MyProfilePage = () => {
 
             {/* Buttons */}
             <div className='flex flex-col xs:flex-row xl:flex-col items-stretch justify-between gap-2'>
-              <Button className='w-full' variant='primary'>
+              <Button className='w-full' variant='primary' href='/profile/edit'>
                 Edit Profile
               </Button>
               <Button className='w-full'>My License</Button>

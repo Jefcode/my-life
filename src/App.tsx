@@ -16,6 +16,7 @@ import SettingsPage from './pages/settings/Settings.page';
 import MyPaymentPage from './pages/profile/MyPayment.page';
 import AppointmentsPage from './pages/appointments/Appointments.page';
 import MyMediaPage from './pages/profile/MyMedia.page';
+import EditProfilePage from './pages/profile/EditProfile.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -45,6 +46,7 @@ function App() {
           </Route>
 
           <Route path='/profile' element={<MyProfilePage />} />
+          <Route path='/profile/edit' element={<EditProfilePage />} />
           <Route path='/profile/my-payment' element={<MyPaymentPage />} />
           <Route path='/profile/my-media' element={<MyMediaPage />} />
 

@@ -9,7 +9,7 @@ const Panel = ({ children, className = '' }: PanelProps) => {
   return (
     <div
       className={classNames(
-        'card bg-white rounded-xl p-5 overflow-hidden',
+        'card bg-white rounded-xl p-5 overflow-x-hidden overflow-y-visible',
         className
       )}
     >
