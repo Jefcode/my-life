@@ -53,8 +53,8 @@ const meetings: Meeting[] = [
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 						aliquip`,
-    startDatetime: '2023-09-20T13:53',
-    endDatetime: '2023-09-20T14:30',
+    startDatetime: '2023-09-20T17:00',
+    endDatetime: '2023-09-20T18:30',
     done: false,
   },
   {
@@ -65,8 +65,8 @@ const meetings: Meeting[] = [
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 						aliquip`,
-    startDatetime: '2023-09-21T13:53',
-    endDatetime: '2023-09-21T14:30',
+    startDatetime: '2023-09-21T17:00',
+    endDatetime: '2023-09-21T19:30',
     done: true,
   },
 ];
