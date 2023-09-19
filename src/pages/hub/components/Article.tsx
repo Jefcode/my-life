@@ -60,7 +60,7 @@ const Article = ({ data }: ArticleProps) => {
               </h3>
             </Modal.Button>
 
-            <Modal.Content>
+            <Modal.Content size='lg'>
               {/* Author info */}
               <div className='flex items-center mb-5 gap-3'>
                 <img

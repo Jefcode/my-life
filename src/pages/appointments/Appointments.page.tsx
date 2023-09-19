@@ -8,6 +8,7 @@ import {
   CheckRawIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ClockActiveIcon,
   FilterActiveIcon,
   VideoActiveIcon,
 } from '../../icons';
@@ -15,6 +16,8 @@ import { isSameDay, parseISO, startOfToday } from 'date-fns';
 import MeetingItem from '../../components/calendar/MeetingItem';
 import Schadule from './Schadule';
 import AppointmentsChart from './AppointmentsChart';
+import Modal from '../../components/common/Modal';
+import MyAvaliblityModal from '../../components/modals/MyAvaliblityModal';
 
 const AppointmentsPage = () => {
   const today = startOfToday();
@@ -39,9 +42,18 @@ const AppointmentsPage = () => {
           {/* Header */}
           <div className='flex items-center justify-between mb-5'>
             {/* My Availibilty */}
-            <button className='px-8 py-2 bg-white text-primary rounded-md border border-transparent hover:border-stone-200 transition active:scale-95'>
-              My Availablity
-            </button>
+            <Modal>
+              <Modal.Button asChild>
+                <button className='px-8 py-2 bg-white text-primary rounded-md border border-transparent hover:border-stone-200 transition active:scale-95'>
+                  My Availablity
+                </button>
+              </Modal.Button>
+
+              <Modal.Content size='sm'>
+                <Modal.Header title='My Availability' icon={ClockActiveIcon} />
+                <MyAvaliblityModal />
+              </Modal.Content>
+            </Modal>
 
             {/* Tabs */}
             <div className='flex items-center shadow-lg shadow-stone-200/30 gap-2 p-1 bg-white rounded-full'>

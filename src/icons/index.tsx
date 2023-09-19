@@ -17,6 +17,7 @@ export { ReactComponent as CheckIcon } from './check.svg';
 export { ReactComponent as ChevronLeftIcon } from './chevron-left.svg';
 export { ReactComponent as ChevronRightIcon } from './chevron-right.svg';
 export { ReactComponent as ClockIcon } from './clock.svg';
+export { ReactComponent as ClockActiveIcon } from './clock-active.svg';
 export { ReactComponent as CloseIcon } from './close.svg';
 export { ReactComponent as CurrencyIcon } from './currency.svg';
 export { ReactComponent as DotsIcon } from './dots.svg';

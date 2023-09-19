@@ -40,10 +40,7 @@ const Video = ({ data }: VideoProps) => {
             <PlayIcon />
           </Modal.Button>
 
-          <Modal.Content
-            dark
-            className='!w-[900px] !h-[550px] !rounded-xl !p-0'
-          >
+          <Modal.Content dark size='xl' className='h-[550px] !rounded-xl !p-0'>
             {/* Video Container */}
             <div className='w-full h-full flex items-center justify-center'>
               <img

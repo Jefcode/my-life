@@ -10,11 +10,13 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
 
 function ModalContent({
   children,
+  size = 'md',
   className = '',
   dark = false,
 }: {
   className?: string;
   children?: React.ReactNode;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   dark?: boolean;
 }) {
   return (
@@ -23,9 +25,22 @@ function ModalContent({
 
       <Dialog.Content
         className={classNames(
-          'rounded-3xl fixed top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 max-w-[calc(100vw-20px)] w-[700px] max-h-[calc(100vh-20px)] z-20 p-5 sm:p-8 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 data-[state=open]:animate-[dialog-content-show_200ms] data-[state=closed]:animate-[dialog-content-hide_200ms]',
+          'rounded-3xl fixed top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 max-w-[calc(100vw-20px)]  max-h-[calc(100vh-20px)] z-20 p-5 sm:p-8 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 data-[state=open]:animate-[dialog-content-show_200ms] data-[state=closed]:animate-[dialog-content-hide_200ms]',
           dark ? 'bg-[#404649] text-white' : 'bg-white',
-          className
+          className,
+          size === 'xs'
+            ? 'w-[450px]'
+            : size === 'sm'
+            ? 'w-[500px]'
+            : size === 'md'
+            ? 'w-[700px]'
+            : size === 'lg'
+            ? 'w-[800px]'
+            : size === 'xl'
+            ? 'w-[900px]'
+            : size === '2xl'
+            ? 'w-[1000px]'
+            : ''
         )}
       >
         <Dialog.Close

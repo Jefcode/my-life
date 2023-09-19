@@ -83,7 +83,7 @@ const MyPaymentPage = () => {
                   <Button className='text-sm'>New Account</Button>
                 </Modal.Button>
 
-                <Modal.Content className='!w-[450px]'>
+                <Modal.Content size='xs'>
                   <Modal.Header title='Add new bank account' icon={BankIcon} />
 
                   <form className='flex flex-col mt-7'>
