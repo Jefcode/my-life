@@ -185,7 +185,7 @@ const AppointmentsPage = () => {
           </div>
 
           {/* Schadule */}
-          <Schadule meetings={selectedDayMeetings} />
+          <Schadule selectedDay={selectedDay} meetings={selectedDayMeetings} />
         </div>
 
         {/* Today's meetings/Appointments stats */}

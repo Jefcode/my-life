@@ -6,7 +6,13 @@ import { differenceInMinutes, format, getHours, getMinutes } from 'date-fns';
 
 const blockSizeInPixels = 60;
 
-const Schadule = ({ meetings }: { meetings: Meeting[] }) => {
+const Schadule = ({
+  meetings,
+  selectedDay,
+}: {
+  meetings: Meeting[];
+  selectedDay: Date;
+}) => {
   const meetingTimeBlocks = useMemo(() => {
     const data: {
       id: number;
@@ -49,7 +55,9 @@ const Schadule = ({ meetings }: { meetings: Meeting[] }) => {
 
   return (
     <div className='mt-10'>
-      <p className='text-center mb-8 font-medium'>May 15, Thuesday</p>
+      <p className='text-center mb-8 font-medium'>
+        {format(selectedDay, 'MMMM dd, EEEE')}
+      </p>
 
       {/* Blocks Container */}
       <div className='xl:max-h-[500px] overflow-y-auto pr-3 py-2 scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-primary'>
