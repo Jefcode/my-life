@@ -1,4 +1,19 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import {
+  add,
+  eachDayOfInterval,
+  endOfMonth,
+  format,
+  isEqual,
+  isSameDay,
+  parse,
+  parseISO,
+  startOfToday,
+} from 'date-fns';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import Button from '../../components/common/Button';
 import PageTitle from '../../components/common/PageTitle';
 import Panel from '../../components/common/Panel';
@@ -12,15 +27,37 @@ import {
   FilterActiveIcon,
   VideoActiveIcon,
 } from '../../icons';
-import { isSameDay, parseISO, startOfToday } from 'date-fns';
 import MeetingItem from '../../components/calendar/MeetingItem';
 import Schadule from './Schadule';
 import AppointmentsChart from './AppointmentsChart';
 import Modal from '../../components/common/Modal';
 import MyAvaliblityModal from '../../components/modals/MyAvaliblityModal';
+import classNames from '../../utils/classNames';
 
 const AppointmentsPage = () => {
   const today = startOfToday();
+  const [selectedDay, setSelectedDay] = useState(today);
+  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
+  const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
+
+  const days = eachDayOfInterval({
+    start: firstDayCurrentMonth,
+    end: endOfMonth(firstDayCurrentMonth),
+  });
+
+  function previousMonth() {
+    const firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
+    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
+  }
+
+  function nextMonth() {
+    const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
+    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
+  }
+
+  const selectedDayMeetings = meetings.filter((meeting) =>
+    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  );
 
   const todaysMeetings = useMemo(() => {
     return meetings.filter((meeting) =>
@@ -36,11 +73,11 @@ const AppointmentsPage = () => {
       />
 
       {/* Flex Container */}
-      <div className='flex items-stretch'>
+      <div className='flex items-stretch flex-wrap'>
         {/* Calendar */}
-        <div className='w-3/5 pr-5'>
+        <div className='w-full xl:w-3/5 xl:pr-5'>
           {/* Header */}
-          <div className='flex items-center justify-between mb-5'>
+          <div className='flex flex-col gap-3 xs:flex-row items-center justify-between mb-5'>
             {/* My Availibilty */}
             <Modal>
               <Modal.Button asChild>
@@ -69,83 +106,90 @@ const AppointmentsPage = () => {
 
           {/* Month */}
           <div className='flex items-center justify-center gap-5 mb-5'>
-            <button>
+            <button onClick={previousMonth}>
               <ChevronLeftIcon className='w-4 h-4 text-primary' />
             </button>
-            <span className='text-stone-800 uppercase text-lg'>may 2023</span>
-            <button>
+            <span className='text-stone-800 uppercase text-lg'>
+              {format(firstDayCurrentMonth, 'MMMM yyyy')}
+            </span>
+            <button onClick={nextMonth}>
               <ChevronRightIcon className='w-4 h-4 text-primary' />
             </button>
           </div>
 
-          {/* Days */}
-          <div className='flex items-center gap-3 justify-between'>
-            {/* Day */}
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-            </div>
-            <div className='bg-primary cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-100 font-medium'>16</span>
-              <span className='text-stone-100 text-sm font-light'>Tue</span>
+          {/* Wrapper for the Swiper => width are very necessary */}
+          <div className='mb-5 xl:max-w-[50vw]'>
+            <Swiper
+              initialSlide={today.getDate() - 2}
+              spaceBetween={50}
+              breakpoints={{
+                '375': {
+                  slidesPerView: 6,
+                },
+                '548': {
+                  slidesPerView: 8,
+                },
+                '1024': {
+                  slidesPerView: 10,
+                },
+                '1280': {
+                  slidesPerView: 8,
+                },
+                '1440': {
+                  slidesPerView: 10,
+                },
+              }}
+              slidesPerView={4}
+              className='py-2 pr-12'
+            >
+              {days.map((day, idx) => (
+                <SwiperSlide key={idx}>
+                  <div
+                    className={classNames(
+                      'cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative transition',
+                      isEqual(day, selectedDay) ? 'bg-primary' : 'bg-white'
+                    )}
+                    onClick={() => setSelectedDay(day)}
+                  >
+                    <span
+                      className={classNames(
+                        'font-medium',
+                        isEqual(day, selectedDay)
+                          ? 'text-white'
+                          : 'text-stone-800'
+                      )}
+                    >
+                      {day.getDate()}
+                    </span>
+                    <span
+                      className={classNames(
+                        'text-sm font-light',
+                        isEqual(day, selectedDay)
+                          ? 'text-white'
+                          : 'text-stone-400'
+                      )}
+                    >
+                      {format(day, 'EE')}
+                    </span>
 
-              {/* Red dot indicator */}
-              <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
-            </div>
-
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-
-              {/* Red dot indicator */}
-              <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
-            </div>
-
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-
-              {/* Red dot indicator */}
-              <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-
-              {/* Red dot indicator */}
-              <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-
-              {/* Red dot indicator */}
-              <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-            </div>
-            <div className='bg-white cursor-pointer rounded-lg w-14 h-16 flex flex-col items-center justify-center relative'>
-              <span className='text-stone-800 font-medium'>15</span>
-              <span className='text-stone-400 text-sm font-light'>Mon</span>
-            </div>
+                    {/* Red dot indicator */}
+                    {meetings.some((meeting) =>
+                      isSameDay(parseISO(meeting.startDatetime), day)
+                    ) && (
+                      <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
+                    )}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           {/* Schadule */}
-          <Schadule meetings={todaysMeetings} />
+          <Schadule meetings={selectedDayMeetings} />
         </div>
 
         {/* Today's meetings/Appointments stats */}
-        <div className='w-2/5'>
+        <div className='w-full xl:w-2/5'>
           <div className='flex flex-col gap-5 h-full'>
             <Panel className='flex-1'>
               <Panel.Header>
@@ -153,7 +197,7 @@ const AppointmentsPage = () => {
                 <Button icon={FilterActiveIcon}>Filter</Button>
               </Panel.Header>
 
-              <div className='mt-4'>
+              <div className='mt-4 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-track-stone-100 scrollbar-thumb-stone-200'>
                 <ul className='flex flex-col gap-5'>
                   {todaysMeetings.map((meeting) => (
                     <MeetingItem key={meeting.id} meeting={meeting} />

@@ -29,6 +29,7 @@ ChartJS.defaults.color = '#A3A7A9';
 
 const options: ChartOptions<'line'> = {
   responsive: true,
+  maintainAspectRatio: true,
   plugins: {
     legend: {
       position: 'top' as const,
@@ -112,8 +113,12 @@ const data: ChartData<'line'> = {
 
 const AppointmentsChart = () => {
   return (
-    <div className='mt-5 w-full relative'>
-      <Line options={options} data={data} />
+    <div className='mt-5 w-full relative h-40 overflow-hidden xs:h-96 xl:h-60'>
+      <Line
+        options={options}
+        className='absolute left-1/2 -translate-x-1/2'
+        data={data}
+      />
     </div>
   );
 };

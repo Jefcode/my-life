@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ClockIcon } from '../../icons';
 import EditButton from '../../components/common/EditButton';
 import { Meeting } from '../../data/meetings';
-import { differenceInMinutes, format, getHours } from 'date-fns';
+import { differenceInMinutes, format, getHours, getMinutes } from 'date-fns';
 
 const blockSizeInPixels = 60;
 
@@ -30,7 +30,7 @@ const Schadule = ({ meetings }: { meetings: Meeting[] }) => {
         startTime: format(startDateTime, 'HH:mm'),
         endTime: format(endDateTime, 'HH:mm'),
         image: meeting.imageUrl,
-        top: getHours(startDateTime),
+        top: getHours(startDateTime) + getMinutes(startDateTime) / 60,
       });
     });
 
@@ -52,7 +52,7 @@ const Schadule = ({ meetings }: { meetings: Meeting[] }) => {
       <p className='text-center mb-8 font-medium'>May 15, Thuesday</p>
 
       {/* Blocks Container */}
-      <div className='max-h-[500px] overflow-y-auto pr-3 py-2 scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-primary'>
+      <div className='xl:max-h-[500px] overflow-y-auto pr-3 py-2 scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-primary'>
         <div className='relative'>
           {/* time blocks */}
           <div>
@@ -70,7 +70,7 @@ const Schadule = ({ meetings }: { meetings: Meeting[] }) => {
           </div>
 
           {/* Meetings */}
-          <div className='absolute inset-0 left-[10%] right-[10px] z-10'>
+          <div className='absolute inset-0 left-14 right-[10px] z-10'>
             <div className='relative w-full h-full'>
               {/* Meeting Block */}
               {meetingTimeBlocks.map((meeting) => (

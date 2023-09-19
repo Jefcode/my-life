@@ -45,7 +45,7 @@ const Day = ({ title }: { title: string }) => {
       {!dayActive && <div className='absolute inset-0 bg-white/80 z-10'></div>}
 
       {/* Content */}
-      <div className='flex items-center justify-between gap-2 mb-8'>
+      <div className='flex items-center flex-wrap justify-between gap-2 mb-8'>
         <p className='text-xl font-medium text-stone-800'>{title}</p>
         {/* Buttons */}
         <div className='flex items-center gap-1'>
@@ -97,7 +97,7 @@ const TimeBlock = () => {
   return (
     <div>
       {/* Inputs Flex Container */}
-      <div className='flex items-center gap-2 mb-5'>
+      <div className='flex flex-col xs:flex-row items-center gap-5 xs:gap-2 mb-5'>
         <div className='w-full'>
           <TimeInput
             label='from'
@@ -110,7 +110,7 @@ const TimeBlock = () => {
         </div>
       </div>
       {/* Checkboxes Flex Contaienr */}
-      <div className='flex items-center gap-12'>
+      <div className='flex flex-col gap-4 xs:flex-row xs:items-center xs:gap-12'>
         <div className='flex items-center gap-3'>
           <Checkbox id={`freeToBook-${randomStr}`} defaultChecked />
           <label htmlFor={`freeToBook-${randomStr}`}>Free to book</label>

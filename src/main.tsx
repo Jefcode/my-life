@@ -1,4 +1,6 @@
 import '@radix-ui/themes/styles.css';
+// Import Swiper styles
+import 'swiper/css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
