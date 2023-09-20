@@ -6,7 +6,7 @@ import SelectInput from '../../../components/common/SelectInput';
 const EditInformationModal = () => {
   return (
     <div className='mt-10'>
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
         <Input label='First name' />
         <Input label='Last name' />
         <Input label='Phone number' />
@@ -25,7 +25,7 @@ const EditInformationModal = () => {
           ]}
         />
       </div>
-      <div className='flex items-center gap-5 mt-5 max-w-sm ml-auto'>
+      <div className='flex items-center gap-2 sm:gap-5 mt-5 sm:max-w-sm ml-auto'>
         <Modal.Close asChild>
           <Button full>Cancel</Button>
         </Modal.Close>

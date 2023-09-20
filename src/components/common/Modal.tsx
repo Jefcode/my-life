@@ -25,7 +25,7 @@ function ModalContent({
 
       <Dialog.Content
         className={classNames(
-          'rounded-3xl fixed top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 max-w-[calc(100vw-20px)]  max-h-[calc(100vh-20px)] z-20 p-5 sm:p-8 data-[state=open]:animate-[dialog-content-show_200ms] data-[state=closed]:animate-[dialog-content-hide_200ms]',
+          'rounded-3xl fixed top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 max-w-[calc(100vw-20px)]  max-h-[calc(100vh-20px)] z-20 p-5 sm:p-8 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 data-[state=open]:animate-[dialog-content-show_200ms] data-[state=closed]:animate-[dialog-content-hide_200ms]',
           dark ? 'bg-[#404649] text-white' : 'bg-white',
           className,
           size === 'xs'
@@ -53,9 +53,7 @@ function ModalContent({
         >
           <FiX className='h-5 w-5 text-current' />
         </Dialog.Close>
-        <div className='relative overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 w-full h-full'>
-          <div className='w-full h-full relative'>{children}</div>
-        </div>
+        <div className='w-full h-full relative'>{children}</div>
       </Dialog.Content>
     </Dialog.Portal>
   );
