@@ -1,5 +1,5 @@
 /**
- * This Component handles both inputs and textareas
+ * This File handles both inputs and textareas
  */
 
 import { ChevronRightIcon } from '../../icons';

@@ -1,9 +1,13 @@
+import { useState } from 'react';
+import DateInput, { Value } from '../../components/common/DateInput';
 import Input from '../../components/common/Input';
 import MyTabs from '../../components/common/MyTabs';
 import { EditIcon, TrashIcon } from '../../icons';
 import classNames from '../../utils/classNames';
 
 const ClientJournal = ({ expanded = false }: { expanded?: boolean }) => {
+  const [dateOfBirth, setDateOfBirth] = useState<Value>(new Date());
+
   return (
     <div className='mt-5'>
       <MyTabs defaultValue='story'>
@@ -173,7 +177,11 @@ const ClientJournal = ({ expanded = false }: { expanded?: boolean }) => {
                 )}
               >
                 <div className='w-full'>
-                  <Input label='Date of birth' type='date' value='1989-12-05' />
+                  <DateInput
+                    label='Date of birth'
+                    value={dateOfBirth}
+                    onChange={(value) => setDateOfBirth(value)}
+                  />
                 </div>
                 <div className='w-full'>
                   <Input label='Location' value='Hampshire' />
