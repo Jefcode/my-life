@@ -1,17 +1,6 @@
-import { useMemo, useState } from 'react';
-import {
-  add,
-  eachDayOfInterval,
-  endOfMonth,
-  format,
-  isEqual,
-  isSameDay,
-  parse,
-  parseISO,
-  startOfToday,
-} from 'date-fns';
+import { useMemo } from 'react';
+import { format, isEqual, isSameDay, parseISO } from 'date-fns';
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Button from '../../components/common/Button';
@@ -33,27 +22,18 @@ import AppointmentsChart from './AppointmentsChart';
 import Modal from '../../components/common/Modal';
 import MyAvaliblityModal from '../../components/modals/MyAvaliblityModal';
 import classNames from '../../utils/classNames';
+import useCalendar from '../../hooks/useCalendar';
 
 const AppointmentsPage = () => {
-  const today = startOfToday();
-  const [selectedDay, setSelectedDay] = useState(today);
-  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
-  const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
-
-  const days = eachDayOfInterval({
-    start: firstDayCurrentMonth,
-    end: endOfMonth(firstDayCurrentMonth),
-  });
-
-  function previousMonth() {
-    const firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-  }
-
-  function nextMonth() {
-    const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-  }
+  const {
+    today,
+    selectedDay,
+    daysOfTheMonth,
+    setSelectedDay,
+    nextMonth,
+    previousMonth,
+    getCurrentMonthAndYear,
+  } = useCalendar();
 
   const selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
@@ -110,7 +90,7 @@ const AppointmentsPage = () => {
               <ChevronLeftIcon className='w-4 h-4 text-primary' />
             </button>
             <span className='text-stone-800 uppercase text-lg'>
-              {format(firstDayCurrentMonth, 'MMMM yyyy')}
+              {getCurrentMonthAndYear()}
             </span>
             <button onClick={nextMonth}>
               <ChevronRightIcon className='w-4 h-4 text-primary' />
@@ -142,7 +122,7 @@ const AppointmentsPage = () => {
               slidesPerView={4}
               className='py-2 pr-12'
             >
-              {days.map((day, idx) => (
+              {daysOfTheMonth.map((day, idx) => (
                 <SwiperSlide key={idx}>
                   <div
                     className={classNames(

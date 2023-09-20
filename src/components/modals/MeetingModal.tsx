@@ -1,6 +1,5 @@
-import { format, parseISO, getDay } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import Button from '../common/Button';
-import { daysOfTheWeek } from '../calendar/Calendar';
 import type { Meeting } from '../../data/meetings';
 import { CalendarIcon, ClockIcon, UsersIcon } from '../../icons';
 
@@ -43,8 +42,7 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
         <div className='flex items-center gap-3'>
           <CalendarIcon className='text-primary w-6 h-6' />
           <span className='text-stone-500'>
-            {format(parseISO(meeting.startDatetime), 'MMMM d')},{' '}
-            {daysOfTheWeek[getDay(parseISO(meeting.startDatetime))]}
+            {format(parseISO(meeting.startDatetime), 'MMMM d, EEEE')}
           </span>
         </div>
         <div className='w-0.5 ml-2.5 h-10 bg-stone-300'></div>

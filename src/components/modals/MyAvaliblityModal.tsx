@@ -5,7 +5,16 @@ import Checkbox from '../common/Checkbox';
 import Button from '../common/Button';
 import { useMemo, useState } from 'react';
 import { generateRandomString } from '../../utils';
-import { daysOfTheWeek } from '../calendar/Calendar';
+
+const daysOfTheWeek = [
+  'Sunday',
+  'Monday',
+  'Thuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 
 const MyAvaliblityModal = () => {
   return (

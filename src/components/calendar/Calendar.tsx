@@ -1,44 +1,30 @@
 import {
-  add,
-  eachDayOfInterval,
-  endOfMonth,
   format,
   getDay,
   isEqual,
   isSameDay,
   isSameMonth,
   isToday,
-  parse,
   parseISO,
-  startOfToday,
 } from 'date-fns';
-import { useState } from 'react';
 
 import classNames from '../../utils/classNames';
 import meetings from '../../data/meetings';
 import MeetingItem from './MeetingItem';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../icons';
+import useCalendar from '../../hooks/useCalendar';
 
 export default function Calendar() {
-  const today = startOfToday();
-  const [selectedDay, setSelectedDay] = useState(today);
-  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
-  const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
-
-  const days = eachDayOfInterval({
-    start: firstDayCurrentMonth,
-    end: endOfMonth(firstDayCurrentMonth),
-  });
-
-  function previousMonth() {
-    const firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-  }
-
-  function nextMonth() {
-    const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-  }
+  const {
+    today,
+    selectedDay,
+    firstDayCurrentMonth,
+    daysOfTheMonth,
+    setSelectedDay,
+    nextMonth,
+    previousMonth,
+    getCurrentMonthAndYear,
+  } = useCalendar();
 
   const selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
@@ -58,7 +44,7 @@ export default function Calendar() {
               <ChevronLeftIcon className='w-4 h-4' aria-hidden='true' />
             </button>
             <h2 className='text-gray-900 uppercase text-lg'>
-              {format(firstDayCurrentMonth, 'MMMM yyyy')}
+              {getCurrentMonthAndYear()}
             </h2>
             <button
               onClick={nextMonth}
@@ -70,7 +56,7 @@ export default function Calendar() {
             </button>
           </div>
           <div className='text-center text-gray-400 font-light text-sm'>
-            {format(today, 'MMMM d')}, {daysOfTheWeek[getDay(today)]}
+            {format(today, 'MMMM d, EEEE')}
           </div>
 
           <div className='grid grid-cols-7 mt-10 text-sm sm:text-lg leading-6 text-center text-primary'>
@@ -83,7 +69,7 @@ export default function Calendar() {
             <div>S</div>
           </div>
           <div className='grid grid-cols-7 mt-2 text-sm sm:text-lg'>
-            {days.map((day, dayIdx) => (
+            {daysOfTheMonth.map((day, dayIdx) => (
               <div
                 key={day.toString()}
                 className={classNames(
@@ -168,18 +154,6 @@ export default function Calendar() {
     </div>
   );
 }
-
-export const daysOfTheWeek = [
-  'Sunday',
-  'Monday',
-  'Thuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
-
-export const daysOfTheWeekShort = ['Sun', 'Mon'];
 
 const colStartClasses = [
   '',
