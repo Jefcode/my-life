@@ -17,6 +17,8 @@ import {
   PhoneIcon,
   WalletIcon,
 } from '../../icons';
+import Modal from '../../components/common/Modal';
+import EditInformationModal from './components/EditInformationModal';
 
 const MyProfilePage = () => {
   return (
@@ -206,7 +208,16 @@ const MyProfilePage = () => {
       <Panel>
         <Panel.Header>
           <PanelHeading icon={JournalIcon} title='My Information' />
-          <Button>Edit Information</Button>
+
+          <Modal>
+            <Modal.Button asChild>
+              <Button>Edit Information</Button>
+            </Modal.Button>
+            <Modal.Content size='lg'>
+              <Modal.Header title='General Infomration' icon={JournalIcon} />
+              <EditInformationModal />
+            </Modal.Content>
+          </Modal>
         </Panel.Header>
 
         <div className='mt-3'>

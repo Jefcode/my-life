@@ -123,7 +123,7 @@ export const NumberInput = ({
       </label>
 
       {/* Currency */}
-      <div className='absolute top-1/2 -translate-y-1/2 left-6 text-stone-800'>
+      <div className='absolute top-1/2 -translate-y-1/2 left-6 text-stone-800 peer-placeholder-shown:hidden'>
         {currency}
       </div>
 
