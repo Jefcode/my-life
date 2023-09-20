@@ -12,9 +12,9 @@ const EditInformationModal = () => {
         <Input label='Phone number' />
         <Input label='Email' />
         <NumberInput label='Years Experience' />
-        <NumberInput label='Hour appointment' currency='£' />
-        <NumberInput label='Hour speak now' currency='£' />
-        <NumberInput label='Hourly rate' currency='£' />
+        <NumberInput label='Hour appointment' currency />
+        <NumberInput label='Hour speak now' currency />
+        <NumberInput label='Hourly rate' currency />
         <Input label='Country of Residence' />
         <Input label='Address' />
         <SelectInput

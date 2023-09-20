@@ -109,11 +109,11 @@ const EditProfilePage = () => {
             </div>
 
             <div className='flex flex-col items-stretch justify-center'>
-              <NumberInput value={70} currency='£' label='Hour appointment' />
+              <NumberInput value={70} currency label='Hour appointment' />
             </div>
 
             <div className='flex flex-col items-stretch justify-center'>
-              <NumberInput value={70} currency='£' label='Hour speak now' />
+              <NumberInput value={70} currency label='Hour speak now' />
             </div>
 
             <div className='flex flex-col items-stretch justify-center'>

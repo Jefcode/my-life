@@ -6,15 +6,16 @@ import Panel from '../../components/common/Panel';
 import PanelHeading from '../../components/common/PanelHeading';
 
 import MyTabs from '../../components/common/MyTabs';
-import Row from '../../components/common/Row';
-import Input from '../../components/common/Input';
+import Input, { NumberInput } from '../../components/common/Input';
 import {
   ChevronRightIcon,
+  ClipIcon,
   FilterActiveIcon,
   JournalIcon,
   MailIcon,
   MediaIcon,
   PhoneIcon,
+  TrashAltIcon,
   WalletIcon,
 } from '../../icons';
 import Modal from '../../components/common/Modal';
@@ -234,30 +235,123 @@ const MyProfilePage = () => {
             <div className='mt-8 min-h-[300px]'>
               <MyTabs.Content value='general-info'>
                 {/* Inputs Flex Container */}
-                <Row>
-                  <div className='w-full sm:w-1/2 md:w-1/3 px-4'>
-                    <Input label='Firstname' />
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-8'>
+                  <Input label='Firstname' />
+                  <Input label='Lastname' />
+                  <Input label='Phone Number' />
+                  <Input type='email' label='Email' />
+                  <NumberInput label='Years experience' />
+                  <NumberInput label='Hour appointment' currency />
+                </div>
+              </MyTabs.Content>
+              <MyTabs.Content value='personal-info'></MyTabs.Content>
+              <MyTabs.Content value='qualifications'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-8'>
+                  <div>
+                    <Input label='GCM Specialist Register' />
                   </div>
-                  <div className='w-full sm:w-1/2 md:w-1/3 px-4'>
-                    <Input label='Lastname' />
+
+                  {/* Group Input */}
+                  <div className='relative'>
+                    <div className='flex flex-col rounded-xl border border-stone-300 p-4 relative'>
+                      {/* Input */}
+                      <input
+                        type='text'
+                        className='w-full outline-none placeholder:font-light peer'
+                        placeholder=' '
+                      />
+
+                      {/* Label */}
+                      <label className='absolute peer-placeholder-shown:top-7 -top-0.5 peer-focus:-top-0.5 transition-all duration-300 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500 whitespace-nowrap pointer-events-none'>
+                        License title
+                      </label>
+
+                      {/* Divider */}
+                      <div className='border-b border-stone-300 my-4'></div>
+
+                      {/* document container */}
+                      <div className='flex items-center justify-between flex-wrap gap-3'>
+                        <div className='flex items-center flex-wrap gap-3'>
+                          <button className='w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition active:scale-90 text-stone-800'>
+                            <ClipIcon className='w-4 h-4' />
+                          </button>
+
+                          <div className='flex items-center gap-2'>
+                            <img
+                              src='/imgs/pdf.svg'
+                              alt='pdf icon'
+                              className='w-7'
+                            />
+                            <div className='flex flex-col justify-center'>
+                              <p className='text-slate-800 font-medium leading-none'>
+                                GCM Document.pdf
+                              </p>
+                              <span className='text-sm text-stone-400'>
+                                200KB
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Trash icon */}
+                        <button className='w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition active:scale-90 text-stone-800'>
+                          <TrashAltIcon className='w-4 h-4' />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div className='w-full md:w-1/3 px-4'>
-                    <Input label='Phone Number' />
+
+                  <div className='relative'>
+                    <div className='flex flex-col rounded-xl border border-stone-300 p-4 relative'>
+                      {/* Input */}
+                      <input
+                        type='text'
+                        className='w-full outline-none placeholder:font-light peer'
+                        placeholder=' '
+                      />
+
+                      {/* Label */}
+                      <label className='absolute peer-placeholder-shown:top-7 -top-0.5 peer-focus:-top-0.5 transition-all duration-300 left-2 -translate-y-1/2 bg-white px-3 py-0.5 text-stone-500 whitespace-nowrap pointer-events-none'>
+                        License title
+                      </label>
+
+                      {/* Divider */}
+                      <div className='border-b border-stone-300 my-4'></div>
+
+                      {/* document container */}
+                      <div className='flex items-center justify-between flex-wrap gap-3'>
+                        <div className='flex items-center flex-wrap gap-3'>
+                          <button className='w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition active:scale-90 text-stone-800'>
+                            <ClipIcon className='w-4 h-4' />
+                          </button>
+
+                          <div className='flex items-center gap-2'>
+                            <img
+                              src='/imgs/pdf.svg'
+                              alt='pdf icon'
+                              className='w-7'
+                            />
+                            <div className='flex flex-col justify-center'>
+                              <p className='text-slate-800 font-medium leading-none'>
+                                GCM Document.pdf
+                              </p>
+                              <span className='text-sm text-stone-400'>
+                                200KB
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Trash icon */}
+                        <button className='w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition active:scale-90 text-stone-800'>
+                          <TrashAltIcon className='w-4 h-4' />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div className='w-full md:w-1/3 px-4'>
-                    <Input type='email' label='Email' />
-                  </div>
-                  <div className='w-full md:w-1/3 px-4'>
-                    <Input label='Years experience' />
-                  </div>
-                  <div className='w-full md:w-1/3 px-4'>
-                    <Input label='Hour appointment' />
-                  </div>
-                </Row>
+                </div>
               </MyTabs.Content>
             </div>
-            <MyTabs.Content value='personal-info'></MyTabs.Content>
-            <MyTabs.Content value='qualifications'></MyTabs.Content>
           </MyTabs>
         </div>
       </Panel>

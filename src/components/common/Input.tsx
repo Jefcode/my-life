@@ -81,7 +81,7 @@ export const Textarea = ({
 type NumberInputProps = Omit<SharedProps, 'onChange' | 'value'> & {
   onChange?: React.Dispatch<React.SetStateAction<number>>;
   value?: number;
-  currency?: string;
+  currency?: boolean;
 };
 
 export const NumberInput = ({
@@ -91,7 +91,7 @@ export const NumberInput = ({
   value,
   onChange,
   className = '',
-  currency,
+  currency = false,
 }: NumberInputProps) => {
   const handleIncrease = () => {
     onChange?.((val) => val + 1 ?? 1);
@@ -123,10 +123,11 @@ export const NumberInput = ({
       </label>
 
       {/* Currency */}
-      <div className='absolute top-1/2 -translate-y-1/2 left-6 text-stone-800 peer-placeholder-shown:hidden'>
-        {currency}
-      </div>
-
+      {currency && (
+        <div className='block absolute top-1/2 -translate-y-1/2 left-6 text-stone-800 peer-placeholder-shown:hidden peer-focus:block'>
+          £
+        </div>
+      )}
       {/* Arrow Buttons */}
       <div className='absolute top-1/2 -translate-y-1/2 right-4 flex flex-col gap-0.5'>
         {/* Top Chevron => increase */}
