@@ -7,11 +7,13 @@ import Input from '../../../components/common/Input';
 import Button from '../../../components/common/Button';
 import {
   ArticleIcon,
-  HubIcon,
+  HubActiveIcon,
   PodcastIcon,
   VideoActiveIcon,
 } from '../../../icons';
 import Checkbox from '../../../components/common/Checkbox';
+import UploadThumbnailDropzone from './UploadThumbnailDropzone';
+import SelectInput from '../../../components/common/SelectInput';
 
 const STEPS = 3;
 
@@ -53,7 +55,7 @@ const CreateMediaModal = () => {
       <Modal.Header
         className='text-stone-800 mb-5'
         title={title}
-        icon={HubIcon}
+        icon={HubActiveIcon}
       />
 
       {/* STEPS */}
@@ -149,6 +151,32 @@ const CreateMediaModal = () => {
               </Button>
             </div>
           </form>
+        </div>
+      )}
+
+      {step === 2 && (
+        <div className='mt-8'>
+          <UploadThumbnailDropzone />
+          <p className='text-stone-400 mt-4 font-light text-sm'>
+            png, jpeg, gif files up to 8mb, Recommended size is 350x150px.
+          </p>
+
+          {/* Divider */}
+          <div className='border-b border-stone-200 w-full my-8'></div>
+
+          <SelectInput
+            label='Category'
+            options={[
+              { value: 'drugs', label: 'Drugs' },
+              { value: 'alcohol', label: 'Alcohol' },
+              { value: 'gambling', label: 'Gambling' },
+            ]}
+          />
+
+          <div className='flex items-center gap-4 justify-end mt-10'>
+            <Button variant='tertiary'>Save as draft</Button>
+            <Button variant='primary'>Publish</Button>
+          </div>
         </div>
       )}
     </Modal.Content>
