@@ -1,18 +1,19 @@
 import { format, parseISO } from 'date-fns';
-import Button from '../../../components/ui/Button';
-import type { Meeting } from '../../../data/meetings';
-import { CalendarIcon, ClockIcon, UsersIcon } from '../../../assets/icons';
 
-interface MeetingModalProps {
-  meeting: Meeting;
+import Button from '../../../components/ui/Button';
+import { CalendarIcon, ClockIcon, UsersIcon } from '../../../assets/icons';
+import type { IAppointment } from '../../../data/appointments';
+
+interface AppointmentModalProps {
+  appointment: IAppointment;
 }
 
-const MeetingModal = ({ meeting }: MeetingModalProps) => {
+const AppointmentModal = ({ appointment }: AppointmentModalProps) => {
   return (
     <>
       <div className='flex flex-col sm:flex-row items-center gap-5 mb-8'>
         <img
-          src={meeting.imageUrl}
+          src={appointment.imageUrl}
           alt='User Image'
           className='w-20 h-20 rounded-full object-cover'
         />
@@ -20,7 +21,7 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
         <div className='flex flex-col sm:w-full text-center sm:text-left'>
           <span className='text-neutral-500'>Meeting with</span>
           <p className='text-xl mb-1 font-semibold text-stone-800'>
-            {meeting.name}
+            {appointment.name}
           </p>
           <div className='text-primary'>Drugs</div>
         </div>
@@ -28,7 +29,7 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
 
       {/* Description */}
       <div className='text-stone-500 mb-10'>
-        {meeting.description}{' '}
+        {appointment.description}{' '}
         <a
           href=''
           className='text-primary inline-block border-b border-primary transition hover:text-red-700 hover:border-red-700'
@@ -42,15 +43,15 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
         <div className='flex items-center gap-3'>
           <CalendarIcon className='text-primary w-6 h-6' />
           <span className='text-stone-500'>
-            {format(parseISO(meeting.startDatetime), 'MMMM d, EEEE')}
+            {format(parseISO(appointment.startDatetime), 'MMMM d, EEEE')}
           </span>
         </div>
         <div className='w-0.5 ml-2.5 h-10 bg-stone-300'></div>
         <div className='flex items-center gap-3'>
           <ClockIcon className='text-primary w-6 h-6' />
           <span className='text-stone-500'>
-            {format(parseISO(meeting.startDatetime), 'hh:mm')} -{' '}
-            {format(parseISO(meeting.endDatetime), 'hh:mm')}
+            {format(parseISO(appointment.startDatetime), 'hh:mm')} -{' '}
+            {format(parseISO(appointment.endDatetime), 'hh:mm')}
           </span>
         </div>
         <div className='w-0.5 ml-2.5 h-10 bg-stone-300'></div>
@@ -83,4 +84,4 @@ const MeetingModal = ({ meeting }: MeetingModalProps) => {
   );
 };
 
-export default MeetingModal;
+export default AppointmentModal;

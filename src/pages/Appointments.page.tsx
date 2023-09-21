@@ -7,7 +7,7 @@ import Button from '../components/ui/Button';
 import PageTitle from '../components/ui/PageTitle';
 import Panel from '../components/ui/Panel';
 import PanelHeading from '../components/ui/PanelHeading';
-import meetings from '../data/meetings';
+import appointments from '../data/appointments';
 import {
   CheckRawIcon,
   ChevronLeftIcon,
@@ -16,7 +16,7 @@ import {
   FilterActiveIcon,
   VideoActiveIcon,
 } from '../assets/icons';
-import MeetingItem from '../features/appointments/components/calendar/MeetingItem';
+import AppointmentItem from '../features/appointments/components/calendar/AppointmentItem';
 import Schadule from '../features/appointments/components/Schadule';
 import AppointmentsChart from '../features/appointments/components/AppointmentsChart';
 import Modal from '../components/ui/Modal';
@@ -35,12 +35,12 @@ const AppointmentsPage = () => {
     getCurrentMonthAndYear,
   } = useCalendar();
 
-  const selectedDayMeetings = meetings.filter((meeting) =>
+  const selectedDayMeetings = appointments.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
   );
 
   const todaysMeetings = useMemo(() => {
-    return meetings.filter((meeting) =>
+    return appointments.filter((meeting) =>
       isSameDay(parseISO(meeting.startDatetime), today)
     );
   }, [today]);
@@ -153,7 +153,7 @@ const AppointmentsPage = () => {
                     </span>
 
                     {/* Red dot indicator */}
-                    {meetings.some((meeting) =>
+                    {appointments.some((meeting) =>
                       isSameDay(parseISO(meeting.startDatetime), day)
                     ) && (
                       <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white'></div>
@@ -165,7 +165,10 @@ const AppointmentsPage = () => {
           </div>
 
           {/* Schadule */}
-          <Schadule selectedDay={selectedDay} meetings={selectedDayMeetings} />
+          <Schadule
+            selectedDay={selectedDay}
+            appointments={selectedDayMeetings}
+          />
         </div>
 
         {/* Today's meetings/Appointments stats */}
@@ -180,7 +183,7 @@ const AppointmentsPage = () => {
               <div className='mt-4 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-track-stone-100 scrollbar-thumb-stone-200'>
                 <ul className='flex flex-col gap-5'>
                   {todaysMeetings.map((meeting) => (
-                    <MeetingItem key={meeting.id} meeting={meeting} />
+                    <AppointmentItem key={meeting.id} appointment={meeting} />
                   ))}
                 </ul>
 

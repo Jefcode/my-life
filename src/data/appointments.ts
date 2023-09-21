@@ -1,4 +1,4 @@
-export interface Meeting {
+export interface IAppointment {
   id: number;
   name: string;
   imageUrl: string;
@@ -8,7 +8,7 @@ export interface Meeting {
   done: boolean;
 }
 
-const meetings: Meeting[] = [
+const appointments: IAppointment[] = [
   {
     id: 1,
     name: 'Leslie Alexander',
@@ -71,4 +71,4 @@ const meetings: Meeting[] = [
   },
 ];
 
-export default meetings;
+export default appointments;

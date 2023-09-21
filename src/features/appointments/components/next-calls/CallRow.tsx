@@ -1,9 +1,9 @@
 import { format, parseISO } from 'date-fns';
 
 import Button from '../../../../components/ui/Button';
-import { Meeting } from '../../../../data/meetings';
+import { Meeting } from '../../../../data/appointments';
 import Modal from '../../../../components/ui/Modal';
-import MeetingModal from '../MeetingModal';
+import AppointmentModal from '../AppointmentModal';
 import Table from '../../../../components/ui/Table';
 
 interface CallRowProps {
@@ -49,7 +49,7 @@ const CallRow = ({ meeting }: CallRowProps) => {
           </Modal.Button>
 
           <Modal.Content>
-            <MeetingModal meeting={meeting} />
+            <AppointmentModal appointment={meeting} />
           </Modal.Content>
         </Modal>
       </Table.BodyColumn>

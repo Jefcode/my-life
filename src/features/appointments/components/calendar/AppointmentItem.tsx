@@ -1,44 +1,44 @@
 import { format, parseISO } from 'date-fns';
 
-import MeetingModal from '../MeetingModal';
+import AppointmentModal from '../AppointmentModal';
 import Button from '../../../../components/ui/Button';
 import Modal from '../../../../components/ui/Modal';
-import { Meeting } from '../../../../data/meetings';
 import { CheckIcon, ClockIcon } from '../../../../assets/icons';
+import type { IAppointment } from '../../../../data/appointments';
 
-interface MeetingItemProps {
-  meeting: Meeting;
+interface AppointmentItemProps {
+  appointment: IAppointment;
 }
 
-const MeetingItem = ({ meeting }: MeetingItemProps) => {
+const AppointmentItem = ({ appointment }: AppointmentItemProps) => {
   return (
     <li className='p-5 border border-stone-100 rounded-lg'>
       {/* Flex Container */}
       <div className='flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0'>
         <img
-          src={meeting.imageUrl}
+          src={appointment.imageUrl}
           alt='User Image'
           className='hidden sm:block rounded-full w-14 h-14 object-cover mr-5'
         />
         <div className='flex flex-col'>
           <span
             className={`${
-              meeting.done ? 'text-green-500' : 'text-primary'
+              appointment.done ? 'text-green-500' : 'text-primary'
             } flex items-center gap-2`}
           >
-            {meeting.done ? (
+            {appointment.done ? (
               <CheckIcon className='w-4 h-4' />
             ) : (
               <ClockIcon className='w-4 h-4' />
             )}
             <span
-              className={`${meeting.done && 'text-slate-400 line-through'}`}
+              className={`${appointment.done && 'text-slate-400 line-through'}`}
             >
-              {format(parseISO(meeting.startDatetime), 'HH:mm')} -{' '}
-              {format(parseISO(meeting.endDatetime), 'HH:mm')}
+              {format(parseISO(appointment.startDatetime), 'HH:mm')} -{' '}
+              {format(parseISO(appointment.endDatetime), 'HH:mm')}
             </span>
           </span>
-          <p className='font-semibold text-xl'>{meeting.name}</p>
+          <p className='font-semibold text-xl'>{appointment.name}</p>
         </div>
 
         {/* Button */}
@@ -48,14 +48,14 @@ const MeetingItem = ({ meeting }: MeetingItemProps) => {
             <Button
               className='sm:ml-auto'
               variant='primary'
-              disabled={meeting.done}
+              disabled={appointment.done}
             >
               Join Call
             </Button>
           </Modal.Button>
 
           <Modal.Content>
-            <MeetingModal meeting={meeting} />
+            <AppointmentModal appointment={appointment} />
           </Modal.Content>
         </Modal>
       </div>
@@ -63,4 +63,4 @@ const MeetingItem = ({ meeting }: MeetingItemProps) => {
   );
 };
 
-export default MeetingItem;
+export default AppointmentItem;

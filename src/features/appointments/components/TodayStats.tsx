@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import meetings from '../../../data/meetings';
+import appointments from '../../../data/appointments';
 import {
   add,
   format,
@@ -15,13 +15,13 @@ const TodayStats = () => {
   const tomarrow = add(today, { days: 1 });
 
   const todaysMeetings = useMemo(() => {
-    return meetings.filter((meeting) =>
+    return appointments.filter((meeting) =>
       isToday(parseISO(meeting.startDatetime))
     ).length;
   }, []);
 
   const tomarrowsMeetings = useMemo(() => {
-    return meetings.filter((meeting) =>
+    return appointments.filter((meeting) =>
       isSameDay(parseISO(meeting.startDatetime), tomarrow)
     ).length;
   }, [tomarrow]);

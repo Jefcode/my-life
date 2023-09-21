@@ -1,16 +1,16 @@
 import { useMemo } from 'react';
 import { ClockIcon } from '../../../assets/icons';
 import EditButton from '../../../components/ui/EditButton';
-import { Meeting } from '../../../data/meetings';
 import { differenceInMinutes, format, getHours, getMinutes } from 'date-fns';
+import { IAppointment } from '../../../data/appointments';
 
 const blockSizeInPixels = 60;
 
 const Schadule = ({
-  meetings,
+  appointments,
   selectedDay,
 }: {
-  meetings: Meeting[];
+  appointments: IAppointment[];
   selectedDay: Date;
 }) => {
   const meetingTimeBlocks = useMemo(() => {
@@ -24,7 +24,7 @@ const Schadule = ({
       top: number;
     }[] = [];
 
-    meetings.forEach((meeting, idx) => {
+    appointments.forEach((meeting, idx) => {
       const startDateTime = new Date(meeting.startDatetime);
       const endDateTime = new Date(meeting.endDatetime);
 
@@ -41,7 +41,7 @@ const Schadule = ({
     });
 
     return data;
-  }, [meetings]);
+  }, [appointments]);
 
   const hoursOfTheDay = useMemo(() => {
     const hrs: string[] = [];

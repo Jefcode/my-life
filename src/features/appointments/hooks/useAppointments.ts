@@ -1,16 +1,16 @@
 import { useMemo } from 'react';
 import { parseISO } from 'date-fns';
 
-import meetings from '../../../data/meetings';
+import appointments from '../../../data/appointments';
 
 export default function useAppointments() {
-  const nextMeetings = useMemo(() => {
-    return meetings.filter(
-      (meeting) =>
-        parseISO(meeting.startDatetime) > parseISO(new Date().toISOString()) &&
-        meeting.done !== true
+  const nextAppointments = useMemo(() => {
+    return appointments.filter(
+      (appointment) =>
+        parseISO(appointment.startDatetime) >
+          parseISO(new Date().toISOString()) && appointment.done !== true
     );
   }, []);
 
-  return { nextMeetings };
+  return { nextMeetings: nextAppointments };
 }

@@ -9,10 +9,10 @@ import {
 } from 'date-fns';
 
 import classNames from '../../../../utils/classNames';
-import meetings from '../../../../data/meetings';
-import MeetingItem from './MeetingItem';
+import AppointmentItem from './AppointmentItem';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../../../assets/icons';
 import useCalendar from '../../hooks/useCalendar';
+import appointments from '../../../../data/appointments';
 
 export default function Calendar() {
   const {
@@ -26,7 +26,7 @@ export default function Calendar() {
     getCurrentMonthAndYear,
   } = useCalendar();
 
-  const selectedDayMeetings = meetings.filter((meeting) =>
+  const selectedDayMeetings = appointments.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
   );
 
@@ -113,7 +113,7 @@ export default function Calendar() {
                   </time>
 
                   <div className='flex items-center gap-0.5 justify-center mx-auto'>
-                    {meetings
+                    {appointments
                       .filter((meeting) =>
                         isSameDay(parseISO(meeting.startDatetime), day)
                       )
@@ -141,7 +141,7 @@ export default function Calendar() {
         {/* Meetings List */}
         <ul className='flex flex-col gap-5'>
           {selectedDayMeetings.map((meeting) => (
-            <MeetingItem key={meeting.id} meeting={meeting} />
+            <AppointmentItem key={meeting.id} appointment={meeting} />
           ))}
         </ul>
 
