@@ -1,8 +1,8 @@
-import Button from '../../components/ui/Button';
-import Panel from '../../components/ui/Panel';
-import Calendar from './components/calendar/Calendar';
-import { CalendarActiveIcon } from '../../assets/icons';
-import PanelHeading from '../../components/ui/PanelHeading';
+import Button from '../../../components/ui/Button';
+import Panel from '../../../components/ui/Panel';
+import Calendar from './calendar/Calendar';
+import { CalendarActiveIcon } from '../../../assets/icons';
+import PanelHeading from '../../../components/ui/PanelHeading';
 
 const Appointments = () => {
   return (

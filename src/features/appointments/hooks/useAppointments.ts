@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { parseISO } from 'date-fns';
+import { useCallback, useMemo } from 'react';
+import { isSameDay, parseISO } from 'date-fns';
 
 import appointments from '../../../data/appointments';
 
@@ -12,5 +12,11 @@ export default function useAppointments() {
     );
   }, []);
 
-  return { nextMeetings: nextAppointments };
+  const getAppoinmentsForDate = useCallback((date: Date) => {
+    return appointments.filter((meeting) =>
+      isSameDay(parseISO(meeting.startDatetime), date)
+    );
+  }, []);
+
+  return { appointments, nextAppointments, getAppoinmentsForDate };
 }

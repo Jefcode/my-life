@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   format,
   getDay,
@@ -8,11 +9,11 @@ import {
   parseISO,
 } from 'date-fns';
 
-import classNames from '../../../../utils/classNames';
-import AppointmentItem from './AppointmentItem';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../../../assets/icons';
+import classNames from '../../../../utils/classNames';
 import useCalendar from '../../hooks/useCalendar';
-import appointments from '../../../../data/appointments';
+import useAppointments from '../../hooks/useAppointments';
+import AppointmentsList from './AppointmentsList';
 
 export default function Calendar() {
   const {
@@ -26,8 +27,11 @@ export default function Calendar() {
     getCurrentMonthAndYear,
   } = useCalendar();
 
-  const selectedDayMeetings = appointments.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  const { appointments, getAppoinmentsForDate } = useAppointments();
+
+  const selectedDayAppointments = useMemo(
+    () => getAppoinmentsForDate(selectedDay),
+    [selectedDay, getAppoinmentsForDate]
   );
 
   return (
@@ -136,21 +140,8 @@ export default function Calendar() {
         </div>
       </div>
 
-      {/* Meetings of today */}
-      <div className='w-full mt-5'>
-        {/* Meetings List */}
-        <ul className='flex flex-col gap-5'>
-          {selectedDayMeetings.map((meeting) => (
-            <AppointmentItem key={meeting.id} appointment={meeting} />
-          ))}
-        </ul>
-
-        {selectedDayMeetings.length === 0 && (
-          <p className='py-4 text-stone-600 text-center'>
-            There is no meeting for this day.
-          </p>
-        )}
-      </div>
+      {/* Appointments of today */}
+      <AppointmentsList data={selectedDayAppointments} />
     </div>
   );
 }

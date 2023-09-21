@@ -16,7 +16,7 @@ import {
   FilterActiveIcon,
   VideoActiveIcon,
 } from '../assets/icons';
-import AppointmentItem from '../features/appointments/components/calendar/AppointmentItem';
+import AppointmentsListItem from '../features/appointments/components/calendar/AppointmentsListItem';
 import Schadule from '../features/appointments/components/Schadule';
 import AppointmentsChart from '../features/appointments/components/AppointmentsChart';
 import Modal from '../components/ui/Modal';
@@ -183,7 +183,10 @@ const AppointmentsPage = () => {
               <div className='mt-4 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-track-stone-100 scrollbar-thumb-stone-200'>
                 <ul className='flex flex-col gap-5'>
                   {todaysMeetings.map((meeting) => (
-                    <AppointmentItem key={meeting.id} appointment={meeting} />
+                    <AppointmentsListItem
+                      key={meeting.id}
+                      appointment={meeting}
+                    />
                   ))}
                 </ul>
 

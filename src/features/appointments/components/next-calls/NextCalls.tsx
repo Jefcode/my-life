@@ -7,7 +7,7 @@ import { CameraIcon, FilterActiveIcon } from '../../../../assets/icons';
 import useAppointments from '../../hooks/useAppointments';
 
 const NextCalls = () => {
-  const { nextMeetings } = useAppointments();
+  const { nextAppointments: nextMeetings } = useAppointments();
 
   return (
     <Panel className='card flex-auto'>

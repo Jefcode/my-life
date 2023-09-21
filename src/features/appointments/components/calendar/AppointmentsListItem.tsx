@@ -10,7 +10,7 @@ interface AppointmentItemProps {
   appointment: IAppointment;
 }
 
-const AppointmentItem = ({ appointment }: AppointmentItemProps) => {
+const AppointmentsListItem = ({ appointment }: AppointmentItemProps) => {
   return (
     <li className='p-5 border border-stone-100 rounded-lg'>
       {/* Flex Container */}
@@ -63,4 +63,4 @@ const AppointmentItem = ({ appointment }: AppointmentItemProps) => {
   );
 };
 
-export default AppointmentItem;
+export default AppointmentsListItem;

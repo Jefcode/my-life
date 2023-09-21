@@ -1,5 +1,5 @@
 import PageTitle from '../components/ui/PageTitle';
-import Appointments from '../features/appointments/Appointments';
+import Appointments from '../features/appointments/components/AppointmentsCard';
 import NextCalls from '../features/appointments/components/next-calls/NextCalls';
 import TodayStats from '../features/appointments/components/TodayStats';
 import UserGreeting from '../features/profile/components/UserGreeting';
