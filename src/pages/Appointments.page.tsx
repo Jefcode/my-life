@@ -97,8 +97,8 @@ const AppointmentsPage = () => {
             </button>
           </div>
 
-          {/* Wrapper for the Swiper => width are very necessary */}
-          <div className='mb-5 xl:max-w-[50vw]'>
+          {/* Wrapper for the Swiper => widths are very necessary */}
+          <div className='mb-5 lg:max-w-[70vw] xl:max-w-[50vw]'>
             <Swiper
               initialSlide={today.getDate() - 2}
               spaceBetween={50}
