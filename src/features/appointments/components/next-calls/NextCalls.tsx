@@ -1,61 +1,35 @@
-import { useMemo } from 'react';
-import { parseISO } from 'date-fns';
-
-import meetings from '../../../../data/meetings';
-import Button from '../../../../components/ui/Button';
 import CallRow from './CallRow';
+import Button from '../../../../components/ui/Button';
 import Panel from '../../../../components/ui/Panel';
+import Table from '../../../../components/ui/Table';
+import PanelHeading from '../../../../components/ui/PanelHeading';
 import { CameraIcon, FilterActiveIcon } from '../../../../assets/icons';
+import useAppointments from '../../hooks/useAppointments';
 
 const NextCalls = () => {
-  const nextMeetings = useMemo(() => {
-    return meetings.filter(
-      (meeting) =>
-        parseISO(meeting.startDatetime) > parseISO(new Date().toISOString()) &&
-        meeting.done !== true
-    );
-  }, []);
+  const { nextMeetings } = useAppointments();
 
   return (
     <Panel className='card flex-auto'>
       {/* Panel Name / Filter Flex Container */}
-      <div className='flex items-center flex-wrap gap-2 justify-between'>
-        <div className='flex items-center gap-2'>
-          <CameraIcon />
-          <span className='text-stone-800 font-semibold text-xl'>
-            Next calls
-          </span>
-        </div>
+      <Panel.Header>
+        <PanelHeading title='Next Calls' icon={CameraIcon} />
+        <Button icon={FilterActiveIcon}>Filter</Button>
+      </Panel.Header>
 
-        {/* Filter Button */}
-        <Button>
-          <FilterActiveIcon />
-          <span>Filter</span>
-        </Button>
-      </div>
-
-      {/* Calls Table */}
-      <div className='overflow-y-auto mt-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-neutral-100 overflow-x-auto'>
-        <table className='w-full text-left whitespace-nowrap'>
-          <thead className='text-stone-400 border-b border-stone-200'>
-            <tr>
-              <td className='py-2 pl-2'>Client</td>
-              <td className='py-2'>Date</td>
-              <td className='py-2'>Time</td>
-              <td className='py-2'></td>
-            </tr>
-          </thead>
-          <tbody className='divide-y divide-stone-100'>
-            {/* Table Row => Each Call */}
-            {nextMeetings.map((meeting) => (
-              <CallRow key={meeting.id} meeting={meeting} />
-            ))}
-          </tbody>
-        </table>
-        {nextMeetings.length === 0 && (
-          <div className='w-full p-6 text-center'>No calls ahead!</div>
-        )}
-      </div>
+      <Table>
+        <Table.Head>
+          <Table.HeadColumn>Client</Table.HeadColumn>
+          <Table.HeadColumn>Date</Table.HeadColumn>
+          <Table.HeadColumn>Time</Table.HeadColumn>
+          <Table.HeadColumn></Table.HeadColumn>
+        </Table.Head>
+        <Table.Body>
+          {nextMeetings.map((meeting) => (
+            <CallRow key={meeting.id} meeting={meeting} />
+          ))}
+        </Table.Body>
+      </Table>
     </Panel>
   );
 };

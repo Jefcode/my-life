@@ -4,6 +4,7 @@ import Button from '../../../../components/ui/Button';
 import { Meeting } from '../../../../data/meetings';
 import Modal from '../../../../components/ui/Modal';
 import MeetingModal from '../MeetingModal';
+import Table from '../../../../components/ui/Table';
 
 interface CallRowProps {
   meeting: Meeting;
@@ -11,9 +12,9 @@ interface CallRowProps {
 
 const CallRow = ({ meeting }: CallRowProps) => {
   return (
-    <tr key={meeting.id} className='bg-white hover:bg-stone-50'>
+    <Table.Row key={meeting.id} className='bg-white hover:bg-stone-50'>
       {/* Client */}
-      <td className='py-4 px-2'>
+      <Table.BodyColumn>
         <div className='flex items-center gap-3'>
           <img
             src={meeting.imageUrl}
@@ -27,19 +28,19 @@ const CallRow = ({ meeting }: CallRowProps) => {
             <span className='text-primary'>Drugs</span>
           </div>
         </div>
-      </td>
-      <td className='py-4 px-2'>
+      </Table.BodyColumn>
+      <Table.BodyColumn>
         <span className='text-stone-500'>
           {format(parseISO(meeting.startDatetime), 'MMMM d')}
         </span>
-      </td>
-      <td className='py-4 px-2'>
+      </Table.BodyColumn>
+      <Table.BodyColumn>
         <span className='text-stone-500'>
           {format(parseISO(meeting.startDatetime), 'hh:mm')} -{' '}
           {format(parseISO(meeting.endDatetime), 'hh:mm')}
         </span>
-      </td>
-      <td className='py-4 px-2 pr-2'>
+      </Table.BodyColumn>
+      <Table.BodyColumn>
         <Modal>
           <Modal.Button asChild>
             <Button variant='tertiary' className='ml-auto'>
@@ -51,8 +52,8 @@ const CallRow = ({ meeting }: CallRowProps) => {
             <MeetingModal meeting={meeting} />
           </Modal.Content>
         </Modal>
-      </td>
-    </tr>
+      </Table.BodyColumn>
+    </Table.Row>
   );
 };
 

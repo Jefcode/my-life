@@ -67,7 +67,7 @@ const meetings: Meeting[] = [
 						aliquip`,
     startDatetime: '2023-09-21T17:00',
     endDatetime: '2023-09-21T19:30',
-    done: true,
+    done: false,
   },
 ];
 
