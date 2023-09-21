@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/common/Button';
-import EditButton from '../../components/common/EditButton';
-import PageTitle from '../../components/common/PageTitle';
-import Panel from '../../components/common/Panel';
-import PanelHeading from '../../components/common/PanelHeading';
+import Button from '../../components/ui/Button';
+import EditButton from '../../components/ui/EditButton';
+import PageTitle from '../../components/ui/PageTitle';
+import Panel from '../../components/ui/Panel';
+import PanelHeading from '../../components/ui/PanelHeading';
 
-import MyTabs from '../../components/common/MyTabs';
-import Input, { NumberInput } from '../../components/common/Input';
+import MyTabs from '../../components/ui/MyTabs';
+import Input, { NumberInput } from '../../components/ui/Input';
 import {
   ChevronRightIcon,
   ClipIcon,
@@ -17,9 +17,9 @@ import {
   PhoneIcon,
   TrashAltIcon,
   WalletIcon,
-} from '../../icons';
-import Modal from '../../components/common/Modal';
-import EditInformationModal from './components/EditInformationModal';
+} from '../../assets/icons';
+import Modal from '../../components/ui/Modal';
+import EditInformationModal from '../../features/profile/components/EditInformationModal';
 
 const MyProfilePage = () => {
   return (

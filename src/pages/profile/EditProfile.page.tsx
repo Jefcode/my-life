@@ -1,11 +1,11 @@
 import Select from 'react-select';
 
-import Button from '../../components/common/Button';
-import Input, { NumberInput, Textarea } from '../../components/common/Input';
-import PageTitle from '../../components/common/PageTitle';
-import Panel from '../../components/common/Panel';
-import PanelHeading from '../../components/common/PanelHeading';
-import { JournalIcon } from '../../icons';
+import Button from '../../components/ui/Button';
+import Input, { NumberInput, Textarea } from '../../components/ui/Input';
+import PageTitle from '../../components/ui/PageTitle';
+import Panel from '../../components/ui/Panel';
+import PanelHeading from '../../components/ui/PanelHeading';
+import { JournalIcon } from '../../assets/icons';
 import classNames from '../../utils/classNames';
 import { useState } from 'react';
 

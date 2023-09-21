@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Layout from './components/layout/Layout';
-import DashboardPage from './pages/dashboard/Dashboard.page';
+import Layout from './components/layouts/Layout';
+import DashboardPage from './pages/Dashboard.page';
 import NotFoundPage from './pages/NotFound.page';
-import VideoCallPage from './pages/dashboard/VideoCall.page';
-import ClientsPage from './pages/clients/Clients.page';
-import ClientDetailPage from './pages/clients/ClientDetail.page';
-import HubLayout from './pages/hub/Hub.layout';
+import VideoCallPage from './pages/VideoCall.page';
+import ClientsPage from './pages/Clients.page';
+import ClientDetailPage from './pages/ClientDetail.page';
+import HubLayout from './components/layouts/Hub.layout';
 import VideosPage from './pages/hub/Videos.page';
 import PodcastsPage from './pages/hub/Podcasts.page';
 import ArticlesPage from './pages/hub/Articles.page';
 import MyProfilePage from './pages/profile/MyProfile.page';
-import SettingsPage from './pages/settings/Settings.page';
+import SettingsPage from './pages/Settings.page';
 import MyPaymentPage from './pages/profile/MyPayment.page';
-import AppointmentsPage from './pages/appointments/Appointments.page';
+import AppointmentsPage from './pages/Appointments.page';
 import MyMediaPage from './pages/profile/MyMedia.page';
 import EditProfilePage from './pages/profile/EditProfile.page';
 

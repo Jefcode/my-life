@@ -1,10 +1,10 @@
-import Button from '../../components/common/Button';
-import PageTitle from '../../components/common/PageTitle';
-import PanelHeading from '../../components/common/PanelHeading';
-import Row from '../../components/common/Row';
+import Button from '../../components/ui/Button';
+import PageTitle from '../../components/ui/PageTitle';
+import PanelHeading from '../../components/ui/PanelHeading';
+import Row from '../../components/ui/Row';
 import videos from '../../data/videos';
-import { FilterActiveIcon, VideoActiveIcon } from '../../icons';
-import Video from '../hub/components/Video';
+import { FilterActiveIcon, VideoActiveIcon } from '../../assets/icons';
+import Video from '../../features/media/components/Video';
 
 const MyMediaPage = () => {
   return (

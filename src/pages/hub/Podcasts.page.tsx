@@ -1,9 +1,9 @@
-import PanelHeading from '../../components/common/PanelHeading';
-import Row from '../../components/common/Row';
-import Podcast from './components/Podcast';
+import PanelHeading from '../../components/ui/PanelHeading';
+import Row from '../../components/ui/Row';
 
 import podcasts from '../../data/podcasts';
-import { PodcastIcon } from '../../icons';
+import { PodcastIcon } from '../../assets/icons';
+import Podcast from '../../features/media/components/Podcast';
 
 const PodcastsPage = () => {
   return (

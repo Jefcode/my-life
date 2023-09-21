@@ -1,9 +1,9 @@
-import PanelHeading from '../../components/common/PanelHeading';
-import Row from '../../components/common/Row';
-import Video from './components/Video';
+import PanelHeading from '../../components/ui/PanelHeading';
+import Row from '../../components/ui/Row';
 
 import videos from '../../data/videos';
-import { VideoActiveIcon } from '../../icons';
+import { VideoActiveIcon } from '../../assets/icons';
+import Video from '../../features/media/components/Video';
 
 const VideosPage = () => {
   return (

@@ -1,9 +1,9 @@
-import PanelHeading from '../../components/common/PanelHeading';
-import Row from '../../components/common/Row';
-import Article from './components/Article';
+import PanelHeading from '../../components/ui/PanelHeading';
+import Row from '../../components/ui/Row';
+import Article from '../../features/media/components/Article';
 
 import articles from '../../data/articles';
-import { ArticleIcon } from '../../icons';
+import { ArticleIcon } from '../../assets/icons';
 
 const ArticlesPage = () => {
   return (

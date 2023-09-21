@@ -1,16 +1,16 @@
-import Button from '../../components/common/Button';
-import Input from '../../components/common/Input';
-import Modal from '../../components/common/Modal';
-import PageTitle from '../../components/common/PageTitle';
-import Panel from '../../components/common/Panel';
-import PanelHeading from '../../components/common/PanelHeading';
-import Table from '../../components/common/Table';
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
+import Modal from '../../components/ui/Modal';
+import PageTitle from '../../components/ui/PageTitle';
+import Panel from '../../components/ui/Panel';
+import PanelHeading from '../../components/ui/PanelHeading';
+import Table from '../../components/ui/Table';
 import {
   BankIcon,
   CheckRawIcon,
   CurrencyIcon,
   FilterActiveIcon,
-} from '../../icons';
+} from '../../assets/icons';
 
 const MyPaymentPage = () => {
   return (
