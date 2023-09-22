@@ -1,6 +1,6 @@
-import { Media } from '../types';
+import { IMedia } from '../types';
 
-const podcasts: Media[] = [
+const podcasts: IMedia[] = [
   {
     title: '7 Ways to Manage Stress',
     image: '/imgs/pod-thumb-1.jpg',

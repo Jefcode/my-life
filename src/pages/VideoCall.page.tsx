@@ -70,14 +70,13 @@ function VideoCallPage() {
                 className='relative z-10 w-full rounded-xl overflow-hidden'
               >
                 {/* Shared Stuff between different stages */}
-                <motion.button
-                  layout
+                <button
                   className='absolute top-5 right-5 bg-black bg-opacity-50 w-8 rounded-lg z-10 p-2 text-stone-200'
                   onClick={() => setFullscreen((val) => !val)}
                 >
                   {!fullscreen && <FullScreenIcon />}
                   {fullscreen && <SmallScreenIcon />}
-                </motion.button>
+                </button>
 
                 <CallWrapper fullscreen={fullscreen}>
                   {/* Calling Stage */}
