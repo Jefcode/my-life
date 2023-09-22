@@ -27,9 +27,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Navigate to='/dashboard' />} />
-
         <Route element={<Layout />}>
+          <Route index element={<Navigate to='/dashboard' replace />} />
           <Route path='/dashboard' element={<DashboardPage />} />
           <Route path='/dashboard/call/:userId' element={<VideoCallPage />} />
 
@@ -39,7 +38,7 @@ function App() {
           <Route path='/appointments' element={<AppointmentsPage />} />
 
           <Route path='/hub' element={<HubLayout />}>
-            <Route path='' element={<Navigate to='videos' />} />
+            <Route index element={<Navigate to='videos' replace />} />
             <Route path='videos' element={<VideosPage />} />
             <Route path='podcasts' element={<PodcastsPage />} />
             <Route path='articles' element={<ArticlesPage />} />

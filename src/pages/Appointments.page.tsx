@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { format, isEqual, isSameDay, parseISO } from 'date-fns';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,13 +15,14 @@ import {
   FilterActiveIcon,
   VideoActiveIcon,
 } from '../assets/icons';
-import AppointmentsListItem from '../features/appointments/components/calendar/AppointmentsListItem';
 import Schadule from '../features/appointments/components/Schadule';
 import AppointmentsChart from '../features/appointments/components/AppointmentsChart';
 import Modal from '../components/ui/Modal';
 import MyAvaliblityModal from '../features/appointments/components/MyAvaliblityModal';
 import classNames from '../utils/classNames';
 import useCalendar from '../features/appointments/hooks/useCalendar';
+import AppointmentsList from '../features/appointments/components/calendar/AppointmentsList';
+import useAppointments from '../features/appointments/hooks/useAppointments';
 
 const AppointmentsPage = () => {
   const {
@@ -35,15 +35,10 @@ const AppointmentsPage = () => {
     getCurrentMonthAndYear,
   } = useCalendar();
 
-  const selectedDayMeetings = appointments.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
-  );
+  const { getAppoinmentsForDate } = useAppointments();
 
-  const todaysMeetings = useMemo(() => {
-    return appointments.filter((meeting) =>
-      isSameDay(parseISO(meeting.startDatetime), today)
-    );
-  }, [today]);
+  const todaysMeetings = getAppoinmentsForDate(today);
+  const selectedDayAppointments = getAppoinmentsForDate(selectedDay);
 
   return (
     <>
@@ -167,7 +162,7 @@ const AppointmentsPage = () => {
           {/* Schadule */}
           <Schadule
             selectedDay={selectedDay}
-            appointments={selectedDayMeetings}
+            appointments={selectedDayAppointments}
           />
         </div>
 
@@ -181,20 +176,7 @@ const AppointmentsPage = () => {
               </Panel.Header>
 
               <div className='mt-4 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-track-stone-100 scrollbar-thumb-stone-200'>
-                <ul className='flex flex-col gap-5'>
-                  {todaysMeetings.map((meeting) => (
-                    <AppointmentsListItem
-                      key={meeting.id}
-                      appointment={meeting}
-                    />
-                  ))}
-                </ul>
-
-                {todaysMeetings.length === 0 && (
-                  <p className='py-4 text-stone-600 text-center'>
-                    There is no meeting for today.
-                  </p>
-                )}
+                <AppointmentsList data={todaysMeetings} />
               </div>
             </Panel>
 

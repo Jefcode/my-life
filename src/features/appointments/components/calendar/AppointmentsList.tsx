@@ -3,7 +3,7 @@ import AppointmentsListItem from './AppointmentsListItem';
 
 const AppointmentsList = ({ data }: { data: IAppointment[] }) => {
   return (
-    <div className='w-full mt-5'>
+    <div className='w-full'>
       {/* Meetings List */}
       <ul className='flex flex-col gap-5'>
         {data.map((meeting) => (
