@@ -40,7 +40,7 @@ const LoginPage = () => {
           <div className='h-full w-full flex items-center gap-5'>
             {/* Content half */}
             <div className='w-full md:w-1/2'>
-              <div className='max-w-md mx-auto'>
+              <div className='max-w-md mx-auto md:mx-0'>
                 {/* Title */}
                 <div className='mb-6 space-y-2'>
                   <h1 className='text-4xl font-bold tracking-tighter'>
