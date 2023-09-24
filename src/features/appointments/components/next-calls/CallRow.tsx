@@ -1,29 +1,29 @@
 import { format, parseISO } from 'date-fns';
 
 import Button from '../../../../components/ui/Button';
-import { Meeting } from '../../../../data/appointments';
 import Modal from '../../../../components/ui/Modal';
 import AppointmentModal from '../AppointmentModal';
 import Table from '../../../../components/ui/Table';
+import { IAppointment } from '../../../../data/appointments';
 
 interface CallRowProps {
-  meeting: Meeting;
+  appointment: IAppointment;
 }
 
-const CallRow = ({ meeting }: CallRowProps) => {
+const CallRow = ({ appointment }: CallRowProps) => {
   return (
-    <Table.Row key={meeting.id} className='bg-white hover:bg-stone-50'>
+    <Table.Row key={appointment.id} className='bg-white hover:bg-stone-50'>
       {/* Client */}
       <Table.BodyColumn>
         <div className='flex items-center gap-3'>
           <img
-            src={meeting.imageUrl}
+            src={appointment.imageUrl}
             className='hidden sm:block w-12 h-12 rounded-full object-cover object-center'
             alt="Client's image"
           />
           <div>
             <p className='font-semibold text-lg leading-tight text-stone-700'>
-              {meeting.name}
+              {appointment.name}
             </p>
             <span className='text-primary'>Drugs</span>
           </div>
@@ -31,13 +31,13 @@ const CallRow = ({ meeting }: CallRowProps) => {
       </Table.BodyColumn>
       <Table.BodyColumn>
         <span className='text-stone-500'>
-          {format(parseISO(meeting.startDatetime), 'MMMM d')}
+          {format(parseISO(appointment.startDatetime), 'MMMM d')}
         </span>
       </Table.BodyColumn>
       <Table.BodyColumn>
         <span className='text-stone-500'>
-          {format(parseISO(meeting.startDatetime), 'hh:mm')} -{' '}
-          {format(parseISO(meeting.endDatetime), 'hh:mm')}
+          {format(parseISO(appointment.startDatetime), 'hh:mm')} -{' '}
+          {format(parseISO(appointment.endDatetime), 'hh:mm')}
         </span>
       </Table.BodyColumn>
       <Table.BodyColumn>
@@ -49,7 +49,7 @@ const CallRow = ({ meeting }: CallRowProps) => {
           </Modal.Button>
 
           <Modal.Content>
-            <AppointmentModal appointment={meeting} />
+            <AppointmentModal appointment={appointment} />
           </Modal.Content>
         </Modal>
       </Table.BodyColumn>

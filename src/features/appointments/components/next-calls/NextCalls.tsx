@@ -26,7 +26,7 @@ const NextCalls = () => {
         </Table.Head>
         <Table.Body>
           {nextMeetings.map((meeting) => (
-            <CallRow key={meeting.id} meeting={meeting} />
+            <CallRow key={meeting.id} appointment={meeting} />
           ))}
         </Table.Body>
       </Table>
