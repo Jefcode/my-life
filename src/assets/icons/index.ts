@@ -6,6 +6,7 @@
  */
 
 export { ReactComponent as AchievementsIcon } from './achievements.svg';
+export { ReactComponent as AppleIcon } from './apple.svg';
 export { ReactComponent as ArticleIcon } from './article.svg';
 export { ReactComponent as BankIcon } from './bank.svg';
 export { ReactComponent as BellIcon } from './bell.svg';
@@ -24,9 +25,13 @@ export { ReactComponent as CurrencyIcon } from './currency.svg';
 export { ReactComponent as DotsIcon } from './dots.svg';
 export { ReactComponent as EditAltIcon } from './edit-alt.svg';
 export { ReactComponent as EditIcon } from './edit.svg';
+export { ReactComponent as EyeOffIcon } from './eye-off.svg';
+export { ReactComponent as EyeIcon } from './eye.svg';
+export { ReactComponent as FacebookIcon } from './facebook.svg';
 export { ReactComponent as FilterActiveIcon } from './filter-active.svg';
 export { ReactComponent as FilterIcon } from './filter.svg';
 export { ReactComponent as FullScreenIcon } from './full-screen.svg';
+export { ReactComponent as GoogleIcon } from './google.svg';
 export { ReactComponent as HeartIcon } from './heart.svg';
 export { ReactComponent as HomeIcon } from './home.svg';
 export { ReactComponent as HubActiveIcon } from './hub-active.svg';
@@ -38,6 +43,7 @@ export { ReactComponent as LogoutIcon } from './logout.svg';
 export { ReactComponent as MailIcon } from './mail.svg';
 export { ReactComponent as MediaIcon } from './media.svg';
 export { ReactComponent as MicrophoneIcon } from './microphone.svg';
+export { ReactComponent as MicrosoftIcon } from './microsoft.svg';
 export { ReactComponent as NextIcon } from './next.svg';
 export { ReactComponent as NoteIcon } from './note.svg';
 export { ReactComponent as NotificationsIcon } from './notifications.svg';

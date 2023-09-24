@@ -17,6 +17,7 @@ import MyPaymentPage from './pages/profile/MyPayment.page';
 import AppointmentsPage from './pages/Appointments.page';
 import MyMediaPage from './pages/profile/MyMedia.page';
 import EditProfilePage from './pages/profile/EditProfile.page';
+import LoginPage from './pages/Login.page';
 
 function App() {
   // Remove loader once the app component mounts
@@ -27,6 +28,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/login' element={<LoginPage />} />
+
         <Route element={<Layout />}>
           <Route index element={<Navigate to='/dashboard' replace />} />
           <Route path='/dashboard' element={<DashboardPage />} />
@@ -38,7 +41,7 @@ function App() {
           <Route path='/appointments' element={<AppointmentsPage />} />
 
           <Route path='/hub' element={<HubLayout />}>
-            <Route index element={<Navigate to='videos' replace />} />
+            <Route path='' element={<Navigate to='videos' replace />} />
             <Route path='videos' element={<VideosPage />} />
             <Route path='podcasts' element={<PodcastsPage />} />
             <Route path='articles' element={<ArticlesPage />} />

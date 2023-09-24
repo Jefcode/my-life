@@ -3,85 +3,115 @@
 @tailwind utilities;
 
 @layer base {
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-Thin.ttf');
-		font-weight: 100;
-	}
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-ExtraLight.ttf');
-		font-weight: 200;
-	}
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-Light.ttf');
-		font-weight: 300;
-	}
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-Thin.ttf');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-ExtraLight.ttf');
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-Light.ttf');
+    font-weight: 300;
+  }
 
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-Regular.ttf');
-		font-weight: 400;
-	}
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-Medium.ttf');
-		font-weight: 500;
-	}
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-SemiBold.ttf');
-		font-weight: 600;
-	}
-	@font-face {
-		font-family: jost;
-		src: url('./fonts/jost/Jost-Bold.ttf');
-		font-weight: 700;
-	}
-	@font-face {
-		font-family: jost;
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-Regular.ttf');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-Medium.ttf');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-SemiBold.ttf');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: jost;
+    src: url('./fonts/jost/Jost-Bold.ttf');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: jost;
 
-		src: url('./fonts/jost/Jost-ExtraBold.ttf');
-		font-weight: 800;
-	}
-	@font-face {
-		font-family: jost;
+    src: url('./fonts/jost/Jost-ExtraBold.ttf');
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: jost;
 
-		src: url('./fonts/jost/Jost-Black.ttf');
-		font-weight: 900;
-	}
+    src: url('./fonts/jost/Jost-Black.ttf');
+    font-weight: 900;
+  }
 
-		@font-face {
-			font-family: icon;
-			src: url('./fonts/icon/icomoon.ttf');
-		}
+  /* Jakarta font faces */
+  @font-face {
+    font-family: jakarta;
+
+    src: url('./fonts/jakarta/jakarta-regular.ttf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: jakarta;
+
+    src: url('./fonts/jakarta/jakarta-medium.ttf');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: jakarta;
+
+    src: url('./fonts/jakarta/jakarta-semibold.ttf');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: jakarta;
+
+    src: url('./fonts/jakarta/jakarta-bold.ttf');
+    font-weight: 700;
+  }
+
+  /* Icon webfont => icomoon website */
+  @font-face {
+    font-family: icon;
+    src: url('./fonts/icon/icomoon.ttf');
+  }
 }
 
 .card {
-	@apply opacity-0;
+  @apply opacity-0;
 }
 
 @keyframes dialog-content-show {
-	from {
-		opacity: 0;
-		transform: translate(50%, -50%) scale(0.95);
-	}
-	to {
-		opacity: 1;
-		transform: translate(50%, -50%) scale(1);
-	}
+  from {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(50%, -50%) scale(1);
+  }
 }
 
 @keyframes dialog-content-hide {
-	from {
-		opacity: 1;
-		transform: translate(50%, -50%) scale(1);
-	}
-	to {
-		opacity: 0;
-		transform: translate(50%, -50%) scale(0.95);
-	}
+  from {
+    opacity: 1;
+    transform: translate(50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.95);
+  }
 }
 
 /* Remove Spinner buttons from number input */
@@ -93,6 +123,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }

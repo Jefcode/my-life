@@ -9,10 +9,13 @@ export default {
       },
       fontFamily: {
         sans: ['jost'],
+        jakarta: ['jakarta'],
         icon: ['icon'],
       },
       colors: {
         primary: '#EA515E',
+        danger: '#D42E2E',
+        lightPink: '#FFECF2',
         gradientRed: {
           100: '#F07F3C',
           200: '#C62F79',
