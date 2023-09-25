@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 
 import {
   AppleIcon,
-  EyeIcon,
-  EyeOffIcon,
   FacebookIcon,
   GoogleIcon,
   LogoIcon,
@@ -11,11 +9,9 @@ import {
   MicrosoftIcon,
 } from '../assets/icons';
 import Container from '../components/ui/Container';
-import { useState } from 'react';
+import LoginForm from '../features/authentication/components/LoginForm';
 
 const LoginPage = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
     <div className='font-jakarta max-w-[100vw] min-h-screen overflow-x-hidden'>
       <Container className='relative'>
@@ -61,50 +57,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* Form */}
-                <form>
-                  <div className='space-y-4'>
-                    <div className='relative'>
-                      <input
-                        type='email'
-                        className='rounded-full py-5 px-6 border border-stone-300 w-full outline-none focus:border-stone-500 transition placeholder:text-stone-400'
-                        placeholder='Your e-mail'
-                      />
-                    </div>
-                    <div className='relative'>
-                      <input
-                        type={showPassword ? 'text' : 'password'}
-                        className='rounded-full py-5 pr-12 px-6 border border-stone-300 w-full outline-none focus:border-stone-500 transition placeholder:text-stone-400'
-                        placeholder='Enter your password'
-                      />
-
-                      {/* Eye icon for the password */}
-                      <button
-                        type='button'
-                        className='absolute top-1/2 -translate-y-1/2 right-5 h-6 w-6 flex items-center justify-center text-stone-400'
-                        onClick={() => setShowPassword((val) => !val)}
-                      >
-                        {showPassword ? <EyeIcon /> : <EyeOffIcon />}
-                      </button>
-                    </div>
-
-                    {/* Submit Button */}
-                    <button className='py-4 px-14 bg-primary text-white rounded-full font-semibold transition-all hover:bg-danger shadow-[0px_4px_16px_0px_rgba(193,34,48,0.16)] active:scale-95'>
-                      Log in
-                    </button>
-
-                    <div className='space-x-2'>
-                      <span className='text-stone-500 font-medium'>
-                        Forgot password?
-                      </span>
-                      <a
-                        href=''
-                        className='text-blue-500 font-bold hover:underline'
-                      >
-                        Recover
-                      </a>
-                    </div>
-                  </div>
-                </form>
+                <LoginForm />
 
                 {/* Line Sperater */}
                 <div className='relative border-b border-stone-200 w-full my-5'>
@@ -115,16 +68,16 @@ const LoginPage = () => {
 
                 {/* Socials icon */}
                 <div className='w-full flex items-center gap-1'>
-                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:bg-stone-50 transition active:scale-95'>
+                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:shadow-xl hover:shadow-slate-200/60 transition active:scale-95'>
                     <GoogleIcon />
                   </button>
-                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:bg-stone-50 transition active:scale-95'>
+                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:shadow-xl hover:shadow-slate-200/60 transition active:scale-95'>
                     <FacebookIcon />
                   </button>
-                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:bg-stone-50 transition active:scale-95'>
+                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:shadow-xl hover:shadow-slate-200/60 transition active:scale-95'>
                     <AppleIcon />
                   </button>
-                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:bg-stone-50 transition active:scale-95'>
+                  <button className='w-full rounded-full py-4 px-2 flex items-center justify-center border border-stone-300 hover:shadow-xl hover:shadow-slate-200/60 transition active:scale-95'>
                     <MicrosoftIcon />
                   </button>
                 </div>

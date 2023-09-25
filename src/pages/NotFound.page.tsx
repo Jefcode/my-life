@@ -23,7 +23,7 @@ function NotFoundPage() {
 
         {/* Go Back to Home Page */}
         <Link
-          to='/'
+          to='/dashboard'
           className='bg-primary text-white px-14 py-4 hover:bg-danger transition'
         >
           Go back to dashboard
