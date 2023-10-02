@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useMutation } from '@tanstack/react-query';
 import * as yup from 'yup';
 
 import { EyeIcon, EyeOffIcon } from '../../../assets/icons';
 import classNames from '../../../utils/classNames';
+import * as apiAuth from '../services/apiAuth';
 
 const loginSchema = yup
   .object({
@@ -16,6 +18,9 @@ const loginSchema = yup
 interface ILoginFormInputs extends yup.InferType<typeof loginSchema> {}
 
 const LoginForm = () => {
+  const { mutate: login } = useMutation({
+    mutationFn: apiAuth.login,
+  });
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -27,7 +32,7 @@ const LoginForm = () => {
   });
 
   const onSubmit = (data: ILoginFormInputs) => {
-    console.log(data);
+    login(data);
   };
 
   return (
@@ -62,7 +67,7 @@ const LoginForm = () => {
             {/* Eye icon for the password */}
             <button
               type='button'
-              className='absolute top-1/2 -translate-y-1/2 right-2.5 h-10 w-10 hover:bg-slate-100 rounded-full flex items-center justify-center text-stone-500/60'
+              className='absolute top-1/2 -translate-y-1/2 right-2.5 h-10 w-10 hover:bg-slate-100 rounded-full flex items-center justify-center text-stone-500/60 transition-all'
               onClick={() => setShowPassword((val) => !val)}
             >
               {showPassword ? <EyeIcon /> : <EyeOffIcon />}
